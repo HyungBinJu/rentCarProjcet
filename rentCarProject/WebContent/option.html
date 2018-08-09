@@ -44,10 +44,11 @@
  } 
  .order{margin-top: 50px;}
  .resDate{width: 70%; height: 600px;float: left; margin-top: 30px;}
- .nextBtn{margin-top: 20PX; float: right; margin-right: 10px;}  
- .nextBtn button{ width: 90px;padding: 10px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
- .preBtn{margin-top: 20PX; float: right;} 
+  .preBtn{display: inline-block;}
  .preBtn button{ width: 90px;padding: 10px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+ .nextBtn{display: inline-block; margin-left: 10px; }  
+ .nextBtn button{ width: 90px;padding: 10px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
+.btn{margin-top: 20PX; float: right;}
  .resStartDate, .resEndDate{display: inline;}
  .waring{margin-top: 30px;}
  .waringContent{background-color: azure;margin: 15px;padding: 18px}
@@ -143,12 +144,14 @@
                     </tr>
                </table>
            </div>
-           <div class="preBtn">
-               <button>차량선택</button>
-           </div>  
-           <div class="nextBtn">
-               <button>선택완료</button>
-           </div> 
+           <div class="btn">
+               <div class="preBtn">
+                   <button>날짜/지점</button>
+               </div>  
+               <div class="nextBtn">
+                   <button>옵션/할인</button>
+               </div> 
+           </div>
        </div>
        
        
