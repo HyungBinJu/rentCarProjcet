@@ -44,6 +44,7 @@
     border-style: inset;
     border-width: 1px;
  } 
+/*  .information .menu_section{background:#083763; color:orange;} */
  .order{margin-top: 50px;}
  .resDate{width: 100%; height: 600px;margin-top: 30px;}
  .resStartDate, .resEndDate{display: inline;}
@@ -140,7 +141,7 @@
            <div class=information>
                <table>
                     <tr> <!-- maxlength 넣기 -->
-               	       <td width="200px"style="background-color: azure">이름 * </td>
+               	       <td width="200px" style="background-color: azure" class="menu_section">이름 * </td>
                   		<td><input type="text" width="200px"></td>
                    </tr>
                      <tr> <!-- ID 유효성체크 -->
@@ -169,7 +170,6 @@
                      <tr> 
                        <td width="200px" style="background-color: azure">생일 *</td>
                         <td><input type="text" class="birth"></td>
-                    </tr>
                     </tr>
                     <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">E-MAIL *</td>
