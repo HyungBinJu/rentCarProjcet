@@ -143,6 +143,17 @@
                	       <td width="200px"style="background-color: azure">이름 * </td>
                   		<td><input type="text" width="200px"></td>
                    </tr>
+                     <tr> <!-- ID 유효성체크 -->
+                       <td width="200px" style="background-color: azure">ID *</td>
+                        <td><input type="text"></td>
+                    </tr>
+                     <tr> <!-- AJAX 구현 -->
+                       <td width="200px" style="background-color: azure">PW *</td>
+                        <td><input type="text"></td>
+                    </tr>
+                     <tr><!-- AJAX 구현 -->
+                       <td width="200px" style="background-color: azure">PW 재입력 *</td>
+                        <td><input type="text"></td>
                     <tr> <!-- 유효성체크 -->
                        <td width="200px" style="background-color: azure">전화 *</td>
                         <td>
@@ -159,28 +170,17 @@
                        <td width="200px" style="background-color: azure">생일 *</td>
                         <td><input type="text" class="birth"></td>
                     </tr>
-                     <tr> <!-- ID 유효성체크 -->
-                       <td width="200px" style="background-color: azure">ID *</td>
-                        <td><input type="text"></td>
-                    </tr>
-                     <tr> <!-- AJAX 구현 -->
-                       <td width="200px" style="background-color: azure">PW *</td>
-                        <td><input type="text"></td>
-                    </tr>
-                     <tr><!-- AJAX 구현 -->
-                       <td width="200px" style="background-color: azure">PW 재입력 *</td>
-                        <td><input type="text"></td>
                     </tr>
                     <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">E-MAIL *</td>
                         <td><input type="text"> @ <input type="text" name="email">
                         	<select id="choose_email">
-                        		<option value="select">선택하기</option>
+                        		<option value="">선택하기</option>
                         		<option value="google.com">google.com</option>
                         		<option value="naver.com">naver.com</option>
                         		<option value="nate.com">nate.com</option>
                         		<option value="daum.net">daum.net</option>
-                        		<option value="directly">직접입력</option>
+                        		<option value="">직접입력</option>
                         	</select>
                         
                         </td>
