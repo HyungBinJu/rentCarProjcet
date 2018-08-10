@@ -29,7 +29,7 @@
  strong{font-weight:bold;} 
 
   .textRight {text-align: right}
- .wrap{width:1080px;margin:0 auto; overflow:hidden;} 
+ .wrap{width:850px;margin:0 auto; overflow:hidden;} 
  .subMenu{width: 20%;height: 600px; float:right;background-color:#083763;color:white;padding-top:50px;padding-left:20px;padding-right: 20px;}
  .img{display: inline-block;}
     *{
@@ -45,6 +45,7 @@
     border-width: 1px;
  } 
 /*  .information .menu_section{background:#083763; color:orange;} */
+ .header_title{background:#083763; color:darkorange;padding:20px;}
  .order{margin-top: 50px;}
  .resDate{width: 100%; height: 600px;margin-top: 30px;}
  .resStartDate, .resEndDate{display: inline;}
@@ -56,9 +57,10 @@
  .nextBtn{display: inline-block; margin-left: 5px; }  
  .preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
- .phone1 {width:52px;height:22px;}
- .phone2 {width:52px;height:22px;}
- .phone3 {width:52px;height:22px;}
+ .address_btn{width: 90px;height: 25px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
+ .phone1 {width:52px;height:26px;}
+ .phone2 {width:52px;height:22px; text-align: center;}
+ .phone3 {width:52px;height:22px; text-align: center;}
     select{
         width: 180px;
         height: 22px;
@@ -108,7 +110,7 @@
 		$("#choose_email").on("change", function() {
 			var mail = $(this).val();
 			if (mail == "choose_phone") {
-				$("input[name='']").val('');
+				$("input[name='email']").val('');
 			} else {
 				$("input[name='email']").val(mail); 
 			}
@@ -120,7 +122,6 @@
 				 yearRange:"c-100:c+0",
 				changeMonth: true,
 			     changeYear: true
-
 			});
 
 
@@ -133,28 +134,29 @@
    <div class="wrap">
       
        <div class="resDate">  
-           <h1 style="font-size: 30px">회원가입</h1>
-           <p style="margin-top: 10px">기본정보를 입력하세요</p><br>
-           <p class="textRight">*필수 입력 항목</p>	
-           <div class="empty">--------------------------------------------------------------</div>
+       	 <div class="header_title">
+	           <h1 style="font-size: 30px">회원가입</h1>
+	           <p style="margin-top: 10px">기본정보를 입력하세요</p><br>
+	           <p class="textRight">*필수 입력 항목</p>	
+        </div>
            <p class="title">회원 정보 입력</p>
            <div class=information>
                <table>
                     <tr> <!-- maxlength 넣기 -->
                	       <td width="200px" style="background-color: azure" class="menu_section">이름 * </td>
-                  		<td><input type="text" width="200px"></td>
+                  		<td><input type="text" width="200px"maxlength=5></td>
                    </tr>
                      <tr> <!-- ID 유효성체크 -->
-                       <td width="200px" style="background-color: azure">ID *</td>
-                        <td><input type="text"></td>
+                       <td width="200px" style="background-color: azure" >ID *</td>
+                        <td><input type="text" placeholder="영문,숫자 10자이내" maxlength=10></td>
                     </tr>
                      <tr> <!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">PW *</td>
-                        <td><input type="text"></td>
+                        <td><input type="password"></td>
                     </tr>
                      <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">PW 재입력 *</td>
-                        <td><input type="text"></td>
+                        <td><input type="password"></td>
                     <tr> <!-- 유효성체크 -->
                        <td width="200px" style="background-color: azure">전화 *</td>
                         <td>
@@ -164,12 +166,13 @@
 						     	<option value="02">02</option>
 						        <option value="070">070</option>
 						   </select>-
-						      <input type="text" name="phone2" class="phone2">-
-						      <input type="text" name="phone3" class="phone3"><br></td>
+						      <input type="text" name="phone2" class="phone2"maxlength=4>-
+						      <input type="text" name="phone3" class="phone3"maxlength=4><br>
+					    </td>
                     </tr>
                      <tr> 
                        <td width="200px" style="background-color: azure">생일 *</td>
-                        <td><input type="text" class="birth"></td>
+                        <td><input type="text" class="birth"placeholder="선택하세요"></td>
                     </tr>
                     <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">E-MAIL *</td>
@@ -192,7 +195,7 @@
                      <tr><!-- 주소 구현 -->
                        <td width="200px" style="background-color: azure">주소 *</td>
                        		
-                        <td><input type="text"><button id="address_btn">주소검색&nbsp;</button></td>
+                        <td><input type="text">　<button class="address_btn">주소검색</button></td>
                     </tr>
                     <tr><!-- 주소 구현 -->
                        <td width="200px" style="background-color: azure">상세주소 *</td>
@@ -204,9 +207,9 @@
                         <td><input type="text"></td>
                     </tr>
                     <tr>
-                       <td width="200px" style="background-color: azure">면허 종류</td>
+                       <td width="200px" style="background-color: azure;">면허 종류</td>
                        <td>
-                          <select id="driver_licence">
+                          <select id="driver_licence" style="width:185px;">
                     	      <option value="choose">선택하기</option>
                               <option value="manual">1종보통</option>
                               <option value="manual2">1종대형(특수)</option>  
