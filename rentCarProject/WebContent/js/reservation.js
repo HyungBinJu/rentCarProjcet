@@ -80,14 +80,7 @@ $(function() {
         	$("#option_div").hide();
     	}
     });
-   /* 
-    $("#nextCar_btn").on("click",function(){
-    	$("#car_div").show();
-    	$("#reservation_div").hide();
-    	$("#qualification_div").hide();
-    	$("#option_div").hide();
-    });
-    */
+   
     $("#preDate_btn").on("click",function(){
     	$("#reservation_div").show();
     	$("#car_div").hide();
