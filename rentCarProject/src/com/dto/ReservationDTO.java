@@ -17,9 +17,9 @@ public class ReservationDTO {
 	*/
 	
 	private String rentId;
-	private String rentDay;
-	private String returnDday;
-	private String returnDay;
+	private String rentDate;
+	private String returnDate;
+	private String RealReturnDate;
 	private String state;
 	private String rOption;
 	private String insurance;
@@ -29,13 +29,13 @@ public class ReservationDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ReservationDTO(String rentId, String rentDay, String returnDday, String returnDay, String state,
+	public ReservationDTO(String rentId, String rentDate, String returnDate, String realReturnDate, String state,
 			String rOption, String insurance) {
 		super();
 		this.rentId = rentId;
-		this.rentDay = rentDay;
-		this.returnDday = returnDday;
-		this.returnDay = returnDay;
+		this.rentDate = rentDate;
+		this.returnDate = returnDate;
+		RealReturnDate = realReturnDate;
 		this.state = state;
 		this.rOption = rOption;
 		this.insurance = insurance;
@@ -49,28 +49,28 @@ public class ReservationDTO {
 		this.rentId = rentId;
 	}
 
-	public String getRentDay() {
-		return rentDay;
+	public String getRentDate() {
+		return rentDate;
 	}
 
-	public void setRentDay(String rentDay) {
-		this.rentDay = rentDay;
+	public void setRentDate(String rentDate) {
+		this.rentDate = rentDate;
 	}
 
-	public String getReturnDday() {
-		return returnDday;
+	public String getReturnDate() {
+		return returnDate;
 	}
 
-	public void setReturnDday(String returnDday) {
-		this.returnDday = returnDday;
+	public void setReturnDate(String returnDate) {
+		this.returnDate = returnDate;
 	}
 
-	public String getReturnDay() {
-		return returnDay;
+	public String getRealReturnDate() {
+		return RealReturnDate;
 	}
 
-	public void setReturnDay(String returnDay) {
-		this.returnDay = returnDay;
+	public void setRealReturnDate(String realReturnDate) {
+		RealReturnDate = realReturnDate;
 	}
 
 	public String getState() {
@@ -99,12 +99,13 @@ public class ReservationDTO {
 
 	@Override
 	public String toString() {
-		return "ReservationDTO [rentId=" + rentId + ", rentDay=" + rentDay + ", returnDday=" + returnDday
-				+ ", returnDay=" + returnDay + ", state=" + state + ", rOption=" + rOption + ", insurance=" + insurance
-				+ "]";
+		return "ReservationDTO [rentId=" + rentId + ", rentDate=" + rentDate + ", returnDate=" + returnDate
+				+ ", RealReturnDate=" + RealReturnDate + ", state=" + state + ", rOption=" + rOption + ", insurance="
+				+ insurance + "]";
 	}
+
 	
-	
-	
+
+
 	
 }//end
