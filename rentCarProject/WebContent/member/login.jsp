@@ -51,7 +51,7 @@
 	    	    		}else if(pw.length==0){
 	    	    			alert("비밀번호를 입력하세요")
 	    	    			$("userpw").focus();
-	    	    			event.preventDefault();
+	    	    			event.preventDefault(); 
 	    	    		}
 	    	    	});
 	    	 //id 한글 입력 방지
