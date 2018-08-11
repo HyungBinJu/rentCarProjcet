@@ -47,12 +47,9 @@ CREATE TABLE memberinfo
 	post number(5,0),
 	addr1 varchar2(50),
 	addr2 varchar2(50),
-	phone1 number(3,0) NOT NULL,
-	phone2 number(4,0) NOT NULL,
-	phone3 number(4,0) NOT NULL,
+	phone varchar2(13) NOT NULL,
 	birth varchar2(10),
-	email1 varchar2(20),
-	email2 varchar2(15),
+	email varchar2(50),
 	licensetype varchar2(10) NOT NULL,
 	licensenum varchar2(20) NOT NULL,
 	mlevel number NOT NULL,
@@ -95,6 +92,10 @@ CREATE TABLE reservation
 	userid varchar2(15) NOT NULL,
 	carid varchar2(4) NOT NULL,
 	shopid varchar2(4) NOT NULL,
+  price number(9,0),
+  navigation varchar2(1),
+  babyseat varchar2(1),
+  baby_carriage varchar2(1),
 	PRIMARY KEY (rentid)
 );
 
@@ -154,10 +155,10 @@ ALTER TABLE reservation
 	REFERENCES shop (shopid)
 ;
 
-insert into shop VALUES('J001','제주지점' ,null,'제주특별자치도 제주시 용담2동 용문로 62','064-726-3322',null);
-insert into shop VALUES('J002','서귀포지점' ,null,'제주특별자치도 서귀포시 상예동','064-738-8255',null);
-insert into shop VALUES('J003','함덕지점' ,null,'제주특별자치도 제주시 조천읍 함덕리 1008','064-728-3989',null);
-insert into shop VALUES('J004','협재지점' ,null,'제주특별자치도 제주시 한림읍 협재리 2497-1','064-796-2404',null);
+insert into shop VALUES('J001','제주지점' ,'제주특별자치도 제주시 용담2동 용문로 62','064-726-3322',null);
+insert into shop VALUES('J002','서귀포지점' ,'제주특별자치도 서귀포시 상예동','064-738-8255',null);
+insert into shop VALUES('J003','함덕지점' ,'제주특별자치도 제주시 조천읍 함덕리 1008','064-728-3989',null);
+insert into shop VALUES('J004','협재지점' ,'제주특별자치도 제주시 한림읍 협재리 2497-1','064-796-2404',null);
 
 INSERT into car VALUES ('CK01', '경차', '올 뉴모닝', '기아','white', 15000, 'CK01.png', 'J001'); 
 INSERT into car VALUES ('CK02', '경차', '레이', '기아','red', 15000, 'CK02.png', 'J001'); 
@@ -174,3 +175,7 @@ INSERT into car VALUES ('LH01', '대형', '제네시스', '현대','black', 5000
 INSERT into car VALUES ('VK01', 'SUV', '쏘렌토', '기아','black', 35000, 'VK01.png', 'J004');
 INSERT into car VALUES ('VH01', 'SUV', '투싼', '현대','white', 35000, 'VH01.png', 'J004');
 INSERT into car VALUES ('VH02', 'SUV', '싼타페', '현대','white', 35000, 'VH02.png', 'J004');
+
+insert into MEMBERINFO 
+     values ('brown', '브라운', '1111', null, null, null, '010-0909-9090' 
+              ,'1988-08-08', null, '1종보통','01-12-567890-66', 1);

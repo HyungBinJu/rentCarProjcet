@@ -27,8 +27,8 @@
            <div class="waring">
                <img src="../images/icon/waring.png" width="15px">알려드립니다<br>
                <div class="waringContent" style="margin-bottom: 50px">
-                예약은 최대 90일 내 선택이 가능하며,<br>
-                차량 출고시 계약서 작성 및 차량 확인에 약 15분 정도의 시간이 소요됩니다.   
+			                예약은 최대 90일 내 선택이 가능하며,<br>
+			                차량 출고시 계약서 작성 및 차량 확인에 약 15분 정도의 시간이 소요됩니다.   
                 </div>
            </div>
            <div class="city">
@@ -64,21 +64,21 @@
            
            <div class="carTable">
                <table id="car_table">
-               <c:forEach var="carList" items="carList">
+             <%--   <c:forEach var="carList" items="carList"> --%>
                   <tr>
                        <td><input type="radio" style="width:15px;height:15px;border:1px;"></td>
                        <td>${carList.image}</td>
                        <td>${carList.carName}</td>
                    </tr>
-               </c:forEach>
+              <%-- </c:forEach> --%>
                </table>    
            </div>
            
            <div class="waring">
                <img src="../images/icon/waring.png" width="15px">알려드립니다<br>
                <div class="waringContent" style="margin-bottom: 50px">
-                대여자격 만 26세 이상, 운전경력 3년이상 차량 안내<br>
-                대형, 고급, 4륜, 승합, 제네시스쿠페  
+			                대여자격 만 26세 이상, 운전경력 3년이상 차량 안내<br>
+			                대형, 고급, 4륜, 승합, 제네시스쿠페  
                 </div>
            </div>
            <div class="btn">
