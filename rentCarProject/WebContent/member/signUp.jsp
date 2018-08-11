@@ -43,9 +43,9 @@
  .nextBtn{display: inline-block; margin-left: 5px; }  
  .preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
- .phone1 {width:52px;height:22px;}
- .phone2 {width:52px;height:22px;}
- .phone3 {width:52px;height:22px;}
+ .phone1 {width:52px;height:22px; text-align:center;}
+ .phone2 {width:52px;height:22px; text-align:center;}
+ .phone3 {width:52px;height:22px; text-align:center;}
     select{
         width: 180px;
         height: 22px;
@@ -98,7 +98,12 @@
 			} else {
 				$("input[name='email']").val(mail); 
 			}
-		});		
+		});	
+		//email 한글방지
+		$(".email_box").on("keyup",function(){
+			if($(this).val($(this).val().replace(/[^0-9]/g,''))){
+			};	
+			});
 		//생일달력
 			$(".birth").datepicker({
 				dateFormat: "yy-mm-dd",
@@ -107,9 +112,59 @@
 				changeMonth: true,
 			     changeYear: true
 			});
-
-
-
+		//비밀번호 확인
+			$("#pw_check").on("keyup",function(){
+	    		var pw_check = $("#pw_check").val().length;
+	    		var pw_check2 = $("#pw_check_again").val().length;
+	    		var pw_mesg2 = "한번 더 입력 해주세요";
+	    		var empty = '';
+	    		if(pw_check != 0){
+	    			$("#pw_result1").text(pw_mesg2);
+	    		}else if(pw_check ==0){
+	    			$("#pw_result1").text("비밀번호를 입력해 주세요");
+	    		} 
+	    	});
+			$("#pw_check_again").on("keyup",function(){
+	    		var pw_check = $("#pw_check").val();
+	    		var pw_mesg =  "비밀번호가 일치하지 않습니다";
+	    		var pw_mesg2 = "비밀번호 일치";
+	    		if(pw_check == $(this).val()){
+	    			$("#pw_result2").text(pw_mesg2);
+	    			$("#pw_result1").text('');
+	    		}else{
+	    			$("#pw_result2").text(pw_mesg);
+	    	}
+	    	});
+			//전화번호 한글방지
+			$(".phone2").on("keyup",function(){
+				if($(this).val($(this).val().replace(/[^0-9]/g,""))){
+				};	
+				});
+			//id 확인
+			$("#id_check").on("keyup",function(){
+				$.ajax({
+					type : "GET",
+					url : "만들고 입력하고 끗!",
+					dataType : "text",
+					data : {
+						userid : $("#id_check").val()
+					},
+					success : function(data, status, xhr){
+						$("#id_result").text(data);
+					},//end success
+					error : function(xhr,status,error){
+						alert("사용 할 수 없는 ID 입니다");
+						$("#id_check").val('');
+					}//end error
+				});//end ajax
+					if($(this).val().length >= 11){
+						alert("10자 이하로 입력해 주세요")
+					}
+				if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
+				}
+			});//end keyup
+			
+			
 
 	});//end ready
 	
@@ -124,26 +179,31 @@
 		           <p class="textRight">*필수 입력 항목</p>	
 		           <div class="empty">--------------------------------------------------------------</div>
 		           <p class="title">회원 정보 입력</p>
-       		</div>    
-     <form action="SignUp"><!-- signUp From  -->
+       		</div><br>   
+     <form action="SignUp" id="myform"><!-- signUp From  -->
      	<div class=information>
                <table>
           
-                    <tr> <!-- maxlength 넣기 -->
+                    <tr> 
                	       <td width="200px" style="background-color: azure" class="menu_section">이름 * </td>
                   		<td><input type="text" width="200px" maxlength=5></td>
                    </tr>
-                     <tr> <!-- ID 유효성체크 -->
-                       <td width="200px" style="background-color: azure">ID *</td>
-                        <td><input type="text"></td>
+                     <tr>                        <td width="200px" style="background-color: azure">ID *</td>
+                        <td><input type="text" id="id_check" placeholder="영문,숫자 조합 한글 사용 불가"maxlength=10 >
+                        	<span id="id_result"></span>
+                        </td>
                     </tr>
-                     <tr> <!-- AJAX 구현 -->
-                       <td width="200px" style="background-color: azure">PW *</td>
-                        <td><input type="text"></td>
+                     <tr> 
+                       <td width="200px" style="background-color: azure" >PW *</td>
+                        <td><input type="password" id="pw_check" maxlength=10 placeholder="영문,숫자 조합 10자 이내">
+                       		<span id="pw_result1">비밀번호를 입력해 주세요</span>
+                        </td>
                     </tr>
-                     <tr><!-- AJAX 구현 -->
-                       <td width="200px" style="background-color: azure">PW 재입력 *</td>
-                        <td><input type="text"></td>
+                     <tr>
+                       <td width="200px" style="background-color: azure" >PW 확인 *</td>
+                        <td><input type="password" id="pw_check_again" maxlength=10 placeholder="영문,숫자 조합 10자 이내">
+                        	<span id="pw_result2"></span>
+                        </td>
                     <tr> <!-- 유효성체크 -->
                        <td width="200px" style="background-color: azure">전화 *</td>
                         <td>
@@ -153,16 +213,17 @@
 						     	<option value="02">02</option>
 						        <option value="070">070</option>
 						   </select>-
-						      <input type="text" name="phone2" class="phone2">-
-						      <input type="text" name="phone3" class="phone3"><br></td>
+						      <input type="text" name="phone2" class="phone2" maxlength=4 >-
+						      <input type="text" name="phone3" class="phone3" maxlength=4 ><br>
+						</td>
                     </tr>
                      <tr> 
                        <td width="200px" style="background-color: azure">생일 *</td>
-                        <td><input type="text" class="birth"></td>
+                        <td><input type="text" class="birth"placeholder="클릭하세요"></td>
                     </tr>
                     <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">E-MAIL *</td>
-                        <td><input type="text"> @ <input type="text" name="email">
+                        <td><input type="text" class="email_box"> @ <input type="text" name="email" class="email_box">
                         	<select id="choose_email">
                         		<option value="">선택하기</option>
                         		<option value="google.com">google.com</option>
