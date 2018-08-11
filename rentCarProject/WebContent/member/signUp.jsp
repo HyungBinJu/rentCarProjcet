@@ -25,21 +25,12 @@
  strong{font-weight:bold;} 
 
   .textRight {text-align: right}
- .wrap{width:1080px;margin:0 auto; overflow:hidden;} 
+   .header_title{ height: 140px;background: #083763;color: darkorange;padding: 20px;} 
+ .wrap{width:850px;margin:0 auto; overflow:hidden;} 
  .subMenu{width: 20%;height: 600px; float:right;background-color:#083763;color:white;padding-top:50px;padding-left:20px;padding-right: 20px;}
  .img{display: inline-block;}
-    *{
-        font-family: 'Jeju Gothic', sans-serif;
-    }
- hr { 
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
- } 
+    *{font-family: 'Jeju Gothic', sans-serif;}
+ hr { display: block;margin-top: 0.5em; margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 1px;} 
 /*  .information .menu_section{background:#083763; color:orange;} */
  .order{margin-top: 50px;}
  .resDate{width: 100%; height: 600px;margin-top: 30px;}
@@ -48,7 +39,7 @@
  .waringContent{background-color: azure;margin: 15px;padding: 18px}
  .selectType{background-color: azure;margin: 15px;padding: 23px}
  .preBtn{display: inline-block;}
- .btn{margin-top: 20PX; float: left;}
+ .last_btn{margin-top: 20PX; float: left;}
  .nextBtn{display: inline-block; margin-left: 5px; }  
  .preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
@@ -115,7 +106,6 @@
 				 yearRange:"c-100:c+0",
 				changeMonth: true,
 			     changeYear: true
-
 			});
 
 
@@ -128,19 +118,20 @@
    <div class="wrap">
       
        <div class="resDate">  
-           <h1 style="font-size: 30px">회원가입</h1>
-           <p style="margin-top: 10px">기본정보를 입력하세요</p><br>
-           <p class="textRight">*필수 입력 항목</p>	
-           <div class="empty">--------------------------------------------------------------</div>
-           <p class="title">회원 정보 입력</p>
-           
-           <form action="SignUp"><!-- signUp From  -->
-           <div class=information>
+       		<div class="header_title">
+		           <h1 style="font-size: 30px">회원가입</h1>
+		           <p style="margin-top: 10px">기본정보를 입력하세요</p><br>
+		           <p class="textRight">*필수 입력 항목</p>	
+		           <div class="empty">--------------------------------------------------------------</div>
+		           <p class="title">회원 정보 입력</p>
+       		</div>    
+     <form action="SignUp"><!-- signUp From  -->
+     	<div class=information>
                <table>
           
                     <tr> <!-- maxlength 넣기 -->
                	       <td width="200px" style="background-color: azure" class="menu_section">이름 * </td>
-                  		<td><input type="text" width="200px"></td>
+                  		<td><input type="text" width="200px" maxlength=5></td>
                    </tr>
                      <tr> <!-- ID 유효성체크 -->
                        <td width="200px" style="background-color: azure">ID *</td>
@@ -184,13 +175,13 @@
                         </td>
                     </tr>
                </table>
-           </div>
+       </div>
            <div class="insuranceTable" >
                <table>
                      <tr><!-- 주소 구현 -->
                        <td width="200px" style="background-color: azure">주소 *</td>
                        		
-                        <td><input type="text"><button id="address_btn">주소검색&nbsp;</button></td>
+                        <td><input type="text">　<button id="address_btn">주소검색</button></td>
                     </tr>
                     <tr><!-- 주소 구현 -->
                        <td width="200px" style="background-color: azure">상세주소 *</td>
@@ -215,15 +206,16 @@
                     </tr>
                </table>
            </div>
-           <div class="btn">
-	               <div class="preBtn">
-	                   <input type="submit" value="가입하기" class="finish">
-	               </div>  
-	               <div class="nextBtn">
-	                    <input type="submit" value="취소" class="cancel">
-	               </div>
+	  <div class="last_btn">
+		               <div class="preBtn">
+		                   <input type="submit" value="가입하기" class="finish">
+		               </div>  
+		               <div class="nextBtn">
+		                    <input type="submit" value="취소" class="cancel">
+		               </div>
+	  </div>
                </form> 
            </div>
        </div>
-   </div> 
+ 
    
