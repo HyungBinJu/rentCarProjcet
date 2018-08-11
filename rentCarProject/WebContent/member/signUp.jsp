@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <head>
+    <title>빠른 회원가입</title>
+    </head>
 <style type="text/css">
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 *{margin:0; padding:0;} 
@@ -26,7 +28,7 @@
 
   .textRight {text-align: right}
    .header_title{ height: 140px;background: #083763;color: darkorange;padding: 20px;} 
- .wrap{width:850px;margin:0 auto; overflow:hidden;} 
+ .wrap{width:850px; margin:0 auto; overflow:hidden;} 
  .subMenu{width: 20%;height: 600px; float:right;background-color:#083763;color:white;padding-top:50px;padding-left:20px;padding-right: 20px;}
  .img{display: inline-block;}
     *{font-family: 'Jeju Gothic', sans-serif;}
@@ -43,7 +45,7 @@
  .nextBtn{display: inline-block; margin-left: 5px; }  
  .preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
- .phone1 {width:52px;height:22px; text-align:center;}
+ .phone1 {width:57px;height:25px; text-align:center;}
  .phone2 {width:52px;height:22px; text-align:center;}
  .phone3 {width:52px;height:22px; text-align:center;}
     select{
@@ -78,7 +80,7 @@
     
 </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
 <!-- 달력 -->
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
