@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <meta charset="UTF-8">
-    <title>Document</title>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-
 <script>
 $(function() {
     $( "#resStartDate" ).datepicker({ 
     	showOn:"both",
-		buttonImage: "a.jpg",
+		buttonImage: "images/rent/a.jpg",
 		buttonImageOnly: true,
 		changeMonth: true,
 		changeYear: true,
@@ -24,7 +21,7 @@ $(function() {
     
     $( "#resEndDate" ).datepicker({
     	showOn:"both",
-		buttonImage: "a.jpg",
+		buttonImage: "images/rent/a.jpg",
 		buttonImageOnly: true,
 		changeMonth: true,
 		changeYear: true,
@@ -93,7 +90,7 @@ $(function() {
  .order button{width: 50px;padding: 5px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
 </style>
 
-<body>
+
    <div class="wrap">
       
        <div class="resDate">  
@@ -102,7 +99,7 @@ $(function() {
            <p class="resStartDate"  style="font-size: 15px">대여일시</p>&nbsp;<input type="text" class="resStartDate" id="resStartDate"> 
            <p class="resEndDate"  style="font-size: 15px">&nbsp;&nbsp;반납일시</p>&nbsp;<input type="text" class="resEndDate" id="resEndDate">
            <div class="waring">
-               <img src="waring.png" width="15px">알려드립니다<br>
+               <img src="images/rent/waring.png" width="15px">알려드립니다<br>
                <div class="waringContent" style="margin-bottom: 50px">
                 예약은 최대 90일 내 선택이 가능하며,<br>
                 차량 출고시 계약서 작성 및 차량 확인에 약 15분 정도의 시간이 소요됩니다.   
@@ -149,5 +146,3 @@ $(function() {
    </div> 
    
    
-</body>
-</html>
