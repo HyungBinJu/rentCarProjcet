@@ -180,6 +180,12 @@ button.closeBtn{width: 45px;height: 30px;font-size: 12px; font-family: 'Jeju Got
 	display: none;
 }
 
+.sub_ib{
+	display: inline-block;
+	margin-bottom: 7px;
+	margin-right: 2px;
+}
+
  hr { 
     display: block;
     margin-top: 0.5em;

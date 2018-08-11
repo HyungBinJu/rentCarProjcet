@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,6 @@
 
 </head>
 <body>
-
 
    <div class="wrap">
 	<div id="reservation_div">
@@ -33,10 +35,10 @@
               <h1 style="font-size: 30px">지점선택</h1>
               <p style="margin-top: 10px">대여지점을 선택해주세요.</p><br>
                    <select name="shop" id="store" class="store">
-                       <option value="제주시">제주지점</option>
-                       <option value="서귀포시">서귀포지점</option>
-                       <option value="제주국제공항">함덕지점</option>
-                       <option value="제주국제공항">협재지점</option>
+                       <option value="J001">제주지점</option>
+                       <option value="J002">서귀포지점</option>
+                       <option value="J003">함덕지점</option>
+                       <option value="J004">협재지점</option>
                    </select>
            </div>  
            <div class="resev_nextBtn" id="nextCar_btn">
@@ -52,24 +54,23 @@
            <p style="margin-top: 10px">고객님께서 승차하실 차량을 선택하여 주세요.</p><br>
            <div class="selectType">
                    <select name="type" id="type" class="type" style="font-size: 13px">
-                       <option value="고급">고급</option>
-                       <option value="중형">중형</option>
+                       <option value="경차">경차</option>
                        <option value="소형">소형</option>
+                       <option value="중형">중형</option>
+                       <option value="대형">대형</option>
+                       <option value="SUV">SUV</option>
                    </select>
            </div> 
            
            <div class="carTable">
                <table id="car_table">
+               <c:forEach var="carList" items="carList">
                   <tr>
                        <td><input type="radio" style="width:15px;height:15px;border:1px;"></td>
-                       <td>Image</td>
-                       <td>Name</td>
+                       <td>${carList.image}</td>
+                       <td>${carList.carName}</td>
                    </tr>
-                   <tr>
-                       <td><input type="radio" style="width:15px;height:15px;border:1px;"></td>
-                       <td>Image</td>
-                       <td>Name</td>
-                   </tr>
+               </c:forEach>
                </table>    
            </div>
            
@@ -237,21 +238,21 @@
      
         <div class="subMenu">
            <div class="subMenu2">
-                <p>차종명칭&nbsp;</p><sapn name="carName" id="carName"></sapn><br>
-                <p>대여일시&nbsp;</p><sapn name="rentDate" id="rentDate"></sapn><br>
-                <p>반납일시&nbsp;</p><sapn name="returnDate" id="returnDate"></sapn><br>
-                <p>대여지점&nbsp;</p><sapn name="shop" class="shop" id="shop"></sapn><br>
-                <p>반납지점&nbsp;</p><sapn class="shop"></sapn><br>
+                <p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib" name="carName" id="carName"></span><br>
+                <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib" name="rentDate" id="rentDate"></span><br>
+                <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib" name="returnDate" id="returnDate"></span><br>
+                <p class="sub_ib">대여지점&nbsp;</p><span class="sub_ib shop" name="shop" id="shop"></span><br>
+                <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop"></span><br>
                 <hr><br>
                 <p>부대장비</p><br>
-                <sapn name="option" id="option"></sapn><br>
+                <span name="option" id="option"></span><br>
                 <p>자차손해면책제도</p><br>
-                <sapn name="insure" id="insure"></sapn><br>
+                <span name="insure" id="insure"></span><br>
                 <p>할인내용</p><br>
-                <sapn></sapn><br>
+                <span></span><br>
                 <hr><br>
-                <p>정상금액&nbsp;</p><sapn></sapn><br>
-                <p>예약금액&nbsp;</p><sapn name="price" id="price"></sapn><br>
+                <p>정상금액&nbsp;</p><span></span><br>
+                <p>예약금액&nbsp;</p><span name="price" id="price"></span><br>
                 <div class="order">
                     <button class="orderBtn">예약</button>
                     <button class="cancelBtn">취소</button>
@@ -259,6 +260,5 @@
             </div> 
         </div>    
 </div>
-   
 </body>
 </html>
