@@ -82,8 +82,10 @@
 <!-- 달력 -->
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<!------------->
 <!-- 달력한국어 설정 -->
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/datepicker-ko.js"></script>
+<!------------->
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 <script type="text/javascript">
@@ -101,7 +103,7 @@
 		});	
 		//email 한글방지
 		$(".email_box").on("keyup",function(){
-			if($(this).val($(this).val().replace(/[^0-9]/g,''))){
+			if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
 			};	
 			});
 		//생일달력
