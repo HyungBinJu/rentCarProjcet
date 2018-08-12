@@ -3,11 +3,11 @@
 <div class="contents">
 		<!-- tbl_top -->
 					<div class="tbl_top">
-						<h4 class="tit_h4 f_l">나의환불 내역</h4>
+						<h4 class="tit_h4 f_l">형카 공지사항</h4>
 						<div class="f_r">
-							<a href="#" class="btn_m btn_type3"><span>문의하기</span></a>
-							<a href="#" class="btn_m btn_type5"><span>환불 요청서 작성</span></a>
-							<a href="#" class="btn_m btn_type5"><span>환불 요청서 작성</span></a>
+							<a href="#" class="btn_m btn_type3"><span>작성하기</span></a>
+							<a href="#" class="btn_m btn_type5"><span>삭제</span></a>
+						
 						</div>
 					</div>
 					<!-- //tbl_top -->
@@ -15,69 +15,28 @@
 					<!-- tbl_type1 -->
 					<div class="tbl_type1">
 						<table>
-							<caption>수강후기</caption>
 							<colgroup>
-								<col width="8%"><col width="*">
-								<col width="12%"><col width="11%">
-								<col width="11%"><col width="10%">
+								<col width="*"><col width="15%">
+								<col width="15%">
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">번호</th>
 									<th scope="col">제목</th>
-									<th scope="col">평점</th>
 									<th scope="col">작성자</th>
 									<th scope="col">작성일</th>
-									<th scope="col">조회수</th>
 								</tr>
 							</thead>
 							<tbody>
+							
 								<tr class="notice">
-									<td><span class="ico_hand"></span></td>
 									<td class="con"><a href="">선생님 단어 궁금한 게 생겼습니다.</a></td>
-									<td><span class="ico_grade s5"></span></td>
-									<td>Ora***</td>
-									<td>해커스인강</td>
-									<td>25</td>
+									<td>admin</td>
+									<td>2018/08/12</td>
 								</tr>
-								<tr class="notice">
-									<td><span class="ico_notice"></span></td>
-									<td class="con"><a href="">선생님 단어 궁금한 게 생겼습니다.</a></td>
-									<td><span class="ico_grade s4"></span></td>
-									<td>Ora***</td>
-									<td>해커스인강</td>
-									<td>25</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td class="con"><a href="">선생님 단어 궁금한 게 생겼습니다.</a></td>
-									<td><span class="ico_grade s1"></span></td>
-									<td>Ora***</td>
-									<td>해커스인강</td>
-									<td>25</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td class="con"><a href="">선생님 단어 궁금한 게 생겼습니다.</a></td>
-									<td><span class="ico_grade s3"></span></td>
-									<td>Ora***</td>
-									<td>해커스인강</td>
-									<td>25</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td class="con"><a href="">선생님 단어 궁금한 게 생겼습니다.</a></td>
-									<td><span class="ico_grade s2"></span></td>
-									<td>Ora***</td>
-									<td>해커스인강</td>
-									<td>25</td>
-								</tr>
+								
 							</tbody>
 						</table>
 					</div>
 					<!-- //tbl_type1 -->
-
-				
-
 
 	</div>
