@@ -120,7 +120,7 @@
 							<a href="ReservationUI">형카예약</a>
 						</li>
 						<li>
-							<a href="#">형카알림</a>
+							<a href="NoticeUI">형카알림</a>
 						</li>
 						<li>
 							<a href="#">형카문의</a>

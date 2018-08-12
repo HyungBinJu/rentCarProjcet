@@ -12,7 +12,7 @@ public class NoticeUIServelt extends HttpServlet {
     public NoticeUIServelt() {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		response.sendRedirect("board_list.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

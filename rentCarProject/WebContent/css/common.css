@@ -217,6 +217,7 @@ table{width:100%;}
 #content.full{width:100% !important;}
 .lay_c{width:1050px;margin:0 auto;overflow:hidden;}
 .hackers_lay{position:relative;padding:60px 0 59px;width:1050px;margin:0 auto; overflow:hidden;}
+.contents{width:1080px;margin:0 auto;padding:50px 0;}
 
 /* main_lec_menu */
 .main_lec_menu{display:block;}
