@@ -109,7 +109,7 @@
 				</div>
 				<div class="gnb_box">
 					<h1 class="logo">
-						<img src="http://placehold.it/150x70" alt="" />
+						<a href="index.jsp"><img src="http://placehold.it/150x70" alt="" /></a>
 					</h1>
 
 					<ul class="menu">

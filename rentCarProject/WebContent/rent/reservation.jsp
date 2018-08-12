@@ -35,7 +35,6 @@ $(function() {
     });
 }); */
 </script>
-</head>
  
  <div class="wrap_reservation">
 	<div id="reservation_div">

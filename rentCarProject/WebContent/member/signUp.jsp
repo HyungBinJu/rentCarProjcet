@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <head>
-    <title>빠른 회원가입</title>
-    </head>
 <style type="text/css">
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
@@ -157,7 +154,6 @@
 	});//end ready
 	
 </script>
-<body>
    <div class="wrap_content">
       
        <div class="resDate">  

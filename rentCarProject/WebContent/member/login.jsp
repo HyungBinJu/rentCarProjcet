@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-  <!DOCTYPE html>
-  <head>
 <meta charset="UTF-8">
-<title>빠른 로그인</title>
-</head>  
-<body>
 <style type="text/css">
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 *{margin:0; padding:0;} 
@@ -230,6 +225,3 @@ input[type=submit]:active {
 	  <p><a href="#">비밀번호 찾기</a></p>
 	</div>
 </div>
-</body>
-</html>
-  
