@@ -1,8 +1,10 @@
-@charset "euc-kr";
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
 
 /* reset */
 html{height:100%;}
-body {height:100%; margin:0; padding:0; font-size:12px; -webkit-text-size-adjust:none; font-family:"Dotum","µ¸¿ò",sans-serif; color:#595959;font-weight:normal}
+body {height:100%; margin:0; padding:0; font-size:12px; -webkit-text-size-adjust:none; font-family:"Dotum","ë‹ì›€",sans-serif; color:#595959;font-weight:normal}
 * {margin:0; padding:0; -webkit-print-color-adjust:exact; -webkit-text-size-adjust:none;}
 table {border-collapse:collapse;border-spacing:0}
 img,fieldset {border:0;}
@@ -17,12 +19,12 @@ em,address,var {font-style:normal}
 var {padding:0 3px}
 legend, caption {display:none}
 input, select {vertical-align:middle}
-a {font-family:"Dotum","µ¸¿ò",sans-serif; color:#2b2b2b; text-decoration:none}
-table,td,tr,div {font-family:"Dotum","µ¸¿ò",sans-serif; color:#2b2b2b;}
+a {font-family:"Dotum","ë‹ì›€",sans-serif; color:#2b2b2b; text-decoration:none}
+table,td,tr,div {font-family:"Dotum","ë‹ì›€",sans-serif; color:#2b2b2b;}
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {padding:0; margin:0; border:0 none}
-input, textarea {vertical-align:middle;font-family:"Dotum","µ¸¿ò",sans-serif}
-form {font-family:"Dotum","µ¸¿ò",sans-serif}
-select{font-family:"Dotum","µ¸¿ò",sans-serif !important; vertical-align:middle;}
+input, textarea {vertical-align:middle;font-family:"Dotum","ë‹ì›€",sans-serif}
+form {font-family:"Dotum","ë‹ì›€",sans-serif}
+select{font-family:"Dotum","ë‹ì›€",sans-serif !important; vertical-align:middle;}
 table{width:100%;}
 .pt0 {padding-top:0px !important}
 .pt4 {padding-top:4px !important}
@@ -204,7 +206,7 @@ table{width:100%;}
 .btm_list .box .hide-text {font-size: 1px; height: 1px; left: -9999px; line-height: 0; position: absolute; width: 1px}
 .hd-area {position:absolute; display:inline-block; font-size:0;*text-indent:0; height:0; line-height:0; visibility:hidden; width:0; text-indent:-9999em}
 
-/* ·¹ÀÌ¾Æ¿ô */
+/* ë ˆì´ì•„ì›ƒ */
 #wrap{position:relative;min-width:1150px;padding-left:10px;z-index:10;}
 #header{line-height:1;background:#fff;}
 #container{background:#f8f8f8;width:100%;position:relative;}
@@ -220,7 +222,7 @@ table{width:100%;}
 .main_lec_menu{display:block;}
 .sub .main_lec_menu{display:none;}
 
-/* ÀÌº¥Æ® ·¹ÀÌ¾Æ¿ô */
+/* ì´ë²¤íŠ¸ ë ˆì´ì•„ì›ƒ */
 .event_area{position:relative;width:100%;}
 .container{width:100%;position:relative;}
 .content{width:1050px;margin:0 auto;}
@@ -228,7 +230,7 @@ table{width:100%;}
 /*.sub .content{width:1050px;margin:50px auto;}*/
 
 .sub_nav_box{overflow:hidden;margin-bottom:55px;border:1px solid #e9e9e9;border-top:0;background:#fff ;}
-/* ¼Ò¼öÁ¡Àº ¹ö¸² */
+/* ì†Œìˆ˜ì ì€ ë²„ë¦¼ */
 .sub_nav_box.tab2 .depth1 > li{width:524px;}
 .sub_nav_box.tab3 .depth1 > li{width:349px;}
 .sub_nav_box.tab4 .depth1 > li{width:262px;}
@@ -237,14 +239,14 @@ table{width:100%;}
 .sub_nav_box.tab7 .depth1 > li{width:149px;}
 .sub_nav_box.tab8 .depth1 > li{width:131px;}
 .sub_nav_box.tab10 .depth1 > li{width:104px;}
-/* »ö»ó´Ù¸¥°Í */
+/* ìƒ‰ìƒë‹¤ë¥¸ê²ƒ */
 .sub_nav_box.type1 {border-top:1px solid #E9E9E9}
 .sub_nav_box.type1 .depth1 li .tit_depth1{background:#fff;}
 .sub_nav_box.type1 .depth1 li .tit_depth1 a{background:#fff;color:#000;font-weight:normal}
 .sub_nav_box.type1 .depth1 li.on .tit_depth1{background:#2185ba;}
 .sub_nav_box.type1 .depth1 li.on .tit_depth1 a{background:#2185ba;color:#fff}
 
-/* ¹è³Ê°¡ ÀÖÀ» ¶§ */
+/* ë°°ë„ˆê°€ ìˆì„ ë•Œ */
 .sub_nav_box.br{border:0;}
 .sub_nav_box.br .sub_nav{overflow:hidden;width:774px;float:left;border:1px solid #e9e9e9;border-top:0;}
 .sub_nav_box.br .sub_br{float:right;}
@@ -269,7 +271,7 @@ table{width:100%;}
 .sub_nav .depth2 ul li.on a{color:#000;font-weight:bold;}
 .sub_nav .depth2 ul{height:162px;margin:12px 0 12px 0;}
 
-/* »ö»ó´Ù¸¥°Í */
+/* ìƒ‰ìƒë‹¤ë¥¸ê²ƒ */
 .sub_nav_box.type1 {border-top:1px solid #E9E9E9}
 .sub_nav_box.type1 .sub_nav{background:none;}
 .sub_nav_box.type1 .depth1 li .tit_depth1{background:#fff url("/img/common/sub_nav_line.gif") no-repeat left 50%;}
@@ -288,7 +290,7 @@ table{width:100%;}
 .line_map em{color:#2185ba;}
 /* nav */
 .nav{border:1px solid #e9e9e9;}
-/* °£°İ */
+/* ê°„ê²© */
 .section{margin-bottom:55px;}
 /* titile */
 .tit_area{overflow:hidden;margin-bottom:14px;}
@@ -301,15 +303,15 @@ table{width:100%;}
 
 .tit_h2{float:left;padding-right:15px;margin-right:15px;background:url("http://teacher.pass.com/img/common/line_tit_h2.gif") no-repeat 100% 2px;}
 .tit_h3{line-height:18px;font-weight:normal;margin-bottom:20px;}
-.tit_h3 strong.txt{vertical-align:bottom;font-size:18px;padding-bottom:6px;display:inline-block;*display:inline;*zoom:1;background:url("http://teacher.pass.com/img/common/tit_h3_line.gif") repeat-x 0 100%;color:#000;font-family:"Malgun Gothic","¸¼Àº°íµñ","¸¼Àº °íµñ","³ª´®°íµñ","Nanum Gothic","Dotum","µ¸¿ò",sans-serif;}
+.tit_h3 strong.txt{vertical-align:bottom;font-size:18px;padding-bottom:6px;display:inline-block;*display:inline;*zoom:1;background:url("http://teacher.pass.com/img/common/tit_h3_line.gif") repeat-x 0 100%;color:#000;font-family:"Malgun Gothic","ë§‘ì€ê³ ë”•","ë§‘ì€ ê³ ë”•","ë‚˜ëˆ”ê³ ë”•","Nanum Gothic","Dotum","ë‹ì›€",sans-serif;}
 .tit_h3 span{line-height:1;vertical-align:bottom;display:inline-block;*display:inline;*zoom:1;margin-left:7px;font-size:11px;color:#929292;}
-.tit_h3.type1{line-height:25px;height:25px;font-size:21px;letter-spacing:-1px;color:#0385ba;font-family:"Malgun Gothic","¸¼Àº°íµñ","¸¼Àº °íµñ","³ª´®°íµñ","Nanum Gothic","Dotum","µ¸¿ò",sans-serif;font-weight:bold;background:url("http://teacher.pass.com/img/common/line_tit_h3.gif") no-repeat 0 5px;padding-left:10px;}
+.tit_h3.type1{line-height:25px;height:25px;font-size:21px;letter-spacing:-1px;color:#0385ba;font-family:"Malgun Gothic","ë§‘ì€ê³ ë”•","ë§‘ì€ ê³ ë”•","ë‚˜ëˆ”ê³ ë”•","Nanum Gothic","Dotum","ë‹ì›€",sans-serif;font-weight:bold;background:url("http://teacher.pass.com/img/common/line_tit_h3.gif") no-repeat 0 5px;padding-left:10px;}
 .tit_h4{line-height:16px;margin-bottom:15px;height:16px;padding-left:10px;font-size:14px;color:#000;background:url("images/bul_bg.png") no-repeat 0 0;}
 .tit_h4 span{font-weight:normal;}
 .tit_h5{height:45px;line-height:45px;background:#112d42;padding-left:20px;color:#fff;font-size:17px;letter-spacing:-1px;}
 .tit_h6{font-size:16px;margin:5px 0 12px 0;}
 
-.f_family{font-family:"Malgun Gothic","¸¼Àº°íµñ","¸¼Àº °íµñ","³ª´®°íµñ","Nanum Gothic","Dotum","µ¸¿ò",sans-serif;}
+.f_family{font-family:"Malgun Gothic","ë§‘ì€ê³ ë”•","ë§‘ì€ ê³ ë”•","ë‚˜ëˆ”ê³ ë”•","Nanum Gothic","Dotum","ë‹ì›€",sans-serif;}
 .ft_nor{font-weight:normal !important;}
 
 /* icon */
@@ -378,7 +380,7 @@ table td .tb_btn{margin-top:5px}
 .lect_title ul.check_lec li:first-child{margin-top:0;}
 .lect_title ul.check_lec li span{margin-left:5px;display:inline-block;}
 
-/* º°Á¡ */
+/* ë³„ì  */
 .ico_grade{background:url("http://darling2.cafe24.com/study/project/teacher/pub_html/img/common/ico_star.png") no-repeat 0 0;width:62px;height:10px;display:inline-block;}
 .ico_grade.s5{background-position:0 0;}
 .ico_grade.s4{background-position:0px -10px;}
@@ -392,7 +394,7 @@ table td .tb_btn{margin-top:5px}
 .tbl_type2 td{border-top:1px solid #e9e9e9;border-left:1px solid #e9e9e9;font-size:11px;vertical-align:middle;text-align:center;background:#fff;color:#2185ba;padding:10px 10px;}
 .tbl_type2 thead th{font-weight:normal;background:#f8f8f8;color:#000000;border-top:1px solid #e9e9e9;}
 
-/* °Ë»ö */
+/* ê²€ìƒ‰ */
 .btn_info{line-height:28px;}
 .btn_info .pdt_find{width:200px;border:1px solid #e4e4e4;height:12px;padding:8px 5px 8px;vertical-align:bottom;}
 .tbl_bottom{text-align:right;margin-top:27px;overflow:hidden;}
@@ -540,15 +542,15 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 .btn_s{padding:2px 6px 0;text-align:center;display:inline-block;font-size:12px;letter-spacing:-1px;width:68px;height:19px;line-height:19px;}
 .btn_m,
 .btn_l,
-.btn_r/* ¿ÀÇÂÀÌÈÄ »èÁ¦ÇØ¾ßÇÔ */{padding:0 25px;text-align:center;display:inline-block;}
+.btn_r/* ì˜¤í”ˆì´í›„ ì‚­ì œí•´ì•¼í•¨ */{padding:0 25px;text-align:center;display:inline-block;}
 .btn_ml{width:145px;height:40px;display:inline-block;text-align:center;line-height:40px;}
-.btn_xr/* ¿ÀÇÂÀÌÈÄ »èÁ¦ÇØ¾ßÇÔ */,
+.btn_xr/* ì˜¤í”ˆì´í›„ ì‚­ì œí•´ì•¼í•¨ */,
 .btn_xl{padding:0px;text-align:center;display:inline-block;height:46px;line-height:48px;width:248px;}
 .btn_m{padding:0 15px;}
 
 .btn_m span{padding-top:1px;line-height:27px;font-size:12px;display:inline-block;*display:block;}
 .btn_ml span{font-weight:bold;font-size:15px;}
-.btn_r span/* ¿ÀÇÂÀÌÈÄ »èÁ¦ÇØ¾ßÇÔ */,
+.btn_r span/* ì˜¤í”ˆì´í›„ ì‚­ì œí•´ì•¼í•¨ */,
 .btn_l span{padding-top:3px;line-height:27px;font-size:14px;font-weight:bold;display:inline-block;}
 .btn_xl span{font-weight:bold;}
 
@@ -562,7 +564,7 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 .btn_type8{color:#fff;background:#707070;border:1px solid #707070;}
 .btn_memo{vertical-align:top;font-size:0;width:15px;height:19px;display:inline-block;*display:inline;*zoom:1;background:url("http://teacher.pass.com/img/common/ico_bg.png") no-repeat 0 -23px;}
 
-/* ÃÖ¼Ò ½Ã½ºÅÛ »ç¾ç ¹× ÇÊ¼ö ¼ÒÇÁÆ® ¿ş¾î º¸±â ¹öÆ°*/
+/* ìµœì†Œ ì‹œìŠ¤í…œ ì‚¬ì–‘ ë° í•„ìˆ˜ ì†Œí”„íŠ¸ ì›¨ì–´ ë³´ê¸° ë²„íŠ¼*/
 .btn_detail{width:auto;}
 
 .btn_list_type1{overflow:hidden;}
@@ -603,7 +605,7 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 .family_list li.active,.family_list li.on{background:#fff;}
 .family_list li .family_site_sub{overflow:hidden;padding:25px 0 20px;}
 .family_list li .family_site_sub li{padding-left:14px;margin-bottom:8px;}
-.family_list li .family_site_sub li a{letter-spacing:-1px;color:#858585;font-size:12px;font-family:"³ª´®°íµñ","Nanum Gothic","Dotum","µ¸¿ò",sans-serif !important;}
+.family_list li .family_site_sub li a{letter-spacing:-1px;color:#858585;font-size:12px;font-family:"ë‚˜ëˆ”ê³ ë”•","Nanum Gothic","Dotum","ë‹ì›€",sans-serif !important;}
 .family_list li .family_site_sub li span{font-size:10px;}
 .family_list li .family_site_sub li.active a,
 .family_list li .family_site_sub li a:hover{color:#616161;font-weight:bold;}
@@ -616,13 +618,13 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 .family_list li#group_qna strong a{background:none;}
 .family_site_close_btn{font-size:0;text-indent: -9999em;height:22px;display:block;background:url("../img/common/com_bg.png") no-repeat 100% -265px;}
 
-.on#language strong a{color:#2185ba;} /* ¾îÇĞ */
-.on#group strong a{color:#2185ba;} /* ±×·ì¼Ò°³ */
-.on#community strong a{color:#2185ba;} /* Ä¿¹Â´ÏÆ¼ */
-.on#job strong a{color:#2185ba;} /* Ãë¾÷ */
-.on#pass strong a{color:#2185ba;} /* °ø¹«¿ø */
-.on#finance strong a{color:#2185ba;} /* ÀÚ°İÁõ */
-.on#hackersut strong a{color:#2185ba;}/* ÆíÀÔ/Æò»ı±³À° */
+.on#language strong a{color:#2185ba;} /* ì–´í•™ */
+.on#group strong a{color:#2185ba;} /* ê·¸ë£¹ì†Œê°œ */
+.on#community strong a{color:#2185ba;} /* ì»¤ë®¤ë‹ˆí‹° */
+.on#job strong a{color:#2185ba;} /* ì·¨ì—… */
+.on#pass strong a{color:#2185ba;} /* ê³µë¬´ì› */
+.on#finance strong a{color:#2185ba;} /* ìê²©ì¦ */
+.on#hackersut strong a{color:#2185ba;}/* í¸ì…/í‰ìƒêµìœ¡ */
 .on#teacher_pass strong a{color:#2185ba;}
 
 .facebook_btn{height:24px;padding-left:10px;}
@@ -637,7 +639,7 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 .facebook_btn .sns_btn a.btn4{background-position:-91px -20px;}
 .facebook_btn .sns_btn a.btn4:hover{background-position:-91px -20px;}
 
-/* Çì´õ */
+/* í—¤ë” */
 #header .gnb_top{position:relative;width:1050px;margin:0 auto;height:53px;padding-top:18px;border-top:1px solid #e9e9e9;z-index:1000;}
 #header .gnb_top h1{float:left;margin:2px 20px 0 13px;}
 
@@ -700,7 +702,7 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 
 .off_ico{position:absolute;left:380px;top:0;}
 
-/* »ó´Ü ½½¶óÀÌµå ¹è³Ê Ãß°¡ */
+/* ìƒë‹¨ ìŠ¬ë¼ì´ë“œ ë°°ë„ˆ ì¶”ê°€ */
 .top_bnr{width:100%;text-align:center;}
 .top_bnr [class^="top_open"]>.inner{width:1050px;margin:0 auto;position:relative;}
 .top_bnr .top_open{background:#101010;border-bottom:1px solid #cdcdcd;cursor:pointer;}
@@ -760,9 +762,9 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 .lguplus{float:right;margin-top:87px;}
 .lguplus p{line-height:18px;}
 .lguplus p span.num{padding-top:5px;display:block;}
-.lguplus p.grey2{letter-spacing:-1px;color:#a8a8a8;font-size:11px;font-family:"Dotum","µ¸¿ò",sans-serif;}
+.lguplus p.grey2{letter-spacing:-1px;color:#a8a8a8;font-size:11px;font-family:"Dotum","ë‹ì›€",sans-serif;}
 
-/* footer ÇØÄ¿½º¿¡ ¹Ù¶õ´Ù ¹è³Ê */
+/* footer í•´ì»¤ìŠ¤ì— ë°”ë€ë‹¤ ë°°ë„ˆ */
 #bnr_wish{width:640px;}
 #bnr_wish .layer_pop_con{height:650px;overflow-y:scroll;}
 #bnr_wish .wish_tit_wrap{color:#000;}
@@ -775,7 +777,7 @@ select{border:1px solid #e4e4e4;height:30px;padding:0 0 0 8px;}
 #bnr_wish .notice_list label input{vertical-align:top;}
 #bnr_wish .notice_list label span{margin-left:5px;display:inline-block;color:#575757;}
 
-/* ·Î±×ÀÎÆË¾÷ */
+/* ë¡œê·¸ì¸íŒì—… */
 #boxe {display:none}
 #mask { position:fixed; left:0; top:-4px; z-index:9998; background:url("http://gosi.pass.com/images/main_temp/bg_layer.png") repeat 0 0;
 width: 100%; height:100%;display:none
@@ -797,9 +799,9 @@ width: 100%; height:100%;display:none
 .popup_login .loginText .checkbox{*margin:-6px -3px -6px -6px;}
 .popup_login .loginText label {margin-left:3px;}
 .popup_login .btnJoin {float:right;}
-/* ·Î±×ÀÎÆË¾÷ */
+/* ë¡œê·¸ì¸íŒì—… */
 
-/* ·¹ÀÌ¾î ÆË¾÷ */
+/* ë ˆì´ì–´ íŒì—… */
 .layer_pop {display:none; position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:9998;}
 .layer_pop .bg {position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.3; filter:alpha(opacity=30);z-index:9999;}
 .layer_pop .layer_box{ background:#fff;position: absolute; top: 50%; left: 50%;overflow:hidden;z-index:10000;left:50%;width:600px;border:1px solid #010101;}
@@ -827,9 +829,9 @@ width: 100%; height:100%;display:none
 .js-tab-con{display:none;}
 .js-tab-con.on{display:block;}
 
-/* ÇØÄ¿½º ¸ŞÀÎ/±³Àç¼Ò°³ °øÁö»çÇ× */
+/* í•´ì»¤ìŠ¤ ë©”ì¸/êµì¬ì†Œê°œ ê³µì§€ì‚¬í•­ */
 h3.tit_mn{padding-bottom:17px;}
-/* ÇØÄ¿½º ½Ç½Ã°£¼ö°­ÈÄ±â */
+/* í•´ì»¤ìŠ¤ ì‹¤ì‹œê°„ìˆ˜ê°•í›„ê¸° */
 .live_review{position:relative;float:left;margin-right:26px;}
 .live_review ul.review_wrap{border:1px solid #000;border-left:0;border-right:0;width:331px;}
 .live_review .review_wrap li{border-top:1px solid #e1e1e1;height:19px;padding:15px 0;overflow:hidden;}
@@ -838,7 +840,7 @@ h3.tit_mn{padding-bottom:17px;}
 .live_review .review_wrap li span{color:#787878;float:left;overflow:hidden;}
 .live_review .review_wrap li .user_id{float:right;width:90px;text-align:right;color:#b8b8b8;}
 
-/* ÇØÄ¿½º °í°´¼¾ÅÍ */
+/* í•´ì»¤ìŠ¤ ê³ ê°ì„¼í„° */
 .hackers_customer{}
 .live_review ul.notice_board{width:335px;}
 .customer_wrap{float:left;}
@@ -850,23 +852,23 @@ ul.customer_center li a.cus1{background-position:20px 0px;}
 ul.customer_center li a.cus2{background-position:20px -48px;}
 ul.customer_center li a.cus3{background-position:20px -96px;}
 
-/* ÇÏ´Ü ¶ì¹è³Ê */
+/* í•˜ë‹¨ ë ë°°ë„ˆ */
 .full_bnr{position:fixed;bottom:0;width:100%;z-index:1000;}
 .full_bnr .full_bnr_in{width:1000px;position:absolute;left:50%;top:0;margin-left:-500px;}
-.full_bnr .full_bnr_close{background:#fff;color:#000;position:absolute;right:0;top:-20px;font-weight:600;font-family:"Dotum","µ¸¿ò",sans-serif;padding:1px 5px;}
+.full_bnr .full_bnr_close{background:#fff;color:#000;position:absolute;right:0;top:-20px;font-weight:600;font-family:"Dotum","ë‹ì›€",sans-serif;padding:1px 5px;}
 .full_bnr .full_bnr_close input[type="checkbox"]{margin-right:2px;}
 .full_bnr .full_bnr_close *{vertical-align:text-top;}
 .full_bnr .full_bnr_close label{line-height:14px;}
 *:first-child+html .full_bnr .full_bnr_close{line-height:12px;top:-21px;padding:2px 5px 0 5px;}
 *:first-child+html .full_bnr .full_bnr_close input[type="checkbox"]{margin-top:-4px;}
 
-/* ·¹ÀÌ¾î ¹è³Ê */
+/* ë ˆì´ì–´ ë°°ë„ˆ */
 .layer_bnr{position:absolute;left:50%;z-index:1000;}
 
-/* ±³¼ö´Ô »ó¼¼º¸±â ÆäÀÌÁö °øÁö»çÇ× ¹®ÀÚÁ¦ÇÑ*/
+/* êµìˆ˜ë‹˜ ìƒì„¸ë³´ê¸° í˜ì´ì§€ ê³µì§€ì‚¬í•­ ë¬¸ìì œí•œ*/
 .notearr{width:200px;display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;}
 
-/* ÀÓ¿ëÇĞ¿ø */
+/* ì„ìš©í•™ì› */
 .offline_main .main_section{margin-bottom:55px;}
 .offline_main .main_tit{margin-bottom:15px;}
 .offline_main .main_visual{overflow:hidden;}
@@ -882,7 +884,7 @@ ul.customer_center li a.cus3{background-position:20px -96px;}
 .offline_main .main_list li.tab3 a{background-position:0 -164px;}
 .offline_main .main_list li.tab3 a:hover{background-position:-337px -164px;}
 
-/* ¸¶ÀÌÆäÀÌÁö ·¹ÀÌ¾î ÆË¾÷ */
+/* ë§ˆì´í˜ì´ì§€ ë ˆì´ì–´ íŒì—… */
 #identification_layer {border:0;width:400px;}
 #identification_layer .layer_pop_con{padding:0;}
 #identification_layer .identification_layer_list{font-size:15px;position:absolute;left:130px;top:100px;z-index:100;}
@@ -899,7 +901,7 @@ ul.customer_center li a.cus3{background-position:20px -96px;}
 
 @charset "utf-8";
 
-/* ÇÑ±Û HyundaiSansHead */
+/* í•œê¸€ HyundaiSansHead */
 @font-face {
     font-family: "HeadBold";
     src: url("font/HyundaiSansHeadKRBold.eot");
@@ -938,7 +940,7 @@ ul.customer_center li a.cus3{background-position:20px -96px;}
 }
 
 
-/* ÇÑ±Û HyundaiSansText */
+/* í•œê¸€ HyundaiSansText */
 @font-face {
     font-family: "TextBold";
     src: url("font/HyundaiSansTextKRBold.eot");
