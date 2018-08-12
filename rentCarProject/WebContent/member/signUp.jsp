@@ -23,43 +23,68 @@
  .selectType{background-color: azure;margin: 15px;padding: 23px}
  .preBtn{display: inline-block;}
  .last_btn{margin-top: 20PX; float: left;}
+ .finish,.cancel,#address_btn{
+  padding: 0 18px;
+  height: 29px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background-image: -webkit-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: -moz-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: -o-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: linear-gradient(to bottom, #edf5f8, #cde5ef);
+  -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  font-family: 'Jeju Gothic', sans-serif;}
+ #choose_email {font-family: 'Jeju Gothic', sans-serif;}
+ #choose_email option{font-family: 'Jeju Gothic', sans-serif;}
+ #driver_licence{font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn{display: inline-block; margin-left: 5px; }  
  .preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .phone1 {width:57px;height:25px; text-align:center;}
  .phone2 {width:52px;height:22px; text-align:center;}
  .phone3 {width:52px;height:22px; text-align:center;}
-  .information  select,insuranceTable select{
+  .information  select, addressTable select{
         width: 180px;
-        height: 22px;
+        height: 20px;
     }
-  .information  input,insuranceTable input{
+  .information input, addressTable input{
         width: 180px;
         height: 20px;
     }
  .order button{width: 50px;padding: 5px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
     
- .information table ,.insuranceTable table{
+ .information table ,.addressTable table{
     width: 100%;
     border-top: 1px solid orange;
     border-collapse: collapse;
   }
- .information td,.insuranceTable td {
+ .information td,.addressTable td {
     border-bottom: 1px solid #ccc;
     padding: 10px;
     font-size: 15px;
      height: 22px;
      font-family: 'Jeju Gothic', sans-serif;
   }
-    .header_title .title{
+ .header_title .title{
         font-size: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .information, .insuranceTable{
+ .information, .addressTable{
         margin-bottom: 30px;
     }
-
+.address_Table input{height:22px;}
 </style>
 
 <script type="text/javascript" src="..js/jquery-3.3.1.js"></script>
@@ -225,21 +250,21 @@
                     </tr>
                </table>
        </div>
-           <div class="insuranceTable" >
+           <div class="addressTable" >
                <table>
                      <tr><!-- 주소 구현 -->
                        <td width="200px" style="background-color: azure">주소 *</td>
                        		
-                        <td><input type="text">　<button id="address_btn">주소검색</button></td>
+                        <td><input type="text" style="height:20px;width: 180px">　<button id="address_btn">주소검색</button></td>
                     </tr>
                     <tr><!-- 주소 구현 -->
                        <td width="200px" style="background-color: azure">상세주소 *</td>
                        		
-                        <td><input type="text">　<input type="text"></td>
+                        <td><input type="text"style="height:20px;width: 180px;">　<input type="text"style="height:20px;width: 180px"></td>
                     </tr>
                      <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">면허 번호</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" style="height:20px;width: 180px"></td>
                     </tr>
                     <tr>
                        <td width="200px" style="background-color: azure">면허 종류</td>
