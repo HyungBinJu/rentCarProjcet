@@ -148,10 +148,12 @@
 					}
 				if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
 				}
-			});//end keyup
-// 			$("#myform").on("click",function(){
-// 				if(true){ alert("회원가입이 완료 되었습니다")};
-// 			});
+			});
+			$("form").on("submit",function(){
+				var next = $("input").val();
+				
+				
+			});
 			
 
 	});//end ready
