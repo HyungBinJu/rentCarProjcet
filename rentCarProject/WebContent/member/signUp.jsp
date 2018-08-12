@@ -62,7 +62,7 @@
 
 </style>
 
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript" src="..js/jquery-3.3.1.js"></script>
 <!-- 달력 -->
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
