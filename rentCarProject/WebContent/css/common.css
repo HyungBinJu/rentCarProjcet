@@ -20,7 +20,7 @@ var {padding:0 3px}
 legend, caption {display:none}
 input, select {vertical-align:middle}
 a {font-family:"Dotum","돋움",sans-serif; color:#2b2b2b; text-decoration:none}
-table,td,tr,div {font-family:"Dotum","돋움",sans-serif; color:#2b2b2b;}
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {padding:0; margin:0; border:0 none}
 input, textarea {vertical-align:middle;font-family:"Dotum","돋움",sans-serif}
 form {font-family:"Dotum","돋움",sans-serif}
