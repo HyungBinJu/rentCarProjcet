@@ -88,8 +88,3 @@
 				
 			</footer>
 
-
-			
-		</div><!-- //wrap -->
-	</body>
-</html>

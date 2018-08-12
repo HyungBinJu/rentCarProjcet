@@ -76,7 +76,6 @@
  <link rel="stylesheet" href="css/main.css" />
  <link rel="stylesheet" href="css/common.css" />
 
-	<body>
 		<div class="wrap">
 			<!-- 메인 퀵 -->
 			<div class="l__car-search-tab">
