@@ -14,8 +14,6 @@ public class SignUpServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		//회원가입 완료 인덱스로 추후 회원가입완료 이미지 띄울예정
-
 		String userid = request.getParameter("userid");
 		String username = request.getParameter("username");
 		String passwd = request.getParameter("passwd");
