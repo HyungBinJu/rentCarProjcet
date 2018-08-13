@@ -16,7 +16,6 @@
 <jsp:include page="common/body.jsp"  flush="true"/>
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
-하이ㅇㄴㄹ
-ㅍㅍ
+1234ㄴㄹㄹㅇ
 </body>
 </html>
