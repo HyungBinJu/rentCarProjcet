@@ -17,5 +17,5 @@
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
 
-</body> 
+</body>  
 </html>
