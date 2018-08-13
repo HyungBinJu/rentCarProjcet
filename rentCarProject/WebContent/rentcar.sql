@@ -69,7 +69,7 @@ CREATE TABLE notice
 	userid varchar2(15) NOT NULL,
 	PRIMARY KEY (num)
 );
-
+create sequence board_seq;
 
 CREATE TABLE qaboard
 (

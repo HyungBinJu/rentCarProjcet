@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/NoticeUI")
 public class NoticeUIServelt extends HttpServlet {
-    public NoticeUIServelt() {
-    }
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.sendRedirect("NoticeBoard");
 	}
