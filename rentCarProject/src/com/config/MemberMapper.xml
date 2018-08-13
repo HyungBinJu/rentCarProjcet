@@ -7,6 +7,7 @@
 	<select id="idcheck" parameterType="hashmap" resultType="int">
      select count(*)
      from memberinfo
-     where userid = #{userid} and passwd = #{passwd}
+     where userid = #{userid} 
+     and passwd = #{passwd}
 	</select>
 </mapper>
