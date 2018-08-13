@@ -10,7 +10,7 @@
 			<table>
 				<colgroup>
 					<col width="10%" />
-					<col width="*" />
+					<col width="*"  />
 				</colgroup>
 				<tbody>  
 					<tr>
