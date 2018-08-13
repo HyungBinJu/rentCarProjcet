@@ -16,6 +16,6 @@
 <jsp:include page="common/body.jsp"  flush="true"/>
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
-하이123
+하이123123124141212512
 </body>
 </html>
