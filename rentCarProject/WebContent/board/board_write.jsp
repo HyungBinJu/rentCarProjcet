@@ -9,8 +9,8 @@
 		<div class="tbl_type3">
 			<table>
 				<colgroup>
-					<col width="10%">
-					<col width="*" >
+					<col width="10%" />
+					<col width="*" />
 				</colgroup>
 				<tbody>  
 					<tr>
