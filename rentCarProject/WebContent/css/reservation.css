@@ -21,7 +21,7 @@
 .preBtn button{ width: 90px;padding: 10px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
 .nextBtn{display: inline-block; margin-left: 10px; }  
 .nextBtn button{ width: 90px;padding: 10px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
-.btn{margin-top: 100px; float: right;}
+.btn{float: right;}
 .option_btn{margin-top: 20PX; float: right;}
  
 
@@ -30,7 +30,7 @@
 
 .resStartDate, .resEndDate{display: inline;}
 .waring{margin-top: 30px;}
-.waringContent{background-color: azure;margin: 15px;padding: 18px}
+.waringContent{background-color: azure;padding: 18px}
 
 
 .selectType{background-color: azure;margin: 15px;padding: 23px}
@@ -156,11 +156,6 @@ div.closeBtn{text-align:center;}
 button.closeBtn{width: 45px;height: 30px;font-size: 12px; font-family: 'Jeju Gothic', sans-serif;}
 
 
-#qualification_div, 
-#car_div,
-#option_div {
-	display: none;
-}
 
 .sub_ib{
 	display: inline-block;

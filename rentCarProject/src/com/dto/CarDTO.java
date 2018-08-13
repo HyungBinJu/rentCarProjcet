@@ -49,6 +49,8 @@ public class CarDTO {
 
 
 
+
+
 	public String getCarId() {
 		return carId;
 	}
@@ -154,6 +156,8 @@ public class CarDTO {
 	public void setState(String state) {
 		this.state = state;
 	}
+
+
 
 
 

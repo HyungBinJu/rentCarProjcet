@@ -4,6 +4,14 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shop">
 
-	
+	<select id="getShopList" parameterType="ShopDTO" resultType="ShopDTO">
+		SELECT shopid shopId,
+		       shopname shopName,
+		       addr,
+		       phone,
+		       map
+		  FROM shop
+		 WHERE shopId = #{shopId} 
+	</select>
 	
 </mapper>

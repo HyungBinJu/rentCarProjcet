@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dto.CarDTO;
+import com.dto.ShopDTO;
 import com.service.CarService;
+import com.service.ShopService;
 
 @WebServlet("/SelectDateCar")
 public class SelectDateCarServlet extends HttpServlet {
@@ -20,23 +22,45 @@ public class SelectDateCarServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 HttpSession session = request.getSession();
 		
+		System.out.println("SelectDateCar()");
+
 		session.setAttribute("userid", "brown");
 		String userId = (String)session.getAttribute("userid");
 		
 		String shopId = request.getParameter("shop");
-		System.out.println(shopId);
-		String searchType = request.getParameter("searchType");
-
+		String rentDate = request.getParameter("rentdate");
+		String returnDate = request.getParameter("returndate");
+		String carType = request.getParameter("carType");
+		System.out.println("shopId : " +  shopId);
+		System.out.println("carType : " +  carType);
+		
 		CarDTO dto = new CarDTO();
-		dto.setCarType(searchType);
+		if(carType != null) { 
+			dto.setCarType(carType);
+		}
 		dto.setShopId(shopId);
 		
+		ShopDTO shopDTO = new ShopDTO();
+		shopDTO.setShopId(shopId);
 		
-		CarService service = new CarService();
+		CarService carService = new CarService();
+		ShopService shopService = new ShopService();
+				
 		List<CarDTO> carList = null;
 		
-		carList = service.carAllList(dto);
-		request.setAttribute("carList", carList);	
+		carList = carService.carAllList(dto);
+		
+		List<ShopDTO> shopList = shopService.getShopList(shopDTO);
+		if(carList.size() <= 0 || carList == null) {
+			request.setAttribute("msg", "검색결과가 없습니다.");
+		}else {
+			request.setAttribute("carList", carList);	
+		}
+		
+		request.setAttribute("rentdate", rentDate);
+		request.setAttribute("returndate", returnDate);
+		request.setAttribute("shopid", shopId);
+		request.setAttribute("shopname", shopList.get(0).getShopName());
 		
 		RequestDispatcher dis = request.getRequestDispatcher("selectCar.jsp");
 		dis.forward(request, response);

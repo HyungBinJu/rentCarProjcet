@@ -7,11 +7,12 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.dto.CarDTO;
+import com.dto.ShopDTO;
 
-public class CarDAO {
+public class ShopDAO {
 
-	public List<CarDTO> carAllList(SqlSession session, CarDTO dto) {
-		List<CarDTO> list = session.selectList("com.car.carAllList", dto);
-		return list;
+	public List<ShopDTO> getShopList(SqlSession session, ShopDTO shopDTO) {
+		return session.selectList("com.shop.getShopList",shopDTO);
 	}
+
 }
