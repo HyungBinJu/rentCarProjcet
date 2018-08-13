@@ -153,10 +153,10 @@
 				};	
 				});
 			//id 확인
-			/* $("#id_check").on("keyup",function(){
+			 $("#id_check").on("keyup",function(){
 				$.ajax({
 					type : "GET",
-					url : "만들고 입력하고 끗!",
+					url : "IDCheck",
 					dataType : "text",
 					data : {
 						userid : $("#id_check").val()
@@ -165,8 +165,9 @@
 						$("#id_result").text(data);
 					},//end success
 					error : function(xhr,status,error){
-						alert("사용 할 수 없는 ID 입니다");
-						$("#id_check").val('');
+						/* alert("사용 할 수 없는 ID 입니다");
+						$("#id_check").val(''); */
+						$("#id_result").text(data);
 					}//end error
 				});//end ajax
 					if($(this).val().length >= 11){
@@ -179,7 +180,7 @@
 				var next = $("input").val();
 				
 				
-			}); */
+			}); 
 			
 
 	});//end ready
