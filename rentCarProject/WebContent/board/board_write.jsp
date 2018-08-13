@@ -5,8 +5,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="contents">
 		<!-- 글쓰기 -->
-
+		<form action="NoticeBoardWrite" method="post">
+		<input type="hidden" name="writedate" class="input_txt" style="width:80%">
 		<div class="tbl_type3">
+		
 			<table>
 				<colgroup>
 					<col width="10%" />
@@ -15,46 +17,21 @@
 				<tbody>  
 					<tr>
 						<th scope="row">작성자</th>
-						<td><input type="text"  readonly class="input_txt" style="width:80%;border:none;" value="darling2"></td>
+						<td><input type="text" name="userid" readonly class="input_txt" style="width:80%;border:none;" value="brown"></td>
 					</tr>
 					<tr>
 						<th scope="row">제목</th>
-						<td><input type="text" class="input_txt" style="width:80%"></td>
+						<td><input type="text" name="title" class="input_txt" style="width:80%"></td>
 					</tr>
-					<tr>
-						<th scope="row">문의유형</th>
-						<td>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-							<label><input type="radio"> 학습방법</label>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">선택</th>
-						<td>
-							<select name="" id="">
-								<option value="">선택1</option>
-								<option value="">선택2</option>
-								<option value="">선택3</option>
-								<option value="">선택4</option>
-								<option value="">선택5</option>
-								<option value="">선택6</option>
-							</select>
-						</td>
-					</tr>
+				
 					<tr>
 						<td colspan="2">
-							<img src="/img/thumb/temp_board.png" alt="">
-							에디터 붙여서 작업
+							<textarea rows="" cols="" name="content"></textarea>
 						</td>
 					</tr>
 				</tbody>
 			</table>
+		
 		</div>
 		<!-- //글쓰기 -->
 
@@ -63,4 +40,5 @@
 			<a href="#;" onclick="cancelCheck();" class="btn_r btn_type2"><span>취소</span></a>
 			<a href="/board/?r=teacher&amp;m=bbs&amp;bid=free" class="btn_l btn_type2"><span>목록</span></a>
 		</div>
+		</form>
 	</div>

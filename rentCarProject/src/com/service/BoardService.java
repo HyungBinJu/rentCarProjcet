@@ -36,6 +36,23 @@ public class BoardService {
 		
 		return list;
 	}
+
+
+
+	public int insertBoard(BoardDTO dto) {
+		SqlSession session = MysqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n =dao.insertBoard(session,dto);
+			session.commit();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+		return n;
+	}
 	
 	
 	
