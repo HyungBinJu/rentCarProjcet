@@ -149,6 +149,29 @@
 				};	
 				});
 			//id 확인
+// 			$("#id_check").on("keyup",function(){
+// 				$.ajax({
+// 					type : "GET",
+// 					url : "만들고 입력하고 끗!",
+// 					dataType : "text",
+// 					data : {
+// 						userid : $("#id_check").val()
+// 					},
+// 					success : function(data, status, xhr){
+// 						$("#id_result").text(data);
+// 					},//end success
+// 					error : function(xhr,status,error){
+// 						alert("사용 할 수 없는 ID 입니다");
+// 						$("#id_check").val('');
+// 					}//end error
+// 				});//end ajax
+// 					if($(this).val().length >= 11){
+// 						alert("10자 이하로 입력해 주세요")
+// 					}
+// 				if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
+// 				}
+// 			});//end keyup
+
 			$("#id_check").on("keyup",function(){
 				$.ajax({
 					type : "GET",
@@ -170,10 +193,12 @@
 					}
 				if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
 				}
-			});//end keyup
-// 			$("#myform").on("click",function(){
-// 				if(true){ alert("회원가입이 완료 되었습니다")};
-// 			});
+			});
+			$("form").on("submit",function(){
+				var next = $("input").val();
+				
+				
+			});
 			
 
 	});//end ready
@@ -189,7 +214,7 @@
 		           <div class="empty"></div>
 		           <p class="title">회원 정보 입력</p>
        		</div><br>   
-     <form action="SignUp" id="myform"><!-- signUp From  -->
+     <form action="Login" id="myform"><!-- signUp From  -->
      	<div class=information>
                <table>
           
@@ -281,7 +306,7 @@
 		                   <input type="submit" value="가입하기" class="finish">
 		               </div>  
 		               <div class="nextBtn">
-		                    <input type="submit" value="취소" class="cancel">
+		                    <input type="button" value="취소" class="cancel">
 		               </div>
 	  </div>
                </form> 
