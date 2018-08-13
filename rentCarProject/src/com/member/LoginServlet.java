@@ -20,22 +20,23 @@ import com.service.MemberService;
 public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		System.out.println("servlet");
 		String userid= request.getParameter("userid");
 		String passwd= request.getParameter("passwd");
-		
+		System.out.println(userid);
 		HashMap<String, String> map = new HashMap<>();
 		map.put("userid", userid);
 		map.put("passwd", passwd);
 		
 		MemberService service = new MemberService();
-		MemberDTO dto = service.login(map);
+		int n = service.login(map);
 		String nextPage = "";
-		if(dto != null) {
+		if(n != 0) {
 			HttpSession session = request.getSession();
-			session.setAttribute("login", dto);
+			session.setAttribute("login", n);
 			nextPage="index.jsp";
 		}else {
+			
 			nextPage="Login";
 		}
 		response.sendRedirect(nextPage);
