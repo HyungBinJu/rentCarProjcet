@@ -6,5 +6,13 @@
 	
 	<select id="selectBoardList" resultType="BoardDTO">
 		select title ,userid,writeday from notice
+		order by writeday desc
 	</select>
+	
+	<insert id="insertBoard" parameterType="BoardDTO">
+		insert into notice (num,userid,title,content,writeday)
+		values (board_seq.nextval,#{userid},#{title},#{content},to_char(sysdate,'yyyy-mm-dd'))
+	</insert>
+	
+	
 </mapper>

@@ -4,7 +4,7 @@ $(function() {
 	var returnDate = null;
     $( "#resStartDate" ).datepicker({ 
     	showOn:"both",
-		buttonImage: "../images/icon/a.jpg",
+		buttonImage: "images/icon/a.jpg",
 		buttonImageOnly: true,
 		changeMonth: true,
 		changeYear: true,
@@ -31,7 +31,7 @@ $(function() {
     
     $( "#resEndDate" ).datepicker({
     	showOn:"both",
-		buttonImage: "../images/icon/a.jpg",
+		buttonImage: "images/icon/a.jpg",
 		buttonImageOnly: true,
 		changeMonth: true,
 		changeYear: true,

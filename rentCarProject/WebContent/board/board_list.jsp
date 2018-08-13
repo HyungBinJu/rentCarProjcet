@@ -8,7 +8,7 @@
 		<div class="tbl_top">
 			<h4 class="tit_h4 f_l">형카 공지사항</h4>
 			<div class="f_r">
-				<a href="NoticeUI" class="btn_m btn_type3"><span>작성하기</span></a>
+				<a href="NoticeUIWrite" class="btn_m btn_type3"><span>작성하기</span></a>
 				<!-- <a href="#" class="btn_m btn_type5"><span>삭제</span></a> -->
 			
 			</div>

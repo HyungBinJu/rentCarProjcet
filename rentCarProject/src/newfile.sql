@@ -129,7 +129,7 @@ ALTER TABLE notice
 	ADD FOREIGN KEY (userid)
 	REFERENCES memberinfo (userid)
 ;
-
+create sequence board_seq; 
 
 ALTER TABLE qaboard
 	ADD FOREIGN KEY (userid)
