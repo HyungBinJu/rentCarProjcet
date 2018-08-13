@@ -11,11 +11,15 @@ import com.dto.MemberDTO;
 
 public class MemberService {
 
+	private MemberDAO dao;
 	
+	public MemberService() {
+		dao = new MemberDAO();
+	}
 	
+	//로그인 체크
 	public int login(HashMap<String, String> map) {
 		SqlSession session = MysqlSessionFactory.getSession();
-		MemberDAO dao = new MemberDAO();
 		int n = 0;
 		try {
 			n = dao.login(session, map);
@@ -24,6 +28,23 @@ public class MemberService {
 		}finally {
 			session.close();
 		}
+		return n;
+	}
+	
+	//회원가입
+	public int addMember(MemberDTO mDTO) {
+		SqlSession session = MysqlSessionFactory.getSession();
+		int n = 0;
+		
+		try {
+			n = dao.addMember(session, mDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(n != 0) session.commit();
+			session.close();
+		}
+		
 		return n;
 	}
 	

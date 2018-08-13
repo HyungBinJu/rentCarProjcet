@@ -13,11 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/LogoutServlet")
+@WebServlet("/Logout")
 public class LogoutServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		response.sendRedirect("index.jsp");
+		
+		
 	}
 		 
 
