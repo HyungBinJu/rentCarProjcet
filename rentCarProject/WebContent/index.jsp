@@ -16,6 +16,7 @@
 <jsp:include page="common/body.jsp"  flush="true"/>
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
-1234ㄴㄹㄹㅇ
+
+수정을 한다
 </body>
 </html>
