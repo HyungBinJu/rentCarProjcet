@@ -4,11 +4,12 @@ public class BoardDTO {
 	
 
 	
-	int num;
-	String title;
-	String content;
-	String writeday;
-	String userid;
+	private int num;
+	private String title;
+	private String content;
+	private String writeday;
+	private String userid;
+	
 	@Override
 	public String toString() {
 		return "BoardDTO [num=" + num + ", title=" + title + ", content=" + content + ", writeday=" + writeday
