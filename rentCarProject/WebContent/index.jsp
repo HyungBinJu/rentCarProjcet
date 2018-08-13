@@ -16,7 +16,6 @@
 <jsp:include page="common/body.jsp"  flush="true"/>
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
-cccccccccccc
 
 </body>  
 </html>
