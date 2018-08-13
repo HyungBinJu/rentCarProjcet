@@ -2,6 +2,7 @@ package com.member;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,11 +32,12 @@ public class LoginServlet extends HttpServlet {
 		MemberService service = new MemberService();
 		int n = service.login(map);
 		String nextPage = "";
-		if(n != 0) {
+		
+		if(n != 0) { //로그인 성공
 			HttpSession session = request.getSession();
-			session.setAttribute("login", n);
+			session.setAttribute("userid", userid);
 			nextPage="index.jsp";
-		}else {
+		}else { //로그인 실패
 			
 			nextPage="Login";
 		}

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,20 +93,43 @@
 				</div>
 			</div>
 			<!-- //메인 퀵 -->
-
 			<header class="headerWrap">
 				<div class="bd">
 					<div class="loginWrap">
 						<ul>
-							<li>
-								<a href="LoginUI">로그인</a>
-							</li>
-							<li>
-								<a href="SignUpUI">회원가입</a>
-							</li>
-							<li>
-								<a href="#">채용</a>
-							</li>
+ 
+  					<c:if test="${empty userid}">
+  								<li>
+									<a href="index.jsp">홈</a>
+								</li>
+								<li>
+									<a href="LoginUI">로그인</a>
+								</li>
+								<li>
+									<a href="SignUpUI">회원가입</a>
+								</li>
+								<li>
+									<a href="#">채용</a>
+								</li>
+					</c:if>   
+					<c:if test="${! empty userid}">
+								
+								<li>
+									<a href="MyPage">${userid}님</a>
+								</li>
+								<li>
+									<a href="index.jsp">홈</a>
+								</li>
+								<li>
+									<a href="Logout">로그아웃</a>
+								</li>
+								<li>
+									 <a href="MyPage">내정보</a>
+								</li>
+								<li>
+									<a href="#">채용</a>
+								</li>
+					</c:if>
 						</ul>
 					</div>
 				</div>
