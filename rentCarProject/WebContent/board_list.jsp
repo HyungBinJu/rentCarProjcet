@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
 
-<jsp:include page="rent/reservation.jsp"  flush="true"/>
+<jsp:include page="board/board_list.jsp"  flush="true"/>
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
 </body>

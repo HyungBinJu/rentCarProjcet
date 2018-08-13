@@ -8,16 +8,15 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-<title>형카 메인 페이지</title>
-
-
+<title>형카 Home</title>
 </head>
 <body>
-<jsp:include page="common/header.jsp" flush="false"/>
+<jsp:include page="common/header.jsp" flush="true"/>
 
-<jsp:include page="common/body.jsp"  flush="false"/>
+<jsp:include page="common/body.jsp"  flush="true"/>
 
-<jsp:include page="common/footer.jsp"  flush="false"/>
-재형 인덱스 테스트!
+<jsp:include page="common/footer.jsp"  flush="true"/>
+하이
+
 </body>
 </html>

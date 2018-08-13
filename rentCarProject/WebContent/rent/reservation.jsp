@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <meta charset="UTF-8">
+
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
 <link rel="stylesheet" href="css/reservation.css" type="text/css" />  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-<script>
+<script src="js/reservation.js"></script>
+<script>/* 
 $(function() {
     $( "#resStartDate" ).datepicker({ 
     	showOn:"both",
@@ -32,11 +33,10 @@ $(function() {
         maxDate: '+3M',
         dateFormat:"yy-mm-dd"
     });
-});
+}); */
 </script>
-</head>
-
- <div class="wrap">
+ 
+ <div class="wrap_reservation">
 	<div id="reservation_div">
        <div class="resDate">  
            <h1 style="font-size: 30px">일정선택</h1>
@@ -253,8 +253,6 @@ $(function() {
            </div>
        </div>
 	</div>
-        
-     
         <div class="subMenu">
            <div class="subMenu2">
                 <p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib" name="carName" id="carName"></span><br>
