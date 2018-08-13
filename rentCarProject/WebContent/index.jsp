@@ -18,6 +18,6 @@
 <jsp:include page="common/body.jsp"  flush="false"/>
 
 <jsp:include page="common/footer.jsp"  flush="false"/>
-나 브런치
+나 브런치ㄱㄱㄱㄱㄱㄱㄱ
 </body>
 </html>
