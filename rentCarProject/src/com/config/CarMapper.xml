@@ -27,9 +27,9 @@
 			   state
 		  from car
 		 where state = 'N' and shopId = #{shopId} 
-		  <if test="carType != null">
+		 <if test='carType != null and carType != "null"' >
 		  	and carType = #{carType}
-		  </if>		  
+		  </if> 
 	</select>
 	
 </mapper>

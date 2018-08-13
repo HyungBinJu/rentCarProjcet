@@ -23,7 +23,7 @@
  			<input type="hidden" name="shop" value="${shopid}">
  			<input type="hidden" name="shopname" value="${shopname }">
            <div class="selectType">
-           <button class="carType" name="carType" value="all" >전체</button>
+           <button class="carType" name="carType" value="null">전체</button>
            <button class="carType" name="carType" value="경차" >경차</button>
            <button class="carType" name="carType" value="소형" >소형</button>
            <button class="carType" name="carType" value="중형" >중형</button>
