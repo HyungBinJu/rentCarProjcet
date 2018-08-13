@@ -10,9 +10,9 @@
 			<table>
 				<colgroup>
 					<col width="10%">
-					<col width="*">
+					<col width="*" />
 				</colgroup>
-				<tbody>
+				<tbody>  
 					<tr>
 						<th scope="row">작성자</th>
 						<td><input type="text"  readonly class="input_txt" style="width:80%;border:none;" value="darling2"></td>
