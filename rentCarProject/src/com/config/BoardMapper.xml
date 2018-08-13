@@ -6,7 +6,7 @@
 	
 	<select id="selectBoardList" resultType="BoardDTO">
 		select title ,userid,writeday from notice
-		order by writeday desc
+		order by num desc
 	</select>
 	
 	<insert id="insertBoard" parameterType="BoardDTO">
