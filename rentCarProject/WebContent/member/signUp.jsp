@@ -149,7 +149,6 @@
 				};	
 				});
 			//id 확인
-<<<<<<< HEAD
 // 			$("#id_check").on("keyup",function(){
 // 				$.ajax({
 // 					type : "GET",
@@ -173,7 +172,6 @@
 // 				}
 // 			});//end keyup
 
-=======
 			$("#id_check").on("keyup",function(){
 				$.ajax({
 					type : "GET",
@@ -201,7 +199,6 @@
 				
 				
 			});
->>>>>>> refs/heads/JH
 			
 
 	});//end ready
