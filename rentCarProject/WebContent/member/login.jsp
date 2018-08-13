@@ -206,9 +206,9 @@ input[type=submit]:active {
 <div class="loginWrap">
 	 <div class="login">
 	  <h1>WelCome 형카</h1>
-	  <form method="post" action="">
-	    <p><input type="text" name="login"placeholder="UserID" id="userid"></p>
-	    <p><input type="password" name="password"placeholder="Password" id="userpw"></p>
+	  <form method="post" action="Login">
+	    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
+	    <p><input type="password" name="passwd"placeholder="Password" id="userpw"></p>
 	    <p class="remember_me">
 	      <label>
 	        <input type="checkbox" name="remember_me" id="remember_me">

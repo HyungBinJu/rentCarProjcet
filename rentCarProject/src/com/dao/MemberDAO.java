@@ -8,10 +8,10 @@ import com.dto.MemberDTO;
 
 public class MemberDAO {
 
-	public static MemberDTO login(SqlSession session,
+	public static int login(SqlSession session,
 			 HashMap<String, String> map) {
-		MemberDTO dto = session.selectOne("com.dto.login",map);
-		return dto;
+		int n  = session.selectOne("com.member.idcheck",map);
+		return n;
 	}
 	
 	

@@ -12,17 +12,18 @@ public class MemberService {
 
 	
 	
-	public MemberDTO login(HashMap<String, String> map) {
+	public int login(HashMap<String, String> map) {
 		SqlSession session = MysqlSessionFactory.getSession();
-		MemberDTO dto = null;
+		MemberDAO dao = new MemberDAO();
+		int n = 0;
 		try {
-			dto = MemberDAO.login(session, map);
+			n = dao.login(session, map);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			session.close();
 		}
-		return dto;
+		return n;
 	}
 	
 	
