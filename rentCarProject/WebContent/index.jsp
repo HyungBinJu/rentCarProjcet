@@ -8,7 +8,9 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
+
 <title>형카 Home</title>
+
 </head>
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
