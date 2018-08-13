@@ -18,6 +18,6 @@
 <jsp:include page="common/body.jsp"  flush="false"/>
 
 <jsp:include page="common/footer.jsp"  flush="false"/>
-재형 인덱스 테스트!
+나 브런치
 </body>
 </html>
