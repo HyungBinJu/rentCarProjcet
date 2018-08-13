@@ -23,6 +23,15 @@ public class BoardDTO {
 		this.writeday = writeday;
 		this.userid = userid;
 	}
+	
+	public BoardDTO( String userid, String title,String content , String writeday) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.userid = userid;
+		this.writeday = writeday;
+	}
+	
 	public BoardDTO() {
 		super();
 		// TODO Auto-generated constructor stub

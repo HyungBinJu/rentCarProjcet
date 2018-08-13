@@ -15,6 +15,11 @@ public class BoardDAO {
 		List<BoardDTO> list = session.selectList("com.board.selectBoardList") ;
 		return list;
 	}
+
+	public int insertBoard(SqlSession session, BoardDTO dto) {
+		int n = session.insert("insertBoard",dto);
+		return n;
+	}
 	
 	
 	
