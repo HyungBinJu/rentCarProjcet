@@ -92,7 +92,7 @@ $(function() {
     
     $(".carSelect").on("click", function(){
 		var carName = $("input[type=radio][name=carSelect]:checked").val();
-    	alert(carName);
+    	//alert(carName);
     	$("#carName").text(carName);
     });
     
