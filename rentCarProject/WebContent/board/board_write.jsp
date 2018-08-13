@@ -47,7 +47,7 @@ $(document).ready(function(){
 						</td>
 					</tr>
 				</tbody>
-			</table>
+			</table> 
 		
 		</div>
 		<!-- //글쓰기 -->
