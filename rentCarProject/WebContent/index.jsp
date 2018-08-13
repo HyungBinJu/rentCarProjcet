@@ -17,6 +17,6 @@
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
 
-수정을 한다
+수정을 한다 
 </body>
 </html>
