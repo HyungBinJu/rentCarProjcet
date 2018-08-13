@@ -6,8 +6,12 @@
 	<properties resource="com/config/jdbc.properties" />
 	
 	<typeAliases>
-	<typeAlias type="com.dto.MemberDTO" alias="MemberDTO" />
-	<typeAlias type="com.dto.BoardDTO" alias="BoardDTO" />
+		<typeAlias type="com.dto.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="com.dto.BoardDTO" alias="BoardDTO" />
+		<typeAlias type="com.dto.ShopDTO" alias="ShopDTO"/>
+		<typeAlias type="com.dto.ReservationDTO" alias="ReservationDTO"/>
+		<typeAlias type="com.dto.CarDTO" alias="CarDTO"/>
+
 	</typeAliases>
    
    
@@ -25,5 +29,8 @@
 	<mappers>
 		<mapper resource="com/config/MemberMapper.xml" />
 		<mapper resource="com/config/BoardMapper.xml" />
+		<mapper resource="com/config/ReservationMapper.xml" />
+		<mapper resource="com/config/ShopMapper.xml" />
+		<mapper resource="com/config/CarMapper.xml" />
 	</mappers>
 </configuration>
