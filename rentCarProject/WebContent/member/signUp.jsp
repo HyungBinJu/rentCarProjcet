@@ -19,7 +19,7 @@
  .waringContent{background-color: azure;margin: 15px;padding: 18px}
  .selectType{background-color: azure;margin: 15px;padding: 23px}
  .preBtn{display: inline-block;}
- .last_btn{margin-top: 20PX; float: left;}
+ .last_btn{margin-top: 20PX;float: left;margin-bottom: 40px;text-align: center;width: 100%;}
  .finish,.cancel,#address_btn{
   padding: 0 18px;
   height: 29px;
@@ -177,9 +177,17 @@
 				if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
 				}
 			});
-			$("form").on("submit",function(){
-				var next = $("input").val();
-				
+			$("form").on("submit",function(event){
+				var check1 = $(".next_page").val();
+				var email_check = $(".email_box").val();
+				var phone2 = $(".phone2").val();
+				var phone3 = $(".phone3").val();
+				var birth = $(".brith").val();
+				var licence = $("input[name='icensenum']").val();
+				if(check1==0 || email_check==0 || phone2==0 || phone3==0||licence==0){
+					alert("* 정보를 다시 확인 하십시오")
+					event.preventDefault();
+				}
 				
 			}); 
 			
@@ -203,22 +211,22 @@
           
                     <tr> 
                	       <td width="200px" style="background-color: azure" class="menu_section">이름 * </td>
-                  		<td><input type="text" name="username" width="200px" maxlength=5></td>
+                  		<td><input type="text" name="username" width="200px" maxlength=5 class="next_page"></td>
                    </tr>
                      <tr>                        <td width="200px" style="background-color: azure">ID *</td>
-                        <td><input type="text" name="userid" id="id_check" placeholder="영문,숫자 조합 한글 사용 불가"maxlength=11 >
+                        <td><input type="text" name="userid" id="id_check" class="next_page" placeholder="영문,숫자 조합 한글 사용 불가"maxlength=11 >
                         	<span id="id_result"></span>
                         </td>
                     </tr>
                      <tr> 
                        <td width="200px" style="background-color: azure" >PW *</td>
-                        <td><input type="password" id="pw_check" name="passwd" maxlength=10 placeholder="영문,숫자 조합 10자 이내">
+                        <td><input type="password" id="pw_check" class="next_page" name="passwd" maxlength=10 placeholder="영문,숫자 조합 10자 이내" >
                        		<span id="pw_result1">비밀번호를 입력해 주세요</span>
                         </td>
                     </tr>
                      <tr>
                        <td width="200px" style="background-color: azure" >PW 확인 *</td>
-                        <td><input type="password" id="pw_check_again" maxlength=10 placeholder="영문,숫자 조합 10자 이내">
+                        <td><input type="password" id="pw_check_again" class="next_page"maxlength=10 placeholder="영문,숫자 조합 10자 이내">
                         	<span id="pw_result2"></span>
                         </td>
                     <tr> <!-- 유효성체크 -->
@@ -235,11 +243,11 @@
 						</td>
                     </tr>
                      <tr> 
-                       <td width="200px" style="background-color: azure">생일 *</td>
+                       <td width="200px" style="background-color: azure">생일 </td>
                         <td><input type="text" name="birth" class="birth"placeholder="클릭하세요"></td>
                     </tr>
                     <tr><!-- AJAX 구현 -->
-                       <td width="200px" style="background-color: azure">E-MAIL *</td>
+                       <td width="200px" style="background-color: azure">E-MAIL </td>
                         <td><input type="text" name="email1" class="email_box"> @ <input type="text" name="email" class="email_box">
                         	<select id="choose_email" name="email2">
                         		<option value="">선택하기</option>
@@ -257,21 +265,21 @@
            <div class="addressTable" >
                <table>
                      <tr><!-- 주소 구현 -->
-                       <td width="200px" style="background-color: azure">주소 *</td>
+                       <td width="200px" style="background-color: azure">주소 </td>
                        		
                         <td><input type="text" name="post" style="height:20px;width: 180px">　<button id="address_btn">주소검색</button></td>
                     </tr>
                     <tr><!-- 주소 구현 -->
-                       <td width="200px" style="background-color: azure">상세주소 *</td>
+                       <td width="200px" style="background-color: azure">상세주소 </td>
                        		
-                        <td><input type="text" name="addr1" style="height:20px;width: 180px;">　<input type="text" name="addr2" style="height:20px;width: 180px"></td>
+                        <td><input type="text" name="addr1" class="next_page"style="height:20px;width: 180px;">　<input type="text" name="addr2" class="next_page"style="height:20px;width: 180px"></td>
                     </tr>
                      <tr><!-- AJAX 구현 -->
-                       <td width="200px" style="background-color: azure">면허 번호</td>
+                       <td width="200px" style="background-color: azure">면허 번호 *</td>
                         <td><input type="text" name="licensenum" style="height:20px;width: 180px"></td>
                     </tr>
                     <tr>
-                       <td width="200px" style="background-color: azure">면허 종류</td>
+                       <td width="200px" style="background-color: azure">면허 종류 *</td>
                        <td>
                           <select id="driver_licence" name="licensetype">
                     	      <option value="choose">선택하기</option>
