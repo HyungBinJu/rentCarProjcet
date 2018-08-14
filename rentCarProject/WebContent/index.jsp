@@ -9,7 +9,7 @@
   <meta name="Keywords" content="">
   <meta name="Description" content="">
 <title>형카 Home</title>
-</head>
+</head> 
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
 <jsp:include page="common/body.jsp"  flush="true"/>
