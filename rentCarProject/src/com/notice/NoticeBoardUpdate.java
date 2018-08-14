@@ -13,14 +13,15 @@ import com.dto.BoardDTO;
 import com.service.BoardService;
 
 /**
- * Servlet implementation class NoticeBoardView
+ * Servlet implementation class NoticeBoardUpdate
  */
-@WebServlet("/NoticeBoardView")
-public class NoticeBoardView extends HttpServlet {
+@WebServlet("/NoticeBoardUpdate")
+public class NoticeBoardUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String num = request.getParameter("num");
+		String num=request.getParameter("num");
+		
 		
 		BoardService service = new BoardService();
 		BoardDTO dto = service.viewBoard(num);
@@ -29,8 +30,8 @@ public class NoticeBoardView extends HttpServlet {
 		
 		String nextPage = "";
 		if(dto!=null) {
-			nextPage="board_view.jsp";
-			System.out.println("리스트들옴");
+			nextPage="board_update.jsp";
+			System.out.println("update!!!!!!!!!");
 		}else {
 			nextPage="board_list.jsp";
 		}
@@ -43,14 +44,8 @@ public class NoticeBoardView extends HttpServlet {
 		dis.forward(request, response);
 		
 		
-
-		//response.sendRedirect(nextPage);
-		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

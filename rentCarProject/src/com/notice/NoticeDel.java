@@ -1,50 +1,39 @@
 package com.notice;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dto.BoardDTO;
 import com.service.BoardService;
 
 /**
- * Servlet implementation class NoticeBoardView
+ * Servlet implementation class NoticeDel
  */
-@WebServlet("/NoticeBoardView")
-public class NoticeBoardView extends HttpServlet {
+@WebServlet("/NoticeDel")
+public class NoticeDel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String num = request.getParameter("num");
+		System.out.println("del접속");
 		
+		String num=request.getParameter("num");  
 		BoardService service = new BoardService();
-		BoardDTO dto = service.viewBoard(num);
 		
+		int n = service.delBoard(num);
+		System.out.println(n);
 		
 		
 		String nextPage = "";
-		if(dto!=null) {
-			nextPage="board_view.jsp";
-			System.out.println("리스트들옴");
+		if(n!=0) {
+			nextPage="NoticeBoard";
 		}else {
-			nextPage="board_list.jsp";
+			nextPage="NoticeBoard";
 		}
+		response.sendRedirect(nextPage);
 		
-		/*RequestDispatcher dis = request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);*/
-		
-		request.setAttribute("boardList", dto);
-		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);
-		
-		
-
-		//response.sendRedirect(nextPage);
 		
 	}
 

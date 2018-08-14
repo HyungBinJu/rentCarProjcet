@@ -11,6 +11,7 @@
 		<typeAlias type="com.dto.ShopDTO" alias="ShopDTO"/>
 		<typeAlias type="com.dto.ReservationDTO" alias="ReservationDTO"/>
 		<typeAlias type="com.dto.CarDTO" alias="CarDTO"/>
+		<typeAlias type="com.dto.QABoardDTO" alias="QABoardDTO"/>
 
 	</typeAliases>
    
@@ -32,5 +33,6 @@
 		<mapper resource="com/config/ReservationMapper.xml" />
 		<mapper resource="com/config/ShopMapper.xml" />
 		<mapper resource="com/config/CarMapper.xml" />
+		<mapper resource="com/config/QABoardMapper.xml" />
 	</mappers>
 </configuration>

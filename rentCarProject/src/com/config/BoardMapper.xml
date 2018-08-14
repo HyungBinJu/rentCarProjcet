@@ -15,7 +15,11 @@
 	</insert>
 	
 	<select id="viewBoard" resultType="BoardDTO" parameterType="string">
-		select title,userid,content,writeday from notice where num=#{num}
+		select num,title,userid,content,writeday from notice where num=#{num}
 	</select>
+	
+	<delete id="delBoard" parameterType="string">
+		delete from notice where num=#{num}
+	</delete>
 	
 </mapper>

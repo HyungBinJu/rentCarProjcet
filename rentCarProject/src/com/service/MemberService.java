@@ -1,7 +1,7 @@
 package com.service;
 
+import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -32,7 +32,7 @@ public class MemberService {
 	}
 	
 	//회원가입
-	public int addMember(MemberDTO mDTO) {
+	public int addMember(MemberDTO mDTO) throws IOException {
 		SqlSession session = MysqlSessionFactory.getSession();
 		int n = 0;
 		
