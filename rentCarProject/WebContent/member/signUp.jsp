@@ -171,7 +171,8 @@
 					}//end error
 				});//end ajax
 					if($(this).val().length >= 11){
-						alert("10자 이하로 입력해 주세요")
+						alert("10자 이하로 입력해 주세요");
+						$("#id_check").val('');
 					}
 				if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
 				}
@@ -205,7 +206,7 @@
                   		<td><input type="text" name="username" width="200px" maxlength=5></td>
                    </tr>
                      <tr>                        <td width="200px" style="background-color: azure">ID *</td>
-                        <td><input type="text" name="userid" id="id_check" placeholder="영문,숫자 조합 한글 사용 불가"maxlength=10 >
+                        <td><input type="text" name="userid" id="id_check" placeholder="영문,숫자 조합 한글 사용 불가"maxlength=11 >
                         	<span id="id_result"></span>
                         </td>
                     </tr>
