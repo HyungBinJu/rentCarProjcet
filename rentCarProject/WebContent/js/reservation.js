@@ -67,12 +67,15 @@ $(function() {
     	if($("#resStartDate").val()==""){
     		alert("대여일시를 입력하세요.");
     		$("#resStartDate").focus();
+    		event.preventDefault();
     	}else if($("#resEndDate").val()==""){
     		alert("반납일시를 입력하세요.");
     		$("#resEndDate").focus();
+    		event.preventDefault();
     	}else if($(".shop").text()==""){
     		alert("지점을 선택해 주세요.");
     		$("#store").focus();
+    		event.preventDefault();
     	}else{
     		$("#select_date").on("submit",function(event){
 	   		 	this.action="SelectDateCar";
