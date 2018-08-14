@@ -41,7 +41,7 @@
            </div> 
        </div>
  	</form>
-   </div>
+   </div> 
    
    <div class="subMenu">
     	<jsp:include page="reservation.jsp" flush="false"></jsp:include>
