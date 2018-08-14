@@ -5,11 +5,14 @@
 				<div class="container mainSlider">
 					<ul class="bx_carousels">
 						<li>
+							<img src="images/main/mac.jpg" alt="" class="wid100" />
+						</li>
+						<li>
+						
 							<img src="images/main/img1.jpg" alt="" class="wid100" />
 							<!-- <p class="s1">
 								완벽한 휴가를 위한  <br /> <em class="fc_orange">형카 장시간 혜택</em>
 							</p> -->
-
 						</li>
 						<li>
 							<img src="images/main/img2.jpg" alt="" class="wid100" />
@@ -288,6 +291,7 @@
 				<div class="container reviewSlider CustomerWrap">
 					<span class="title">이용후기</span>
 					<ul class="bx_carousels">
+						
 						<li>
 							<img src="images/main/slide1.png" alt="" class="wid100" />
 						</li>
