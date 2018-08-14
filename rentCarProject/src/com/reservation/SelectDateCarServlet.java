@@ -73,7 +73,7 @@ HttpSession session = request.getSession();
 		request.setAttribute("shopid", shopId);
 		request.setAttribute("shopname", shopList.get(0).getShopName());
 		
-		
+		 
 		
 		RequestDispatcher dis = request.getRequestDispatcher("selectCar.jsp");
 		dis.forward(request, response);
