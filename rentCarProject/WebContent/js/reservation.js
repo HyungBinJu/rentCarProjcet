@@ -67,12 +67,15 @@ $(function() {
     	if($("#resStartDate").val()==""){
     		alert("대여일시를 입력하세요.");
     		$("#resStartDate").focus();
+    		event.preventDefault();
     	}else if($("#resEndDate").val()==""){
     		alert("반납일시를 입력하세요.");
     		$("#resEndDate").focus();
+    		event.preventDefault();
     	}else if($(".shop").text()==""){
     		alert("지점을 선택해 주세요.");
     		$("#store").focus();
+    		event.preventDefault();
     	}else{
     		$("#select_date").on("submit",function(event){
 	   		 	this.action="SelectDateCar";
@@ -84,7 +87,6 @@ $(function() {
     
     $(".carType").on("submit",function(){
     	var carType = $(".carType").val();
-    	
     	this.action="SelectDateCar";
    		this.method="get";
     	
@@ -92,9 +94,19 @@ $(function() {
     
     $(".carSelect").on("click", function(){
 		var carName = $("input[type=radio][name=carSelect]:checked").val();
-    	//alert(carName);
-    	$("#carName").text(carName);
+		//alert(carName);
+    	$("#carName").text(carName.split("/")[0]);
     });
+    
+    $("#preDate_btn").on("click", function(){
+    	$("form").attr("action","ReservationUI");
+    });
+    
+    $("#nextOpt_btn").on("click", function(){
+    	$("form").attr("action","SelectOption");
+    });
+    
+    
     
     
 });

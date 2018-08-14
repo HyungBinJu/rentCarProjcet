@@ -7,12 +7,11 @@
 
 <link rel="stylesheet" href="css/reservation.css" type="text/css" />  
 <script src="js/reservation.js"></script>
-
 	
-     <div class="subMenu2">
-          <p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib" name="carName" id="carName"></span><br>
-          <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib" name="rentDate" id="rentDate"><c:if test="${!empty rentdate }">${rentdate}</c:if></span><br>
-          <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib" name="returnDate" id="returnDate"><c:if test="${!empty returndate }">${returndate}</c:if></span><br>
+  <div class="subMenu2">
+          <p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib" name="carName" id="carName"><c:if test="${!empty carname}">${carname}</c:if></span><br>
+          <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib" name="rentDate" id="rentDate"><c:if test="${!empty rentdate}">${rentdate}</c:if></span><br>
+          <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib" name="returnDate" id="returnDate"><c:if test="${!empty returndate}">${returndate}</c:if></span><br>
           <p class="sub_ib">대여지점&nbsp;</p><span class="sub_ib shop" name="shop" id="shop"><c:if test="${!empty shopname}">${shopname}</c:if></span><br>
           <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop"><c:if test="${!empty shopname}">${shopname}</c:if></span><br>
           <hr><br>
