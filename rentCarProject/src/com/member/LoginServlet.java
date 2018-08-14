@@ -36,7 +36,6 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("userid", userid);
 			nextPage="index.jsp";
 		}else { //로그인 실패
-
 			nextPage="LoginUI";
 		}
 		response.sendRedirect(nextPage);
