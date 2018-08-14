@@ -17,8 +17,13 @@ public class BoardDAO {
 	}
 
 	public int insertBoard(SqlSession session, BoardDTO dto) {
-		int n = session.insert("insertBoard",dto);
+		int n = session.insert("com.board.insertBoard",dto);
 		return n;
+	}
+
+	public BoardDTO viewBoard(SqlSession session, String num) {
+		BoardDTO dto  = session.selectOne("com.board.viewBoard",num);
+		return dto;
 	}
 	
 	

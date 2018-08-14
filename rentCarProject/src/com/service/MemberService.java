@@ -47,7 +47,23 @@ public class MemberService {
 		
 		return n;
 	}
-	
+
+	//아이디 체크
+	public int idCheck(String userid) {
+		SqlSession session = MysqlSessionFactory.getSession();
+		int n = 0;
+		
+		try {
+			n = dao.idCheck(session, userid);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return n;
+	}
+
 	
 	
 }

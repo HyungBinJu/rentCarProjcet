@@ -53,7 +53,7 @@ section .main_notice{background:url("../images/main/bg.jpg") repeat  0 center;pa
 .main_notice .module { position:relative; width:50%;margin: 0  auto ; padding: 30px 30px 20px; box-sizing: content-box; background-color: #fff;}
 .main_notice .module .more { position:absolute; top:28px; right:30px; display: inline-block;}
 .main_notice .module .icon {
-    background-image: url('images/main/main-news-go-pc.gif');
+    background-image: url('../images/main/main-news-go-pc.gif');
     width: 20px;
     height: 20px;
     background-size: 20px 20px;
@@ -83,7 +83,7 @@ section .main_notice{background:url("../images/main/bg.jpg") repeat  0 center;pa
 /* footer */
 /* 怨듯넻 footer */
 .hmc_footer{width:100%; background:#02203c; font-size:13px; color:#999;}
-.footer_logo{width:58px; height:31px; background:url(../images/common/img_logo_w.png) no-repeat;}
+.footer_logo{width:58px; height:31px;}
 .footer_menu a strong {color:#fff;}
 .hmc_footer .sns_link{width:100%; margin-bottom:12px;}
 .link_group .sns_link:after{content:''; display: block; clear:both;}
