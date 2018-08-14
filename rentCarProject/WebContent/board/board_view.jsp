@@ -23,7 +23,7 @@ $(document).ready(function(){
 			<div class="f_r">
 				<!-- <a href="NoticeUIWrite" class="btn_m btn_type3"><span>작성하기</span></a> -->
 				<a href="NoticeDel?num=${dto.num}" class="btn_m btn_type5" id="btnDel"><span>삭제</span></a>
-				<a href="#" class="btn_m btn_type5"><span>수정</span></a>
+				<a href="NoticeBoardUpdate?num=${dto.num}" class="btn_m btn_type5"><span>수정</span></a>
 			
 			</div>
 		</div>
@@ -37,9 +37,6 @@ $(document).ready(function(){
 						
 					</colgroup>
 					<thead>
-			
-						
-						
 						<tr>
 							<th scope="col" colspan="4">${dto.title}</th>
 						</tr>
