@@ -200,7 +200,57 @@ input[type=submit]:active {
 	 			if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
 	 			};	
 	 			});
+	   
+	    	//아이디 저장쿠키
+    	    var userInputId = getCookie("userInputId");
+    	    $("input[name='userid']").val(userInputId); 
+    	     
+    	    if($("input[name='userid']").val() != ""){ 
+    	        $("#remember_me").attr("checked", true); 
+    	     
+    	    $("#remember_me").on("change",function(){ 
+    	        if($("#remember_me").is(":checked")){ 
+    	            var userInputId = $("input[name='userid']").val();
+    	            setCookie("userInputId", userInputId, 3); 
+    	        }else{
+    	            deleteCookie("userInputId");
+    	        }
+    	        });
+    	    }
+    	    $("input[name='userid']").on("keyup",function(){ 
+    	        if($("#remember_me").is(":checked")){ 
+    	            var userInputId = $("input[name='userid']").val();
+    	            setCookie("userInputId", userInputId, 3); 
+    	        }
+    	    });
+    	function setCookie(cookieName, value, exdays){
+    	    var exdate = new Date();
+    	    exdate.setDate(exdate.getDate() + exdays);
+    	    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    	    document.cookie = cookieName + "=" + cookieValue;
+    	}
+    	function deleteCookie(cookieName){
+	    	    var expireDate = new Date();
+	    	    expireDate.setDate(expireDate.getDate() - 1);
+	    	    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+    	}
+    	function getCookie(cookieName) {
+    	    cookieName = cookieName + '=';
+    	    var cookieData = document.cookie;
+    	    var start = cookieData.indexOf(cookieName);
+    	    var cookieValue = '';
+    	    if(start != -1)
+    	    {
+	   	        start += cookieName.length;
+	   	        var end = cookieData.indexOf(';', start);
+	   	        if(end == -1)end = cookieData.length;
+	   	        cookieValue = cookieData.substring(start, end);
+    	   	}
+    	    return unescape(cookieValue);
+    	}
 	 });//end ready
+	 
+	 
 </script>
 <!-- 로그인 폼 시작-->
 <div class="loginWrap">
@@ -208,7 +258,8 @@ input[type=submit]:active {
 	  <h1>WelCome 형카</h1>
 	  <form method="post" action="Login">
 	    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
-	    <p><input type="password" name="passwd"placeholder="Password" id="userpw"></p>
+	    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
+	    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
 	    <p class="remember_me">
 	      <label>
 	        <input type="checkbox" name="remember_me" id="remember_me">

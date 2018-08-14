@@ -153,5 +153,37 @@
 						</li>
 						
 					</ul>
+					
 				</div>
+				<!-- 로그인 팝업 -->
+			<!-- 	<div class="loginWrap">
+					<div class="login">
+						<h1>WelCome 형카</h1>
+						  <form method="post" action="Login">
+								<p>
+									<input type="text" name="userid"placeholder="UserID" id="userid">
+								</p>
+								<p>
+									<input type="password" name="passwd"placeholder="Password" id="userpw"
+									 onKeyDown="if(event.keyCode==13)loginProcess()">
+								</p>
+								<p class="remember_me">
+									<label>
+										<input type="checkbox" name="remember_me" id="remember_me">
+										아이디 기억하기
+									</label>
+								</p>
+								<p class="submit">
+									<input type="submit" name="commit" value="로그인">
+								</p>
+						  </form>
+					</div>
+					<div class="login_help">
+						<p><a href="#">아이디 찾기</a></p>
+					</div>
+					<div class="login_help">
+						<p><a href="#">비밀번호 찾기</a></p>
+					</div>
+				</div> -->
+				<!-- //로그인 팝업 -->
 			</header><!-- //headerWrap -->
