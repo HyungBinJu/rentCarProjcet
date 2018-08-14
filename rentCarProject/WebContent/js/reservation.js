@@ -87,7 +87,6 @@ $(function() {
     
     $(".carType").on("submit",function(){
     	var carType = $(".carType").val();
-    	
     	this.action="SelectDateCar";
    		this.method="get";
     	
@@ -95,9 +94,19 @@ $(function() {
     
     $(".carSelect").on("click", function(){
 		var carName = $("input[type=radio][name=carSelect]:checked").val();
-    	//alert(carName);
-    	$("#carName").text(carName);
+		//alert(carName);
+    	$("#carName").text(carName.split("/")[0]);
     });
+    
+    $("#preDate_btn").on("click", function(){
+    	$("form").attr("action","ReservationUI");
+    });
+    
+    $("#nextOpt_btn").on("click", function(){
+    	$("form").attr("action","SelectOption");
+    });
+    
+    
     
     
 });

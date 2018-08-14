@@ -19,9 +19,12 @@
            <p style="margin-top: 10px">고객님께서 승차하실 차량을 선택하여 주세요.</p><br>
 		<form id="car_form">           
 			<input type="hidden" name="rentdate" value="${rentdate}">
- 			<input type="hidden" name="returndate" value="${returndate }">
+ 			<input type="hidden" name="returndate" value="${returndate}">
  			<input type="hidden" name="shop" value="${shopid}">
- 			<input type="hidden" name="shopname" value="${shopname }">
+ 			<input type="hidden" name="shopname" value="${shopname}">
+ 			<input type="hidden" name="carid" id="carid" > 
+ 			<%-- <input type="hidden" name="carname" value="${carname}"> --%>
+ 			
            <div class="selectType">
            <button class="carType" name="carType" value="null">전체</button>
            <button class="carType" name="carType" value="경차" >경차</button>
@@ -47,9 +50,9 @@
                </c:if>
                <c:if test="${!empty carList }">	
 	               <c:forEach var="carDTO" items="${carList}">
-	<%--                   <input type="hidden" name="carId" value="${carList.carId}">  --%>
 	                  <tr>
-	                       <td><input type="radio" style="width:15px;height:15px;border:1px;" name="carSelect" class="carSelect" id="carSelect" value="${carDTO.carName}"></td>
+	                       <td><input type="radio" style="width:15px;height:15px;border:1px;"
+	                       			 name="carSelect" class="carSelect" id="carSelect" value="${carDTO.carName}/${carDTO.carId}"></td>
 	                       <td><img src="images/car/${carDTO.image}" width="70px" height="40px"></td>
 	                       <td>${carDTO.carName}</td>
 	                   </tr>
@@ -67,11 +70,11 @@
                 </div>
            </div>
            <div class="btn">
-               <div class="preBtn" id="preDate_btn">
-                   <button>날짜/지점</button>
+               <div class="preBtn">
+                   <button id="preDate_btn">날짜/지점</button>
                </div>  
-               <div class="nextBtn" id="nextOpt_btn">
-                   <button>옵션/할인</button>
+               <div class="nextBtn">
+                   <button id="nextOpt_btn">옵션/할인</button>
                </div> 
            </div>
         </form>
