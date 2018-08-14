@@ -1,50 +1,59 @@
 package com.dto;
 
 public class ReservationDTO {
-
-	/*
-	rentid varchar2(8) NOT NULL,
-	rentday varchar2(10) NOT NULL,
-	returnd_day varchar2(10) NOT NULL,
-	returnday varchar2(10),
-	state varchar2(1),
-	roption varchar2(12),
-	insurance varchar2(10),
-	userid varchar2(15) NOT NULL,
-	carid varchar2(4) NOT NULL,
-	shopid varchar2(4) NOT NULL,
-	PRIMARY KEY (rentid)
+    /*
+	CREATE TABLE reservation
+	(
+		rentid varchar2(8) NOT NULL,
+		rentdate varchar2(10) NOT NULL,
+		real_returndate varchar2(10) NOT NULL,
+		returndate varchar2(10),
+		insurance varchar2(10),
+		userid varchar2(15) NOT NULL,
+		carid varchar2(4) NOT NULL,
+		shopid varchar2(4) NOT NULL,
+	  price number(9,0),
+	  navigation varchar2(1) default 'N' ,
+	  babyseat varchar2(1) default 'N',
+	  baby_carriage varchar2(1) default 'N',
+		PRIMARY KEY (rentid)
+	);
 	*/
 	
 	private String rentId;
 	private String rentDate;
 	private String returnDate;
 	private String RealReturnDate;
-	private String state;
-	private String rOption;
 	private String insurance;
 	private String carId;
 	private String shopId;
 	private String userId;
+	private String navigation;
+	private String babyseat;
+	private String babyCarriage;
+	private int price;
 	
 	public ReservationDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ReservationDTO(String rentId, String rentDate, String returnDate, String realReturnDate, String state,
-			String rOption, String insurance, String carId, String shopId, String userId) {
+	public ReservationDTO(String rentId, String rentDate, String returnDate, String realReturnDate, String insurance,
+			String carId, String shopId, String userId, String navigation, String babyseat, String babyCarriage,
+			int price) {
 		super();
 		this.rentId = rentId;
 		this.rentDate = rentDate;
 		this.returnDate = returnDate;
 		RealReturnDate = realReturnDate;
-		this.state = state;
-		this.rOption = rOption;
 		this.insurance = insurance;
 		this.carId = carId;
 		this.shopId = shopId;
 		this.userId = userId;
+		this.navigation = navigation;
+		this.babyseat = babyseat;
+		this.babyCarriage = babyCarriage;
+		this.price = price;
 	}
 
 	public String getRentId() {
@@ -79,22 +88,6 @@ public class ReservationDTO {
 		RealReturnDate = realReturnDate;
 	}
 
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getrOption() {
-		return rOption;
-	}
-
-	public void setrOption(String rOption) {
-		this.rOption = rOption;
-	}
-
 	public String getInsurance() {
 		return insurance;
 	}
@@ -127,12 +120,46 @@ public class ReservationDTO {
 		this.userId = userId;
 	}
 
+	public String getNavigation() {
+		return navigation;
+	}
+
+	public void setNavigation(String navigation) {
+		this.navigation = navigation;
+	}
+
+	public String getBabyseat() {
+		return babyseat;
+	}
+
+	public void setBabyseat(String babyseat) {
+		this.babyseat = babyseat;
+	}
+
+	public String getBabyCarriage() {
+		return babyCarriage;
+	}
+
+	public void setBabyCarriage(String babyCarriage) {
+		this.babyCarriage = babyCarriage;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	@Override
 	public String toString() {
 		return "ReservationDTO [rentId=" + rentId + ", rentDate=" + rentDate + ", returnDate=" + returnDate
-				+ ", RealReturnDate=" + RealReturnDate + ", state=" + state + ", rOption=" + rOption + ", insurance="
-				+ insurance + ", carId=" + carId + ", shopId=" + shopId + ", userId=" + userId + "]";
+				+ ", RealReturnDate=" + RealReturnDate + ", insurance=" + insurance + ", carId=" + carId + ", shopId="
+				+ shopId + ", userId=" + userId + ", navigation=" + navigation + ", babyseat=" + babyseat
+				+ ", babyCarriage=" + babyCarriage + ", price=" + price + "]";
 	}
-
+	
+	
 	
 }//end
