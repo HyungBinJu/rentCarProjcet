@@ -77,7 +77,7 @@ HttpSession session = request.getSession();
 		
 		RequestDispatcher dis = request.getRequestDispatcher("selectCar.jsp");
 		dis.forward(request, response);
-	}
+	} 
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
