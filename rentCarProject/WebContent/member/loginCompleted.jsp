@@ -13,6 +13,6 @@
 <img src="images/login/logincompleted.jpg" usemap="#Map">
 <map name="Map">
   <area shape="rect" coords="39,216,230,283" href="index.jsp">
-  <area shape="rect" coords="241,214,434,282" href="Login">
+  <area shape="rect" coords="241,214,434,282" href="LoginUI">
 </map>
 </div>

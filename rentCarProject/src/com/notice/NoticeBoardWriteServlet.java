@@ -33,11 +33,16 @@ public class NoticeBoardWriteServlet extends HttpServlet {
 		String nextPage = "";
 		if(n!=0) {
 			nextPage="NoticeBoard";
+			System.out.println("빠짐");
 		}else {
 			nextPage="NoticeUIWrite";
 		}
-		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);
+		response.sendRedirect(nextPage);
+		/*RequestDispatcher dis = request.getRequestDispatcher(nextPage);
+		dis.forward(request, response);*/
+		
+
+		
 	}
 
 

@@ -5,8 +5,8 @@
 <mapper namespace="com.board">
 	
 	<select id="selectBoardList" resultType="BoardDTO">
-		select title ,userid,writeday from notice
-		order by writeday desc
+		select title ,userid,writeday,num from notice
+		order by num desc
 	</select>
 	
 	<insert id="insertBoard" parameterType="BoardDTO">
@@ -14,5 +14,8 @@
 		values (board_seq.nextval,#{userid},#{title},#{content},to_char(sysdate,'yyyy-mm-dd'))
 	</insert>
 	
+	<select id="viewBoard" resultType="BoardDTO" parameterType="string">
+		select title,userid,content,writeday from notice where num=#{num}
+	</select>
 	
 </mapper>

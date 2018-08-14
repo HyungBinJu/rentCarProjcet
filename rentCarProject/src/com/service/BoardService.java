@@ -53,6 +53,24 @@ public class BoardService {
 		
 		return n;
 	}
+
+
+
+	public BoardDTO viewBoard(String num) {
+		SqlSession session = MysqlSessionFactory.getSession();
+		BoardDTO dto = null;
+		try {
+			dto =dao.viewBoard(session,num);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+		return dto;
+		
+	}
 	
 	
 	

@@ -17,6 +17,7 @@
 
 		<!-- tbl_type1 -->
 		<div class="tbl_type1">
+			<input type="hidden" value ="${dto.num}" />
 			<table>
 				<colgroup>
 					<col width="*"><col width="15%">
@@ -33,7 +34,7 @@
 				
 					<c:forEach var ="dto" items="${list}"  varStatus="status">
 					<tr class="notice">
-						<td class="con"><a href="">${dto.title}</a></td>
+						<td class="con"><a href="NoticeBoardView?num=${dto.num}">${dto.title}</a></td>
 						<td>${dto.userid}</td>
 						<td>${dto.writeday}</td>
 					</tr>

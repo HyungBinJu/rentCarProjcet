@@ -10,14 +10,15 @@
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script src="js/reservation.js"></script>
 
-<form action="SelectDateCar" method="get">
+
  <div class="wrap_reservation">
 	<div id="reservation_div">
+	<form id="select_date">
        <div class="resDate">  
            <h1 style="font-size: 30px">일정선택</h1>
            <p style="margin-top: 10px">고객님의 총 대여하실 기간을 선택해주세요.</p><br>
-           <p class="resStartDate"  style="font-size: 15px">대여일시</p>&nbsp;<input type="text" class="resStartDate reserv_input" id="resStartDate"> 
-           <p class="resEndDate"  style="font-size: 15px">&nbsp;&nbsp;반납일시</p>&nbsp;<input type="text" class="resEndDate reserv_input" id="resEndDate">
+           <p class="resStartDate"  style="font-size: 15px">대여일시</p>&nbsp;<input type="text" class="resStartDate reserv_input" id="resStartDate" name="rentdate" required="required"> 
+           <p class="resEndDate"  style="font-size: 15px">&nbsp;&nbsp;반납일시</p>&nbsp;<input type="text" class="resEndDate reserv_input" id="resEndDate" name="returndate" required="required">
            <div class="waring">
                <img src="images/icon/waring.png" width="15px">알려드립니다<br>
                <div class="waringContent" style="margin-bottom: 50px">
@@ -28,22 +29,24 @@
            <div class="city">
               <h1 style="font-size: 30px">지점선택</h1>
               <p style="margin-top: 10px">대여지점을 선택해주세요.</p><br>
-                   <select name="shop" id="store" class="store">
+                   <select name="shop" id="store" class="store" required>
                        <option value="J001">제주지점</option>
                        <option value="J002">서귀포지점</option>
                        <option value="J003">함덕지점</option>
                        <option value="J004">협재지점</option>
                    </select>
            </div>  
-           <div class="resev_nextBtn" id="nextCar_btn">
-               <button>차종선택</button>
+           <div class="resev_nextBtn">
+               <button id="nextCar_btn">차종선택</button>
            </div> 
        </div>
-   </div>
-
-    <div class="subMenu">
-    	<jsp:include page="reservation.jsp" flush="true"/>
+ 	</form>
+   </div> 
+   
+   <div class="subMenu">
+    	<jsp:include page="reservation.jsp" flush="false"></jsp:include>
     </div>
+
 </div>
-</form>
+
    

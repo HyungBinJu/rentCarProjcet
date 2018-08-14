@@ -8,17 +8,11 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-<title>형카 Home</title>
+<title>형카 shopInfo</title>
 </head>
 <body>
-<jsp:include page="common/header.jsp" flush="true"/>
 
-<jsp:include page="rent/selectDateShop.jsp"  flush="true"/>
-
-
-<jsp:include page="common/footer.jsp"  flush="true"/>
-
-
+<jsp:include page="rent/shopinfo.jsp"  flush="true"/>
 
 </body>
 </html>

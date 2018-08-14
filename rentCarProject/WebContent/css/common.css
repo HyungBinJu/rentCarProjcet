@@ -307,7 +307,7 @@ table{width:100%;}
 .tit_h3 strong.txt{vertical-align:bottom;font-size:18px;padding-bottom:6px;display:inline-block;*display:inline;*zoom:1;background:url("http://teacher.pass.com/img/common/tit_h3_line.gif") repeat-x 0 100%;color:#000;font-family:"Malgun Gothic","맑은고딕","맑은 고딕","나눔고딕","Nanum Gothic","Dotum","돋움",sans-serif;}
 .tit_h3 span{line-height:1;vertical-align:bottom;display:inline-block;*display:inline;*zoom:1;margin-left:7px;font-size:11px;color:#929292;}
 .tit_h3.type1{line-height:25px;height:25px;font-size:21px;letter-spacing:-1px;color:#0385ba;font-family:"Malgun Gothic","맑은고딕","맑은 고딕","나눔고딕","Nanum Gothic","Dotum","돋움",sans-serif;font-weight:bold;background:url("http://teacher.pass.com/img/common/line_tit_h3.gif") no-repeat 0 5px;padding-left:10px;}
-.tit_h4{line-height:16px;margin-bottom:15px;height:16px;padding-left:10px;font-size:14px;color:#000;background:url("images/bul_bg.png") no-repeat 0 0;}
+.tit_h4{line-height:16px;margin-bottom:15px;height:16px;font-size:20px;color:#000;font-family:'Jeju Gothic', sans-serif;}
 .tit_h4 span{font-weight:normal;}
 .tit_h5{height:45px;line-height:45px;background:#112d42;padding-left:20px;color:#fff;font-size:17px;letter-spacing:-1px;}
 .tit_h6{font-size:16px;margin:5px 0 12px 0;}

@@ -13,12 +13,8 @@
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
 
-<jsp:include page="rent/selectDateShop.jsp"  flush="true"/>
-
+<jsp:include page="board/board_view.jsp"  flush="true"/>
 
 <jsp:include page="common/footer.jsp"  flush="true"/>
-
-
-
 </body>
 </html>
