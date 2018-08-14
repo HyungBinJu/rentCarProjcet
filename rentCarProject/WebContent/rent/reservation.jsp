@@ -14,7 +14,7 @@
           <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib" name="rentDate" id="rentDate"><c:if test="${!empty rentdate }">${rentdate}</c:if></span><br>
           <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib" name="returnDate" id="returnDate"><c:if test="${!empty returndate }">${returndate}</c:if></span><br>
           <p class="sub_ib">대여지점&nbsp;</p><span class="sub_ib shop" name="shop" id="shop"><c:if test="${!empty shopname}">${shopname}</c:if></span><br>
-          <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop"><c:if test="${!empty shopname}">${shopname}</c:if> </span><br>
+          <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop"><c:if test="${!empty shopname}">${shopname}</c:if></span><br>
           <hr><br>
           <p>부대장비</p><br>
           <span name="option" id="option"></span><br>

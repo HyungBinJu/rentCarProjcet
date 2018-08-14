@@ -36,8 +36,8 @@
                        <option value="J004">협재지점</option>
                    </select>
            </div>  
-           <div class="resev_nextBtn" id="nextCar_btn">
-               <button>차종선택</button>
+           <div class="resev_nextBtn">
+               <button id="nextCar_btn">차종선택</button>
            </div> 
        </div>
  	</form>

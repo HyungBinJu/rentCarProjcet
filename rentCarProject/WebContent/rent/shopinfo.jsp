@@ -4,26 +4,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     
-    
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <link rel="stylesheet" href="css/reservation.css" type="text/css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
 <script src="js/reservation.js"></script>
 
-<body>
+
  <div class="wrap_reservation"> 
       <div class="top">
         <h1 class="storeInfo">지점 정보</h1>
       </div> 
-      <h1>제주시청지점</h1>
-      <table>
+      <h1 id="shop_info">제주시청지점</h1>
+      <table id="store_table">
           <tr>
               <th>주소</th>
               <td>제주도 어딘가</td>          
@@ -48,5 +41,3 @@
           <button class="closeBtn">닫기</button>
       </div>
 </div>     
-</body>
-</html>
