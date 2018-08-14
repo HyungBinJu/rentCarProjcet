@@ -13,7 +13,7 @@
 			
 			</div>
 		</div>
-		<!-- //tbl_top -->
+		<!-- //tbl_top -->   
 
 		<!-- tbl_type1 -->
 		<div class="tbl_type1">
