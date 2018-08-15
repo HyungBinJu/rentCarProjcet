@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 			nextPage="index.jsp";
 		}else { //로그인 실패
 			
-			nextPage="Login";
+			nextPage="LoginUI";
 		}
 		response.sendRedirect(nextPage);
 		
