@@ -37,6 +37,7 @@
 			$(".tab_cont").eq(idx).addClass("on");
 
 		});
+
 		
 	});
 
@@ -69,6 +70,7 @@
 		  });
 		  
 	});
+	
 
 </script>
 
@@ -80,6 +82,11 @@
  <link rel="stylesheet" href="css/common.css" />
 
 		<div class="wrap">
+		
+			<!-- 로그인  -->
+			<jsp:include page="../member/login.jsp" flush="true"/>
+			<!-- //로그인  -->
+			
 			<!-- 메인 퀵 -->
 			<div class="l__car-search-tab">
 				<div class="js__car-search-tab">
@@ -103,7 +110,7 @@
 									<a href="index.jsp">홈</a>
 								</li>
 								<li>
-									<a href="LoginUI">로그인</a>
+									<a href="#" id="btnLogin">로그인</a>
 								</li>
 								<li>
 									<a href="SignUpUI">회원가입</a>

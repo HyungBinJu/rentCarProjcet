@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<meta charset="UTF-8">
+ 
 <style type="text/css">
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 *{margin:0; padding:0;} 
@@ -21,7 +21,7 @@
   -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-
+/* 
 .login:before {
   content: '';
   position: absolute;
@@ -32,6 +32,14 @@
   z-index: -1;
   background: #083763;
   border-radius: 4px;
+} */
+
+.login {
+
+  background: whitesmoke;
+  border-radius: 4px;
+  border:4px solid #083763;
+  z-index:10;
 }
 
 .login h1 {
@@ -70,6 +78,12 @@
   float: left;
   line-height: 31px;
 }
+.login_help {
+ float: left;
+    line-height: 31px;
+    clear: both;
+}
+
 
 .login p.remember_me label {
   font-size: 12px;
@@ -85,15 +99,16 @@
   vertical-align: middle;
 }
 
-.login p.submit {
+.login p.submit{
   text-align: right;
 }
+
 
 .login_help {
   margin: 20px 0;
   font-size: 11px;
   color: darkorange;
-  text-align: center;
+  text-align: left;
 /*   text-shadow: 0 1px #2a85a1; */
 }
 
@@ -143,7 +158,7 @@ input[type=text]:focus, input[type=password]:focus {
   outline-offset: 0;
 }
 
-input[type=submit] {
+input[type=submit],.close_btn {
   padding: 0 18px;
   height: 29px;
   font-size: 12px;
@@ -165,7 +180,7 @@ input[type=submit] {
   -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
   font-family: 'Jeju Gothic', sans-serif;
-}
+} 
 
 input[type=submit]:active {
   background: #cde5ef;
@@ -177,11 +192,38 @@ input[type=submit]:active {
 .lt-ie9 input[type=text], .lt-ie9 input[type=password] {
   line-height: 34px;
 }
+
+ .loginBox{width:500px;height:500px;}
+ .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
+ 
+ .login{position: absolute;
+    top: 29%;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    height: 260px;
+    background: #fff;
+    z-index: 7;}
+ 
+ 
  </style>
  <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 		
 	 $(document).ready(function(){
+				//팝업레이어
+			$('#close_btn').on("click",function() {  
+				$('.LoginlayerBox').hide();        
+			});
+			$('.bg').on("click",function() {  
+				$('.LoginlayerBox').hide();        
+			});
+			/* 로그인  */
+			$("#btnLogin").click(function(){
+				$(".LoginlayerBox").show();
+			});
+			
+			//아이디 체크
 	    	 $("form").on("submit",function(event){		
 	    		 var id = $("#userid").val();
 	    		 var pw = $("#userpw").val();
@@ -248,31 +290,41 @@ input[type=submit]:active {
     	   	}
     	    return unescape(cookieValue);
     	}
+    		
+
 	 });//end ready
 	 
 	 
 </script>
 <!-- 로그인 폼 시작-->
-<div class="loginWrap">
-	 <div class="login">
-	  <h1>WelCome 형카</h1>
-	  <form method="post" action="Login">
-	    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
-	    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
-	    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
-	    <p class="remember_me">
-	      <label>
-	        <input type="checkbox" name="remember_me" id="remember_me">
-	        	아이디 기억하기
-	      </label>
-	    </p>
-	    <p class="submit"><input type="submit" name="commit" value="로그인"></p>
-	  </form>
-	</div>
-	<div class="login_help">
-	  <p><a href="#">아이디 찾기</a></p>
-	</div>
-	<div class="login_help">
-	  <p><a href="#">비밀번호 찾기</a></p>
+<div class="LoginlayerBox" style="display:none;">
+
+	<div class="loginWrapBox">
+		<div class="bg"></div>
+		 <div class="login">
+		  <h1>WelCome 형카</h1>
+		  <form method="post" action="Login">
+		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
+		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
+		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
+		    <p class="remember_me">
+		      <label>
+		        <input type="checkbox" name="remember_me" id="remember_me">
+		        	아이디 기억하기
+		      </label>
+		    </p>
+		    <p class="submit"><input type="submit" name="commit" value="LOGIN">
+		    <p class="login_help">
+		      <label>
+		        <a href="#">아이디 찾기</a>
+		      </label>
+		      <label>
+		       <a href="#">비밀번호 찾기</a>
+		      </label>
+		    <p class="submit"><input type="button" value="CLOSE" class="close_btn" id="close_btn"></p>
+		    
+		  </form>
+		</div>
 	</div>
 </div>
+
