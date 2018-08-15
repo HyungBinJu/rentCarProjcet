@@ -4,9 +4,9 @@
 			<section class="conents">
 				<div class="container mainSlider">
 					<ul class="bx_carousels">
-						<li>
+						<!-- <li>
 							<img src="images/main/mac.jpg" alt="" class="wid100" />
-						</li>
+						</li> -->
 						<li>
 							<img src="images/main/img1.jpg" alt="" class="wid100" />
 							<!-- <p class="s1">
