@@ -87,7 +87,7 @@
 						<h1 class="title">렌터카 빠른검색</h1>
 						<span class="explain">제주여행 필수 예약 렌트카!<br>렌트카 예약은 오로지  <em class="fc_orange fc_weight fs14">형카!</em></span>
 						<div class="icon">
-							<img src="../images/main/ico.png" alt="" />
+							<img src="images/main/ico.png" alt="" />
 						</div>
 					</aside>
 				</div>
