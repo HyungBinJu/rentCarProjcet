@@ -36,7 +36,7 @@
 
 .login {
 
-  background: #fff;
+  background: whitesmoke;
   border-radius: 4px;
   border:4px solid #083763;
   z-index:10;
@@ -194,14 +194,14 @@ input[type=submit]:active {
 }
 
  .loginBox{width:500px;height:500px;}
- .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:black; opacity:0.7; z-index: 5;}
+ .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
  
  .login{position: absolute;
     top: 29%;
     left: 50%;
     margin-left: -150px;
     width: 300px;
-    height: 300px;
+    height: 260px;
     background: #fff;
     z-index: 7;}
  
