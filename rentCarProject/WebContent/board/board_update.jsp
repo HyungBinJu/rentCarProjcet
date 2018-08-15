@@ -3,7 +3,13 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<script>
+$(document).ready(function(){
+	$("#btnModify").click(function(){
+		$("#form").submit();
+	});
+})
+</script>
 <div class="contents">
 	<c:set var="dto" value="${boardList}" scope="session" />
 		<!-- tbl_top -->
@@ -17,6 +23,8 @@
 			</div>
 		</div>
 		<!-- //tbl_top -->
+		<form action="NoticeBoardModify" method="post" id="form">
+		<input type="hidden" name="num" value="${dto.num}" />
 		<div class="board_view">
 				<table>
 					<colgroup>
@@ -28,7 +36,7 @@
 					<thead>
 						<tr>
 							<th scope="col" colspan="4">
-								제목 : <input type="text" name="title" value="${dto.title}" />
+								제목 : <input type="text" class="input_txt" name="title" style="vertical-align:middle;" value="${dto.title}" />
 						</th>
 						</tr>
 					</thead>
@@ -40,8 +48,10 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<textarea rows="" cols="">
-									${dto.content}
+								<div>
+								
+								</div>
+								<textarea rows="" cols=""name="content" style="border:1px solid #e4e4e4;width:100%;height:200px;">  ${dto.content}
 								</textarea>
 								
 							</td>
@@ -49,10 +59,10 @@
 					</tbody>
 				</table>
 		</div>
-
+		</form>
 
 		<div class="tbl_bottom t_r">
 			<a href="" class="btn_l btn_type2"><span>목록</span></a>
-			<a href="BoardUpdate" class="btn_l btn_type3"><span>수정완료</span></a>
+			<a href="#" id="btnModify" class="btn_l btn_type3"><span>수정완료</span></a>
 		</div>
 	</div>
