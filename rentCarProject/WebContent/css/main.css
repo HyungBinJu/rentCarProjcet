@@ -138,7 +138,7 @@ section .main_notice{background:url("../images/main/bg.jpg") repeat  0 center;pa
 .floating_menu{display:none;}
 
  
- .js__car-search-tab { position:absolute; top:107px; left:50%; margin-left:-850px; width:239px; height:180px;padding-top:20px; background-color:#334d68; cursor:pointer; z-index:1;}
+ .js__car-search-tab { position:absolute; top:114px; left:50%; margin-left:-850px; width:239px; height:180px;padding-top:20px; background-color:#334d68; cursor:pointer; z-index:1;}
 .l__car-search-tab { display:block; padding:0px 20px; color:#fff; }
 .l__car-search-tab > .title { font-size:22px; font-weight:500; font-family: 'nanum-square-r'; line-height:40px; }
 .l__car-search-tab > .explain { font-size:13px; font-weight:500; line-height:18px; }
