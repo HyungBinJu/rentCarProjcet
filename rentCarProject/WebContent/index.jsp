@@ -8,10 +8,10 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-<title>형카 Home 입니다</title>
+<title>형카 Home 입니다!</title>
 </head> 
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
 <jsp:include page="common/body.jsp"  flush="true"/>
 <jsp:include page="common/footer.jsp"  flush="true"/> 
-</body> 
+</body>  
