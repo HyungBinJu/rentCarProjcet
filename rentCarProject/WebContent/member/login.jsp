@@ -214,16 +214,16 @@ input[type=submit]:active {
 				//팝업레이어
 			$('#close_btn').on("click",function() {  
 				$('.LoginlayerBox').hide();        
-
 			});
-			
+			$('.bg').on("click",function() {  
+				$('.LoginlayerBox').hide();        
+			});
 			/* 로그인  */
 			$("#btnLogin").click(function(){
 				$(".LoginlayerBox").show();
 			});
-		
 			
-			
+			//아이디 체크
 	    	 $("form").on("submit",function(event){		
 	    		 var id = $("#userid").val();
 	    		 var pw = $("#userpw").val();
