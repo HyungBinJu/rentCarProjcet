@@ -194,7 +194,7 @@ input[type=submit]:active {
 }
 
  .loginBox{width:500px;height:500px;}
- .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
+ .bgLogin{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
  
  .login{position: absolute;
     top: 29%;
@@ -215,13 +215,14 @@ input[type=submit]:active {
 			$('#close_btn,.bg').on("click",function() {  
 				$('.LoginlayerBox').hide();        
 			});
+
 			/* 로그인  */
 			$("#btnLogin").click(function(){
 				$(".LoginlayerBox").show();
 			});
 			
 			//아이디 체크
-	    	 $("form").on("submit",function(event){		
+	    	 $("#formLogin").on("submit",function(event){		
 	    		 var id = $("#userid").val();
 	    		 var pw = $("#userpw").val();
 	    	    		if(id.length==0){
@@ -297,11 +298,16 @@ input[type=submit]:active {
 <div class="LoginlayerBox" style="display:none;">
 
 	<div class="loginWrapBox">
-		<div class="bg"></div>
+		<div class="bgLogin"></div>
 		 <div class="login">
 		  <h1>WelCome 형카</h1>
+<<<<<<< HEAD
 		  <form method="post" action="Login">
 		    <p><input type="text" name="user_id"placeholder="UserID" id="userid"></p>
+=======
+		  <form method="post" action="Login" id="formLogin">
+		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
+>>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
 		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
 		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
 		    <p class="remember_me">
