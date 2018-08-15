@@ -24,14 +24,20 @@ public class SelectOptionServlet extends HttpServlet {
 	          <input type="hidden" name="carname" value="${carDTO.carName}">  
 	     	  */
 		
+			  //String price = request.getParameter("price");
 	          String carId = request.getParameter("carSelect").split("/")[1];
+	          String carPrice = request.getParameter("carSelect").split("/")[2];
 		      String shopId = request.getParameter("shop");
 		      String rentDate = request.getParameter("rentdate");
 		      String returnDate = request.getParameter("returndate");   
 		      String carName = request.getParameter("carSelect").split("/")[0];
 		      String shopName = request.getParameter("shopname");
-		   System.out.println("option name = "+carName);
-		   System.out.println("option id = "+carId);
+		      String price = request.getParameter("price_param");
+		      
+		      System.out.println("option name = "+carName);	
+		      System.out.println("carPrice = "+carPrice);	
+		      System.out.println("price = "+price);
+			  System.out.println("option id = "+carId);
 		      /* 
 		      ReservationDTO reservDTO = new ReservationDTO();
 		      reservDTO.setCarId(carId);
@@ -48,7 +54,8 @@ public class SelectOptionServlet extends HttpServlet {
 			  request.setAttribute("carname", carName);
 			  request.setAttribute("shopname", shopName);
 			  request.setAttribute("carid", carId);
-
+			  request.setAttribute("carprice", carPrice);
+			  request.setAttribute("price", price);
 			  
 			  RequestDispatcher dis = request.getRequestDispatcher("selectOption.jsp");
 		      dis.forward(request, response);
