@@ -212,10 +212,7 @@ input[type=submit]:active {
 		
 	 $(document).ready(function(){
 				//팝업레이어
-			$('#close_btn').on("click",function() {  
-				$('.LoginlayerBox').hide();        
-			});
-			$('.bg').on("click",function() {  
+			$('#close_btn,.bg').on("click",function() {  
 				$('.LoginlayerBox').hide();        
 			});
 			/* 로그인  */
@@ -229,11 +226,11 @@ input[type=submit]:active {
 	    		 var pw = $("#userpw").val();
 	    	    		if(id.length==0){
 	    	    			alert("ID를 입력하세요")
-	    	    			$("uesrid").focus();
+	    	    			$("#uesrid").focus();
 	    	    			event.preventDefault();
 	    	    		}else if(pw.length==0){
 	    	    			alert("비밀번호를 입력하세요")
-	    	    			$("userpw").focus();
+	    	    			$("#userpw").focus();
 	    	    			event.preventDefault(); 
 	    	    		}
 	    	    	});
@@ -245,23 +242,23 @@ input[type=submit]:active {
 	   
 	    	//아이디 저장쿠키
     	    var userInputId = getCookie("userInputId");
-    	    $("input[name='userid']").val(userInputId); 
+    	    $("input[name='user_id']").val(userInputId); 
     	     
-    	    if($("input[name='userid']").val() != ""){ 
+    	    if($("input[name='user_id']").val() != ""){ 
     	        $("#remember_me").attr("checked", true); 
     	     
     	    $("#remember_me").on("change",function(){ 
     	        if($("#remember_me").is(":checked")){ 
-    	            var userInputId = $("input[name='userid']").val();
+    	            var userInputId = $("input[name='user_id']").val();
     	            setCookie("userInputId", userInputId, 3); 
     	        }else{
     	            deleteCookie("userInputId");
     	        }
     	        });
     	    }
-    	    $("input[name='userid']").on("keyup",function(){ 
+    	    $("input[name='user_id']").on("keyup",function(){ 
     	        if($("#remember_me").is(":checked")){ 
-    	            var userInputId = $("input[name='userid']").val();
+    	            var userInputId = $("input[name='user_id']").val();
     	            setCookie("userInputId", userInputId, 3); 
     	        }
     	    });
@@ -304,7 +301,7 @@ input[type=submit]:active {
 		 <div class="login">
 		  <h1>WelCome 형카</h1>
 		  <form method="post" action="Login">
-		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
+		    <p><input type="text" name="user_id"placeholder="UserID" id="userid"></p>
 		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
 		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
 		    <p class="remember_me">

@@ -4,35 +4,52 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<script>
+$(document).ready(function(){
+	$("#btnDel").click(function(e){
+		var k = confirm("삭제할꺼야?");
+		if(k==false){
+			e.preventDefault();
+		}
 
+	});
+});
+</script>
 <div class="contents">
+	<c:set var="dto" value="${boardList}" scope="session" />
+		<!-- tbl_top -->
+		<div class="tbl_top">
+			<h4 class="tit_h4 f_l">형카 공지사항</h4>
+			<div class="f_r">
+				<!-- <a href="NoticeUIWrite" class="btn_m btn_type3"><span>작성하기</span></a> -->
+				<a href="NoticeDel?num=${dto.num}" class="btn_m btn_type5" id="btnDel"><span>삭제</span></a>
+				<a href="NoticeBoardUpdate?num=${dto.num}" class="btn_m btn_type5"><span>수정</span></a>
+			
+			</div>
+		</div>
+		<!-- //tbl_top -->
 		<div class="board_view">
 				<table>
 					<colgroup>
 						<col width="*">
-						<col width="9%">
+						
 						<col width="16%">
-						<col width="12%">
+						
 					</colgroup>
 					<thead>
-					<%-- <c:set var="x" value="${aaa}" scope="session" /> --%>
 						<tr>
-							<th scope="col" colspan="4">해커스 토익 스타트 Listening MP3 관련 다시 질문해커스 토익 스타트 Listening MP3 관련 다시 질문질문질문질문질문질문</th>
+							<th scope="col" colspan="4">${dto.title}</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>첨부 : 프리패스</td>
-							<td>번호 : 3</td>
-							<td>작성일 : 2016-04-29</td>
-							<td>조회수 : 2222</td>
+							<td>글번호 : ${dto.num}</td>
+							<td>${dto.writeday}</td>
+						
 						</tr>
 						<tr>
-							<td colspan="4">
-								해커스 토익 스타트 Listening MP3  이거 어제 이거 결재가 안된다고 문의드렸었는데 답변해주셔서 감사합니다. 그런데..  답글보도 다시 한번 구매하려고 하니까글보도 다시 한번 구매하려고 하니까..글보도 다시 한번 구매하려고 하니까..글보도 다시 한번 구매하려고 하니까..글보도 다시 한번 구매하려고 하니까....   <br><br>
-								해커스 토익 스타트 Listening MP3  이거 어제 이거 결재가 안된다고 문의드렸었는데 답변해주셔서 감사합니다. 그런데..  답글보도 다시 한번 구매하려고 하니까..   <br><br>
-								해커스 토익 스타트 Listening MP3  이거 어제 이거 결재가 안된다고 문의드렸었는데 답변해주셔서 감사합니다. 그런데..  답글보도 다시 한번 구매하려고 하니까..   <br><br>
-								해커스 토익 스타트 Listening MP3  이거 어제 이거 결재가 안된다고 문의드렸었는데 답변해주셔서 감사합니다. 그런데..  답글보도 다시 한번 구매하려고 하니까..  
+							<td colspan="2">
+								${dto.content}
 							</td>
 						</tr>
 					</tbody>

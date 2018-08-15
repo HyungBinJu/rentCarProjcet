@@ -74,9 +74,11 @@ CREATE TABLE qaboard
 	num number(7,0) NOT NULL,
 	title varchar2(50) NOT NULL,
 	content varchar2(500),
-	writeday varchar2(10),
+	writeday date,
 	type varchar2(10),
 	userid varchar2(15) NOT NULL,
+  reproot number(7,0) not null,
+  repstep number(7,0) not null,
 	PRIMARY KEY (num)
 );
 
@@ -154,6 +156,9 @@ ALTER TABLE reservation
 	REFERENCES shop (shopid)
 ;
 
+drop sequence qaboard_num_seq;
+create sequence qaboard_num_seq;
+
 insert into shop VALUES('J001','제주지점' ,'제주특별자치도 제주시 용담2동 용문로 62','064-726-3322',null);
 insert into shop VALUES('J002','서귀포지점' ,'제주특별자치도 서귀포시 상예동','064-738-8255',null);
 insert into shop VALUES('J003','함덕지점' ,'제주특별자치도 제주시 조천읍 함덕리 1008','064-728-3989',null);
@@ -180,3 +185,7 @@ insert into MEMBERINFO
               ,'1988-08-08', null, '1종보통','01-12-567890-66', 1);
 
 insert into RESERVATION values ('R001', '2018-08-12', '2018-08-15',null, '일반자차(15,000)', 'brown', 'CK01' , 'J001', '75000', 'Y', default, default);
+
+insert into qaboard
+values (qaboard_num_seq.nextval,'게시판 글글글','게시판 글내용', sysdate, '예약문의', 'brown', qaboard_num_seq.currval, 0);
+commit;

@@ -2,7 +2,6 @@ package com.member;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dto.MemberDTO;
 import com.service.MemberService;
 
 /**
@@ -22,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("servlet");
-		String userid= request.getParameter("userid");
+		String userid= request.getParameter("user_id");
 		String passwd= request.getParameter("passwd");
 		System.out.println(userid);
 		HashMap<String, String> map = new HashMap<>();
@@ -38,7 +36,6 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("userid", userid);
 			nextPage="index.jsp";
 		}else { //로그인 실패
-			
 			nextPage="LoginUI";
 		}
 		response.sendRedirect(nextPage);

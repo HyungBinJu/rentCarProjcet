@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.QABoard">
+	<!-- 
+	num number(7,0) NOT NULL,
+	title varchar2(50) NOT NULL,
+	content varchar2(500),
+	writeday date,
+	type varchar2(10),
+	userid varchar2(15) NOT NULL,
+ 	reproot number(7,0) not null,
+ 	repstep number(7,0) not null, 
+ 	-->
+	<select id="getAllList" resultType="QABoardDTO">
+		select num, title, content
+			 , to_char(writeday,'YY/MM/DD HH:MM:SS') writeday
+			 , type, userid, reproot, repstep
+		from qaboard
+	</select>
+	
+	<select id="getContent" resultType="QABoardDTO" parameterType="int">
+		select num, title, content
+			 , to_char(writeday,'YY/MM/DD HH:MM:SS') writeday
+			 , type, userid, reproot, repstep
+		from qaboard
+		where num = #{num}
+	</select>
+</mapper>
