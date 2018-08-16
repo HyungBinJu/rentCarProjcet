@@ -42,9 +42,9 @@
   -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
   font-family: 'Jeju Gothic', sans-serif;}
- #choose_email {font-family: 'Jeju Gothic', sans-serif;}
- #choose_email option{font-family: 'Jeju Gothic', sans-serif;}
- #driver_licence{font-family: 'Jeju Gothic', sans-serif;}
+ .choose_email, .email_box{font-family: 'Jeju Gothic', sans-serif;}
+ .choose_email option{font-family: 'Jeju Gothic', sans-serif;}
+ .driver_licence{font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn{display: inline-block; margin-left: 5px; }  
  .preBtn .finish{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
  .nextBtn .cancel{ width: 90px;height: 40px;text-align: center;font-size: 15px;font-family: 'Jeju Gothic', sans-serif;}
@@ -82,6 +82,11 @@
         margin-bottom: 30px;
     }
 .address_Table input{height:22px;}
+
+
+.driver_licence{font-family: 'Jeju Gothic', sans-serif;}
+
+
 </style>
 
 <script type="text/javascript" src="..js/jquery-3.3.1.js"></script>
@@ -249,7 +254,7 @@
                     <tr><!-- AJAX 구현 -->
                        <td width="200px" style="background-color: azure">E-MAIL </td>
                         <td><input type="text" name="email1" class="email_box"> @ <input type="text" name="email" class="email_box">
-                        	<select id="choose_email" name="email2">
+                        	<select id="choose_email" name="email2" class="choose_email">
                         		<option value="">선택하기</option>
                         		<option value="google.com">google.com</option>
                         		<option value="naver.com">naver.com</option>
@@ -281,8 +286,8 @@
                     <tr>
                        <td width="200px" style="background-color: azure">면허 종류 *</td>
                        <td>
-                          <select id="driver_licence" name="licensetype">
-                    	      <option value="choose">선택하기</option>
+                          <select id="driver_licence" name="licensetype" class="driver_licence">
+                    	      <option value="choose" >선택하기</option>
                               <option value="manual">1종보통</option>
                               <option value="manual2">1종대형(특수)</option>  
                               <option value="auto">2종보통</option>

@@ -287,11 +287,7 @@
     	   	}
     	    return unescape(cookieValue);
     	}
-    		
-
 	 });//end ready
-	 
-	 
 </script>
 <!-- 로그인 폼 시작-->
 <div class="LoginlayerBox" style="display:none;">
