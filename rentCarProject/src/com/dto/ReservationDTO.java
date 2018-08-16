@@ -29,7 +29,7 @@ public class ReservationDTO {
 	private String shopId;
 	private String userId;
 	private String navigation;
-	private String babyseat;
+	private String babySeat;
 	private String babyCarriage;
 	private int price;
 	
@@ -38,8 +38,10 @@ public class ReservationDTO {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public ReservationDTO(String rentId, String rentDate, String returnDate, String realReturnDate, String insurance,
-			String carId, String shopId, String userId, String navigation, String babyseat, String babyCarriage,
+			String carId, String shopId, String userId, String navigation, String babySeat, String babyCarriage,
 			int price) {
 		super();
 		this.rentId = rentId;
@@ -51,10 +53,12 @@ public class ReservationDTO {
 		this.shopId = shopId;
 		this.userId = userId;
 		this.navigation = navigation;
-		this.babyseat = babyseat;
+		this.babySeat = babySeat;
 		this.babyCarriage = babyCarriage;
 		this.price = price;
 	}
+
+
 
 	public String getRentId() {
 		return rentId;
@@ -128,12 +132,12 @@ public class ReservationDTO {
 		this.navigation = navigation;
 	}
 
-	public String getBabyseat() {
-		return babyseat;
+	public String getBabySeat() {
+		return babySeat;
 	}
 
-	public void setBabyseat(String babyseat) {
-		this.babyseat = babyseat;
+	public void setBabySeat(String babySeat) {
+		this.babySeat = babySeat;
 	}
 
 	public String getBabyCarriage() {
@@ -156,10 +160,9 @@ public class ReservationDTO {
 	public String toString() {
 		return "ReservationDTO [rentId=" + rentId + ", rentDate=" + rentDate + ", returnDate=" + returnDate
 				+ ", RealReturnDate=" + RealReturnDate + ", insurance=" + insurance + ", carId=" + carId + ", shopId="
-				+ shopId + ", userId=" + userId + ", navigation=" + navigation + ", babyseat=" + babyseat
+				+ shopId + ", userId=" + userId + ", navigation=" + navigation + ", babySeat=" + babySeat
 				+ ", babyCarriage=" + babyCarriage + ", price=" + price + "]";
 	}
-	
-	
+
 	
 }//end

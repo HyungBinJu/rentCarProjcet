@@ -131,12 +131,12 @@
   font-size: 13px;
 }
 
-input {
+.LoginlayerBox input {
   font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
   font-size: 14px;
 }
 
-input[type=text], input[type=password] {
+.LoginlayerBox input[type=text],.LoginlayerBox  input[type=password] {
   margin: 5px;
   padding: 0 10px;
   width: 200px;
@@ -152,13 +152,13 @@ input[type=text], input[type=password] {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.LoginlayerBox input[type=text]:focus, .LoginlayerBox input[type=password]:focus {
   border-color: #7dc9e2;
   outline-color: #dceefc;
   outline-offset: 0;
 }
 
-input[type=submit],.close_btn {
+.LoginlayerBox input[type=submit],.close_btn {
   padding: 0 18px;
   height: 29px;
   font-size: 12px;
@@ -182,7 +182,7 @@ input[type=submit],.close_btn {
   font-family: 'Jeju Gothic', sans-serif;
 } 
 
-input[type=submit]:active {
+.LoginlayerBox input[type=submit]:active {
   background: #cde5ef;
   border-color: #9eb9c2 #b3c0c8 #b4ccce;
   -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
@@ -302,7 +302,7 @@ input[type=submit]:active {
 		 <div class="login">
 		  <h1>WelCome 형카</h1>
 		  <form method="post" action="Login" id="formLogin">
-		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
+		    <p><input type="text" name="userid"placeholder="UserID" id="userid" ></p>
 		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
 		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
 		    <p class="remember_me">

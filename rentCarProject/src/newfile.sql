@@ -87,9 +87,9 @@ CREATE TABLE reservation
 (
 	rentid varchar2(8) NOT NULL,
 	rentdate varchar2(10) NOT NULL,
-	real_returndate varchar2(10) NOT NULL,
+	real_returndate varchar2(10),
 	returndate varchar2(10),
-	insurance varchar2(10),
+	insurance varchar2(20),
 	userid varchar2(15) NOT NULL,
 	carid varchar2(4) NOT NULL,
 	shopid varchar2(4) NOT NULL,

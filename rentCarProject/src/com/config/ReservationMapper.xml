@@ -3,8 +3,38 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.reservation">
+
+	<insert id="insertOrder" parameterType="ReservationDTO">
+	   INSERT INTO reservation (rentid,
+								rentdate,
+								real_returndate,
+								returndate,
+								insurance,
+								userid,
+								carid,
+								shopid,
+								price,
+								navigation,
+								babyseat,
+								baby_carriage)
+			 VALUES (('R'||reservation_seq.nextval),
+			 		  #{rentDate},
+			 		  null,
+					  #{returnDate},
+					  #{insurance},
+				      #{userId},
+					  #{carId},
+					  #{shopId},
+					  #{price},
+					  #{navigation},
+					  #{babySeat},
+					  #{babyCarriage})
+	</insert>
 	
-	
-	
+	<update id="updateState" parameterType="string">
+		UPDATE car 
+		   SET state = 'Y'
+		 WHERE carid = #{carId}
+	</update>
 	
 </mapper>

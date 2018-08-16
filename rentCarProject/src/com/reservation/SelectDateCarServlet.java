@@ -22,9 +22,7 @@ public class SelectDateCarServlet extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-HttpSession session = request.getSession();
-		
-		System.out.println("SelectDateCar()");
+		HttpSession session = request.getSession();
 
 		session.setAttribute("userid", "brown");
 		String userId = (String)session.getAttribute("userid");
@@ -33,6 +31,9 @@ HttpSession session = request.getSession();
 		String rentDate = request.getParameter("rentdate");
 		String returnDate = request.getParameter("returndate");
 		String carType = request.getParameter("carType");
+		String price = request.getParameter("price");
+		
+		System.out.println("price"+price);
 		System.out.println("shopId : " +  shopId);
 		System.out.println("carType : " +  carType);
 		
@@ -76,7 +77,7 @@ HttpSession session = request.getSession();
 		request.setAttribute("shopid", shopId);
 		*/
 		request.setAttribute("shopname", shopList.get(0).getShopName());
-		
+		request.setAttribute("price", price);
 		 
 		
 		RequestDispatcher dis = request.getRequestDispatcher("selectCar.jsp");

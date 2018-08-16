@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dto.ReservationDTO;
 
@@ -30,55 +31,63 @@ public class AgreementServlet extends HttpServlet {
 		 * value="${carDTO.carId}"> <input type="hidden" name="carname"
 		 * value="${carDTO.carName}">
 		 */
-		ReservationDTO reservDTO = new ReservationDTO();
+		HttpSession session = request.getSession();
 		
-		String carId = request.getParameter("carid");
-		String shopId = request.getParameter("shop");
-		String rentDate = request.getParameter("rentdate");
-		String returnDate = request.getParameter("returndate");
+		session.setAttribute("userid", "brown");
+		String userId = (String)session.getAttribute("userid");
+		
+		ReservationDTO reservDTO = new ReservationDTO();
+ 
+		String promotion = request.getParameter("promotion");
+		String carOption = request.getParameter("car_option");
 		String carPrice = request.getParameter("carprice");
 		String price = request.getParameter("price");
+		
+		String insurance = request.getParameter("insurance");	
+		String rentDate = request.getParameter("rentdate");
+		String returnDate = request.getParameter("returndate");
+		String discountPrice = request.getParameter("discount_price");
 		String [] caroption = request.getParameterValues("option_checkbox");
+		String carId = request.getParameter("carid");
+		String shopId = request.getParameter("shop");
+		
+		System.out.println("p"+promotion);
+		System.out.println("c"+carOption);
+		System.out.println("i"+insurance);
+		System.out.println("d"+discountPrice);
+
 		
 		for(int i=0; caroption.length>i; i++) {
 			if(caroption[i].equals("네비게이션")) {
 				reservDTO.setNavigation("Y");
 			}else if(caroption[i].equals("베이비카시트")) {
-				reservDTO.setBabyseat("Y");
+				reservDTO.setBabySeat("Y");
 			}else if(caroption[i].equals("유모차")) {
 				reservDTO.setBabyCarriage("Y");
 			}
 		}
-		
-		String navi = reservDTO.getNavigation();
-		System.out.println("navi "+navi);
-		String seat = reservDTO.getBabyseat();
-		System.out.println("seat "+seat);
-		String carry = reservDTO.getBabyCarriage();
-		System.out.println("carry "+carry);
-		
+				
 		String carName = request.getParameter("carname");
 		String shopName = request.getParameter("shopname");
 
-		System.out.println("car id: " + carId);
-		System.out.println("shop id: " + shopId);
-		System.out.println("rentDate: " + rentDate);
-		System.out.println("returnDate: " + returnDate);
-		System.out.println("carName: " + carName);
-		System.out.println("shopName: " + shopName);
-
-		
 		reservDTO.setCarId(carId);
 		reservDTO.setShopId(shopId);
 		reservDTO.setRentDate(rentDate);
 		reservDTO.setReturnDate(returnDate);
-		reservDTO.setPrice(Integer.parseInt(price));
+		reservDTO.setPrice(Integer.parseInt(discountPrice));
+		reservDTO.setInsurance(insurance);
+		reservDTO.setUserId(userId);
 		
 		request.setAttribute("reservDTO", reservDTO);
 
 		request.setAttribute("carname", carName);
 		request.setAttribute("shopname", shopName);
-
+		request.setAttribute("promotion", promotion);
+		request.setAttribute("insurance", insurance);
+		request.setAttribute("carOption", carOption);
+		request.setAttribute("price", price);
+		request.setAttribute("discountPrice", discountPrice);
+		
 		RequestDispatcher dis = request.getRequestDispatcher("agreement.jsp");
 		dis.forward(request, response);
 	}

@@ -80,7 +80,7 @@
                
            </div>
            <div class="waringBox">
-               <input type="radio" class="qua_radio"><p class="pWaring">대여자격 기준 및 보험, 결제조건을 확인하였고 이에 동의합니다.</p>
+               <input type="radio" class="qua_radio" id="qua_radio"><p class="pWaring">대여자격 기준 및 보험, 결제조건을 확인하였고 이에 동의합니다.</p>
            </div>
        </div>
 	</div>

@@ -103,7 +103,7 @@ $(function() {
     	var totalday = calcTotalday(rentdate,returndate);
     	
     	var price = carPrice * totalday;
-    	$("#price").text(price);
+    	$("#price").val(price);
     	$("#price_param").val(price);
     	
     });
@@ -119,15 +119,15 @@ $(function() {
     
     $(".cupon_select").off().on("change",function(event){
     	var promotion = $(".cupon_select option:selected");
-    	$("#promotion").text(promotion.text());
+    	$("#promotion").val(promotion.text());
     	var promotion_val = promotion.val();
-    	var price = $("#price").text();
+    	var price = $("#price").val();
     	if(promotion_val == ""){
-    		$("#price").text(price);
-    		$("#discount_price").text(price);    	
+    		$("#price").val(price);
+    		$("#discount_price").val(price);    	
     	}else{
     		var promotion_price = price * promotion_val;
-    		$("#discount_price").text(promotion_price);    	
+    		$("#discount_price").val(promotion_price);    	
     	}
     	
 
@@ -143,26 +143,26 @@ $(function() {
     	var price = $("#param_price").val();
     	
     	if(insurance.val() == ""){
-    		$("#price").text(price);
+    		$("#price").val(price);
     		if($(".cupon_select option:selected").val()==""){
-    			$("#discount_price").text(price); 
+    			$("#discount_price").val(price); 
     		}else{
     			var promotion_val = $(".cupon_select option:selected").val()
     			var reprice = price*promotion_val;
-    			$("#discount_price").text(reprice); 
+    			$("#discount_price").val(reprice); 
     		}	
     	}else{
-    		$("#insurance").text(insurance.text());
+    		$("#insurance").val(insurance.text());
     		
     		var insurance_val = insurance.val() * totalday;
     		var insurance_price = parseInt(price) + parseInt(insurance_val);
     		var promotion_val = $(".cupon_select option:selected").val();
-    		$("#price").text(insurance_price);
+    		$("#price").val(insurance_price);
     		if(promotion_val==""){
     			promotion_val = 1;
     		}
     		var promotion_price = insurance_price * promotion_val;
-    		$("#discount_price").text(promotion_price); 
+    		$("#discount_price").val(promotion_price); 
     	}
     	
     	
@@ -175,11 +175,11 @@ $(function() {
 		if($(".option_checkbox").is(":checked")){
 			$("input[type='checkbox'].option_checkbox:checked").each(function(index,data){
 				result += data.value + " ";
-				$("#car_option").text(result);
+				$("#car_option").val(result);
 			});
 		}else{
 			if($("input[type='checkbox'].option_checkbox:checked").length == 0){
-				$("#car_option").text("");
+				$("#car_option").val("");
 			}
 		}
 		
@@ -199,6 +199,13 @@ $(function() {
     	
     	return totalday;
     }
+    
+    
+   $("#qua_radio").on("click", function(){
+	   console.log("aa");
+	  $("#orderBtn").removeAttr('disabled');
+	  $("#cancelBtn").removeAttr('disabled');
+   });
     
     
 });
