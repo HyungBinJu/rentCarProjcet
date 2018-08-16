@@ -48,10 +48,8 @@ $(document).ready(function(){
 						</tr>
 						<tr>
 							<td colspan="2">
-	
 <textarea rows="" cols=""name="content" style="border:1px solid #e4e4e4;width:100%;height:200px;">  ${dto.content}
 </textarea>
-								
 							</td>
 						</tr>
 					</tbody>

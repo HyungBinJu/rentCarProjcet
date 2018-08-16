@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
- 
 <style type="text/css">
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 *{margin:0; padding:0;} 
@@ -21,18 +19,7 @@
   -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-/* 
-.login:before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
-  left: -8px;
-  z-index: -1;
-  background: #083763;
-  border-radius: 4px;
-} */
+
 
 .login {
 
@@ -131,15 +118,15 @@
   font-size: 13px;
 }
 
-input {
-  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
-  font-size: 14px;
-}
+/* input { */
+/*   font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif; */
+/*   font-size: 14px; */
+/* } */
 
-input[type=text], input[type=password] {
+.login input[type=text],.login input[type=password] {
   margin: 5px;
   padding: 0 10px;
-  width: 200px;
+  width: 260px;
   height: 34px;
   color: #404040;
   background: white;
@@ -152,13 +139,13 @@ input[type=text], input[type=password] {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.login input[type=text]:focus, .login input[type=password]:focus {
   border-color: #7dc9e2;
   outline-color: #dceefc;
   outline-offset: 0;
 }
 
-input[type=submit],.close_btn {
+.ok_btn,.close_btn {
   padding: 0 18px;
   height: 29px;
   font-size: 12px;
@@ -182,19 +169,19 @@ input[type=submit],.close_btn {
   font-family: 'Jeju Gothic', sans-serif;
 } 
 
-input[type=submit]:active {
+.next_page:active {
   background: #cde5ef;
   border-color: #9eb9c2 #b3c0c8 #b4ccce;
   -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+ /* .lt-ie9 input[type=text], .lt-ie9 input[type=password] {
   line-height: 34px;
-}
+}  */
 
  .loginBox{width:500px;height:500px;}
- .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
+ .loginWrapBox .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
  
  .login{position: absolute;
     top: 29%;
@@ -209,7 +196,6 @@ input[type=submit]:active {
  </style>
  <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-		
 	 $(document).ready(function(){
 				//팝업레이어
 
@@ -295,36 +281,115 @@ input[type=submit]:active {
 	 });//end ready
 	 
 	 
+      
+    $(document).ready(function(){
+            //팝업레이어
+         $('#close_btn,.bg').on("click",function() {  
+            $('.LoginlayerBox').hide();        
+         });
+         /* 로그인  */
+         $("#btnLogin").click(function(){
+            $(".LoginlayerBox").show();
+         });
+         
+         //아이디 체크
+           $("formlogin").on("submit",function(event){      
+              var id = $("#userid").val();
+              var pw = $("#userpw").val();
+                    if(id.length==0){
+                       alert("ID를 입력하세요")
+                       $("uesrid").focus();
+                       event.preventDefault();
+                    }else if(pw.length==0){
+                       alert("비밀번호를 입력하세요")
+                       $("userpw").focus();
+                       event.preventDefault(); 
+                    }
+                 });
+           //id 한글 입력 방지
+           $("#userid").on("keyup",function(){
+             if($(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,''))){
+             };   
+             });
+      
+          //아이디 저장쿠키
+           var userInputId = getCookie("userInputId");
+           $("input[name='userid']").val(userInputId); 
+            
+           if($("input[name='userid']").val() != ""){ 
+               $("#remember_me").attr("checked", true); 
+            
+           $("#remember_me").on("change",function(){ 
+               if($("#remember_me").is(":checked")){ 
+                   var userInputId = $("input[name='userid']").val();
+                   setCookie("userInputId", userInputId, 3); 
+               }else{
+                   deleteCookie("userInputId");
+               }
+               });
+           }
+           $("input[name='userid']").on("keyup",function(){ 
+               if($("#remember_me").is(":checked")){ 
+                   var userInputId = $("input[name='userid']").val();
+                   setCookie("userInputId", userInputId, 3); 
+               }
+           });
+       function setCookie(cookieName, value, exdays){
+           var exdate = new Date();
+           exdate.setDate(exdate.getDate() + exdays);
+           var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+           document.cookie = cookieName + "=" + cookieValue;
+       }
+       function deleteCookie(cookieName){
+              var expireDate = new Date();
+              expireDate.setDate(expireDate.getDate() - 1);
+              document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+       }
+       function getCookie(cookieName) {
+           cookieName = cookieName + '=';
+           var cookieData = document.cookie;
+           var start = cookieData.indexOf(cookieName);
+           var cookieValue = '';
+           if(start != -1)
+           {
+                 start += cookieName.length;
+                 var end = cookieData.indexOf(';', start);
+                 if(end == -1)end = cookieData.length;
+                 cookieValue = cookieData.substring(start, end);
+             }
+           return unescape(cookieValue);
+       }
+    });//end ready
 </script>
 <!-- 로그인 폼 시작-->
 <div class="LoginlayerBox" style="display:none;">
 
-	<div class="loginWrapBox">
-		<div class="bg"></div>
-		 <div class="login">
-		  <h1>WelCome 형카</h1>
-		  <form method="post" action="Login">
-		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
-		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
-		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
-		    <p class="remember_me">
-		      <label>
-		        <input type="checkbox" name="remember_me" id="remember_me">
-		        	아이디 기억하기
-		      </label>
-		    </p>
-		    <p class="submit"><input type="submit" name="commit" value="LOGIN">
-		    <p class="login_help">
-		      <label>
-		        <a href="#">아이디 찾기</a>
-		      </label>
-		      <label>
-		       <a href="#">비밀번호 찾기</a>
-		      </label>
-		    <p class="submit"><input type="button" value="CLOSE" class="close_btn" id="close_btn"></p>
-		    
-		  </form>
-		</div>
-	</div>
-</div>
 
+   <div class="loginWrapBox">
+      <div class="bg"></div>
+      <div class="login">
+        <h1>WelCome 형카</h1>
+        <form method="post" action="Login" id="formlogin">
+          <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
+          <p><input type="password" name="passwd"placeholder="Password" id="userpw"
+                  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
+          <p class="remember_me">
+            <label>
+              <input type="checkbox" name="remember_me" id="remember_me">
+                 아이디 기억하기
+            </label>
+          </p>
+          <p class="submit"><input type="submit" name="commit" value="LOGIN" class="ok_btn">
+          <p class="login_help">
+            <label>
+              <a href="#">아이디 찾기</a>
+            </label>
+            <label>
+             <a href="#">비밀번호 찾기</a>
+            </label>
+          <p class="submit"><input type="button" value="CLOSE" class="close_btn" id="close_btn"></p>
+          
+        </form>
+      </div>
+   </div>
+</div>
