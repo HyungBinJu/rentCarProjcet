@@ -13,5 +13,5 @@
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
 <jsp:include page="common/body.jsp"  flush="true"/>
-<jsp:include page="common/footer.jsp"  flush="true"/> 
-</body> 
+<jsp:include page="common/footer.jsp"  flush="true"/>  
+</body>
