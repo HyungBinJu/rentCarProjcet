@@ -17,12 +17,12 @@
            <h1 style="font-size: 30px">옵션 및 할인 선택</h1>
            <p style="margin-top: 10px">부대장비 및 자차손해면책제도, 할인 항목 등을 선택하세요.</p><br>
 
-            <input type="hidden" id="rentdate" name="rentdate" value="${rentdate}">
- 			<input type="hidden" id="returndate" name="returndate" value="${returndate}">
- 			<input type="hidden" name="shop" value="${shopid}">
+            <input type="hidden" id="rentdate" name="rentdate" value="${reservDTO.rentDate}">
+ 			<input type="hidden" id="returndate" name="returndate" value="${reservDTO.returnDate}">
+ 			<input type="hidden" name="shop" value="${reservDTO.shopId}">
  			<input type="hidden" name="shopname" value="${shopname}">
  			<input type="hidden" name="carname" value="${carname}">
- 			<input type="hidden" name="carid" value="${carid}">
+ 			<input type="hidden" name="carid" value="${reservDTO.carId}">
  			<input type="hidden" name="carprice" value="${carprice}">
  			<input type="hidden" id="param_price" name="price" value="${price}">
            

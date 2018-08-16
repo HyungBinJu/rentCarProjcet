@@ -18,13 +18,12 @@
            <h1 style="font-size: 30px">차량선택</h1>
            <p style="margin-top: 10px">고객님께서 승차하실 차량을 선택하여 주세요.</p><br>
 		<form id="car_form">           
-			<input type="hidden" id="rentdate" name="rentdate" value="${rentdate}">
- 			<input type="hidden" id="returndate" name="returndate" value="${returndate}">
- 			<input type="hidden" name="shop" value="${shopid}">
- 			<input type="hidden" name="shopname" value="${shopname}">
- 			<input type="hidden" name="carid" id="carid" > 
+			<input type="hidden" id="rentdate" name="rentdate" value="${reservDTO.rentDate}">
+ 			<input type="hidden" id="returndate" name="returndate" value="${reservDTO.returnDate}">
+ 			<input type="hidden" name="shop" value="${reservDTO.shopId}">
+ 			<input type="hidden" name="shopname" value="${shopname}"> 
  			<input type="hidden" name="price_param" id="price_param"> 
- 			<%-- <input type="hidden" name="carname" value="${carname}"> --%>
+
  			
            <div class="selectType">
            <button class="carType" name="carType" value="null">전체</button>

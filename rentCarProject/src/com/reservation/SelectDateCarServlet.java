@@ -59,7 +59,9 @@ HttpSession session = request.getSession();
 			request.setAttribute("carList", carList);	
 			request.setAttribute("shopList", shopList);
 		}
-		/*
+		
+		System.out.println(shopList);
+		
 		ReservationDTO reservDTO = new ReservationDTO();
 		reservDTO.setRentDate(rentDate);
 		reservDTO.setReturnDate(returnDate);
@@ -67,11 +69,12 @@ HttpSession session = request.getSession();
 		
 		request.setAttribute("reservDTO", reservDTO);
 		System.out.println(reservDTO);
-		*/
 		
+		/*
 		request.setAttribute("rentdate", rentDate);
 		request.setAttribute("returndate", returnDate);
 		request.setAttribute("shopid", shopId);
+		*/
 		request.setAttribute("shopname", shopList.get(0).getShopName());
 		
 		

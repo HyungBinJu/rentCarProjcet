@@ -38,22 +38,22 @@ public class SelectOptionServlet extends HttpServlet {
 		      System.out.println("carPrice = "+carPrice);	
 		      System.out.println("price = "+price);
 			  System.out.println("option id = "+carId);
-		      /* 
+		      
 		      ReservationDTO reservDTO = new ReservationDTO();
 		      reservDTO.setCarId(carId);
 		      reservDTO.setShopId(shopId);
 		      reservDTO.setRentDate(rentDate);
 		      reservDTO.setReturnDate(returnDate);
-
 			      
-			  request.setAttribute("reservDTO", reservDTO);    
-			  */
+			  request.setAttribute("reservDTO", reservDTO);   
+			  /*
+			  request.setAttribute("carid", carId);
 			  request.setAttribute("rentdate", rentDate);
 			  request.setAttribute("returndate", returnDate);
 			  request.setAttribute("shopid", shopId);
+			  */
 			  request.setAttribute("carname", carName);
 			  request.setAttribute("shopname", shopName);
-			  request.setAttribute("carid", carId);
 			  request.setAttribute("carprice", carPrice);
 			  request.setAttribute("price", price);
 			  

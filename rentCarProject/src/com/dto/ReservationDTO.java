@@ -45,7 +45,7 @@ public class ReservationDTO {
 		this.rentId = rentId;
 		this.rentDate = rentDate;
 		this.returnDate = returnDate;
-		RealReturnDate = realReturnDate;
+		this.RealReturnDate = realReturnDate;
 		this.insurance = insurance;
 		this.carId = carId;
 		this.shopId = shopId;

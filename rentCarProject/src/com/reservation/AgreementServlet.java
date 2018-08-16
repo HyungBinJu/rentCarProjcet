@@ -36,6 +36,8 @@ public class AgreementServlet extends HttpServlet {
 		String shopId = request.getParameter("shop");
 		String rentDate = request.getParameter("rentdate");
 		String returnDate = request.getParameter("returndate");
+		String carPrice = request.getParameter("carprice");
+		String price = request.getParameter("price");
 		String [] caroption = request.getParameterValues("option_checkbox");
 		
 		for(int i=0; caroption.length>i; i++) {
@@ -70,11 +72,12 @@ public class AgreementServlet extends HttpServlet {
 		reservDTO.setShopId(shopId);
 		reservDTO.setRentDate(rentDate);
 		reservDTO.setReturnDate(returnDate);
+		reservDTO.setPrice(Integer.parseInt(price));
 		
 		request.setAttribute("reservDTO", reservDTO);
 
-		request.setAttribute("carName", carName);
-		request.setAttribute("shopName", shopName);
+		request.setAttribute("carname", carName);
+		request.setAttribute("shopname", shopName);
 
 		RequestDispatcher dis = request.getRequestDispatcher("agreement.jsp");
 		dis.forward(request, response);
