@@ -131,15 +131,15 @@
   font-size: 13px;
 }
 
-/* input { */
-/*   font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif; */
-/*   font-size: 14px; */
-/* } */
+input {
+  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-size: 14px;
+}
 
-.login input[type=text],.login input[type=password] {
+input[type=text], input[type=password] {
   margin: 5px;
   padding: 0 10px;
-  width: 260px;
+  width: 200px;
   height: 34px;
   color: #404040;
   background: white;
@@ -152,13 +152,13 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-.login input[type=text]:focus, .login input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus {
   border-color: #7dc9e2;
   outline-color: #dceefc;
   outline-offset: 0;
 }
 
-.ok_btn,.close_btn {
+input[type=submit],.close_btn {
   padding: 0 18px;
   height: 29px;
   font-size: 12px;
@@ -182,19 +182,19 @@
   font-family: 'Jeju Gothic', sans-serif;
 } 
 
-.next_page:active {
+input[type=submit]:active {
   background: #cde5ef;
   border-color: #9eb9c2 #b3c0c8 #b4ccce;
   -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
- /* .lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
   line-height: 34px;
-}  */
+}
 
  .loginBox{width:500px;height:500px;}
- .loginWrapBox .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
+ .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
  
  .login{position: absolute;
     top: 29%;
@@ -212,25 +212,36 @@
 		
 	 $(document).ready(function(){
 				//팝업레이어
+<<<<<<< HEAD
+			$('#close_btn').on("click",function() {  
+=======
 			$('#close_btn,.bg').on("click",function() {  
+>>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
 				$('.LoginlayerBox').hide();        
 			});
+<<<<<<< HEAD
+			$('.bg').on("click",function() {  
+				$('.LoginlayerBox').hide();        
+			});
+=======
+
+>>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
 			/* 로그인  */
 			$("#btnLogin").click(function(){
 				$(".LoginlayerBox").show();
 			});
 			
 			//아이디 체크
-	    	 $("formlogin").on("submit",function(event){		
+	    	 $("form").on("submit",function(event){		
 	    		 var id = $("#userid").val();
 	    		 var pw = $("#userpw").val();
 	    	    		if(id.length==0){
 	    	    			alert("ID를 입력하세요")
-	    	    			$("uesrid").focus();
+	    	    			$("#uesrid").focus();
 	    	    			event.preventDefault();
 	    	    		}else if(pw.length==0){
 	    	    			alert("비밀번호를 입력하세요")
-	    	    			$("userpw").focus();
+	    	    			$("#userpw").focus();
 	    	    			event.preventDefault(); 
 	    	    		}
 	    	    	});
@@ -242,23 +253,23 @@
 	   
 	    	//아이디 저장쿠키
     	    var userInputId = getCookie("userInputId");
-    	    $("input[name='userid']").val(userInputId); 
+    	    $("input[name='user_id']").val(userInputId); 
     	     
-    	    if($("input[name='userid']").val() != ""){ 
+    	    if($("input[name='user_id']").val() != ""){ 
     	        $("#remember_me").attr("checked", true); 
     	     
     	    $("#remember_me").on("change",function(){ 
     	        if($("#remember_me").is(":checked")){ 
-    	            var userInputId = $("input[name='userid']").val();
+    	            var userInputId = $("input[name='user_id']").val();
     	            setCookie("userInputId", userInputId, 3); 
     	        }else{
     	            deleteCookie("userInputId");
     	        }
     	        });
     	    }
-    	    $("input[name='userid']").on("keyup",function(){ 
+    	    $("input[name='user_id']").on("keyup",function(){ 
     	        if($("#remember_me").is(":checked")){ 
-    	            var userInputId = $("input[name='userid']").val();
+    	            var userInputId = $("input[name='user_id']").val();
     	            setCookie("userInputId", userInputId, 3); 
     	        }
     	    });
@@ -287,16 +298,20 @@
     	   	}
     	    return unescape(cookieValue);
     	}
+    		
+
 	 });//end ready
+	 
+	 
 </script>
 <!-- 로그인 폼 시작-->
 <div class="LoginlayerBox" style="display:none;">
 
 	<div class="loginWrapBox">
 		<div class="bg"></div>
-		<div class="login">
+		 <div class="login">
 		  <h1>WelCome 형카</h1>
-		  <form method="post" action="Login" id="formlogin">
+		  <form method="post" action="Login">
 		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
 		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
 		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
@@ -306,7 +321,7 @@
 		        	아이디 기억하기
 		      </label>
 		    </p>
-		    <p class="submit"><input type="submit" name="commit" value="LOGIN" class="ok_btn">
+		    <p class="submit"><input type="submit" name="commit" value="LOGIN">
 		    <p class="login_help">
 		      <label>
 		        <a href="#">아이디 찾기</a>

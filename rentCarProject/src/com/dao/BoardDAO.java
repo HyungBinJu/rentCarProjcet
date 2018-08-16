@@ -25,6 +25,11 @@ public class BoardDAO {
 		BoardDTO dto  = session.selectOne("com.board.viewBoard",num);
 		return dto;
 	}
+
+	public int delBoard(SqlSession session, String num) {
+		int n = session.delete("com.board.delBoard",num);
+		return n;
+	}
 	
 	
 	

@@ -156,7 +156,7 @@
 							<a href="NoticeUI">형카알림</a>
 						</li>
 						<li>
-							<a href="#">형카문의</a>
+							<a href="QABoardUI">형카문의</a>
 						</li>
 						
 					</ul>

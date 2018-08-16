@@ -71,6 +71,24 @@ public class BoardService {
 		return dto;
 		
 	}
+
+
+
+	public int delBoard(String num) {
+		SqlSession session = MysqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n =dao.delBoard(session,num);
+			session.commit();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}finally {
+			session.close();
+		}
+		
+		return n;
+	}
 	
 	
 	
