@@ -63,7 +63,7 @@ $(function() {
     	$(".shop").text($("#store option:selected").text());
     });
     
-    $("#nextCar_btn").off('click').on("click", function(){
+    $("#nextCar_btn").off('click').on("click", function(event){
     	if($("#resStartDate").val()==""){
     		alert("대여일시를 입력하세요.");
     		$("#resStartDate").focus();
@@ -92,21 +92,113 @@ $(function() {
     	
     });
     
-    $(".carSelect").on("click", function(){
-		var carName = $("input[type=radio][name=carSelect]:checked").val();
-		//alert(carName);
-    	$("#carName").text(carName.split("/")[0]);
+    $(".carSelect").off().on("click", function(){
+		var carInfo = $("input[type=radio][name=carSelect]:checked").val();
+    	$("#carName").text(carInfo.split("/")[0]);
+    	var carPrice = carInfo.split("/")[2];
+    	
+    	var rentdate = $("#rentdate").val();
+    	var returndate = $("#returndate").val();
+    	
+    	var totalday = calcTotalday(rentdate,returndate);
+    	
+    	var price = carPrice * totalday;
+    	$("#price").text(price);
+    	$("#price_param").val(price);
+    	
     });
     
     $("#preDate_btn").on("click", function(){
-    	$("form").attr("action","ReservationUI");
+    	$("#car_form").attr("action","ReservationUI");
     });
     
     $("#nextOpt_btn").on("click", function(){
-    	$("form").attr("action","SelectOption");
+    	$("#car_form").attr("action","SelectOption");
     });
     
     
+    $(".cupon_select").off().on("change",function(event){
+    	var promotion = $(".cupon_select option:selected");
+    	$("#promotion").text(promotion.text());
+    	var promotion_val = promotion.val();
+    	var price = $("#price").text();
+    	if(promotion_val == ""){
+    		$("#price").text(price);
+    		$("#discount_price").text(price);    	
+    	}else{
+    		var promotion_price = price * promotion_val;
+    		$("#discount_price").text(promotion_price);    	
+    	}
+    	
+
+    });
+    
+    $(".insurance_select").off().on("change",function(event){
+    	var insurance = $(".insurance_select option:selected");
+    	
+    	var rentdate = $("#rentdate").val();
+    	var returndate = $("#returndate").val();
+    	var totalday = calcTotalday(rentdate,returndate);
+    	
+    	var price = $("#param_price").val();
+    	
+    	if(insurance.val() == ""){
+    		$("#price").text(price);
+    		if($(".cupon_select option:selected").val()==""){
+    			$("#discount_price").text(price); 
+    		}else{
+    			var promotion_val = $(".cupon_select option:selected").val()
+    			var reprice = price*promotion_val;
+    			$("#discount_price").text(reprice); 
+    		}	
+    	}else{
+    		$("#insurance").text(insurance.text());
+    		
+    		var insurance_val = insurance.val() * totalday;
+    		var insurance_price = parseInt(price) + parseInt(insurance_val);
+    		var promotion_val = $(".cupon_select option:selected").val();
+    		$("#price").text(insurance_price);
+    		if(promotion_val==""){
+    			promotion_val = 1;
+    		}
+    		var promotion_price = insurance_price * promotion_val;
+    		$("#discount_price").text(promotion_price); 
+    	}
+    	
+    	
+    	 	
+   
+    });
+    
+    $(".option_checkbox").off().on("click",function(){
+		var result = "";
+		if($(".option_checkbox").is(":checked")){
+			$("input[type='checkbox'].option_checkbox:checked").each(function(index,data){
+				result += data.value + " ";
+				$("#car_option").text(result);
+			});
+		}else{
+			if($("input[type='checkbox'].option_checkbox:checked").length == 0){
+				$("#car_option").text("");
+			}
+		}
+		
+    });
+    
+    $("#nextQua_btn").on("click", function(){
+    	$("#option_form").attr("action","AgreementServlet");
+    });
+
+    function calcTotalday(first,last){
+    	var dRent = Date.parse(first);
+    	var dReturn = Date.parse(last);
+
+    	var diff = dReturn - dRent;
+    	var day = 24 * 60 * 60 * 1000; // 시간 * 분 * 초 * 밀리세컨
+    	var totalday = (diff/day)+1;
+    	
+    	return totalday;
+    }
     
     
 });

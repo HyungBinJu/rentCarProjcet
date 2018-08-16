@@ -20,6 +20,7 @@ import com.service.ShopService;
 @WebServlet("/SelectDateCar")
 public class SelectDateCarServlet extends HttpServlet {
 	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 HttpSession session = request.getSession();
 		
@@ -58,7 +59,9 @@ HttpSession session = request.getSession();
 			request.setAttribute("carList", carList);	
 			request.setAttribute("shopList", shopList);
 		}
-		/*
+		
+		System.out.println(shopList);
+		
 		ReservationDTO reservDTO = new ReservationDTO();
 		reservDTO.setRentDate(rentDate);
 		reservDTO.setReturnDate(returnDate);
@@ -66,11 +69,12 @@ HttpSession session = request.getSession();
 		
 		request.setAttribute("reservDTO", reservDTO);
 		System.out.println(reservDTO);
-		*/
 		
+		/*
 		request.setAttribute("rentdate", rentDate);
 		request.setAttribute("returndate", returnDate);
 		request.setAttribute("shopid", shopId);
+		*/
 		request.setAttribute("shopname", shopList.get(0).getShopName());
 		
 		 
@@ -79,9 +83,6 @@ HttpSession session = request.getSession();
 		dis.forward(request, response);
 	} 
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
