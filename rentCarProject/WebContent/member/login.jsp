@@ -212,28 +212,11 @@ input[type=submit]:active {
 		
 	 $(document).ready(function(){
 				//팝업레이어
-<<<<<<< HEAD
-<<<<<<< HEAD
-			$('#close_btn').on("click",function() {  
-=======
 			$('#close_btn,.bg').on("click",function() {  
->>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
-=======
-			$('#close_btn,.bg').on("click",function() {  
->>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
 				$('.LoginlayerBox').hide();        
 			});
-<<<<<<< HEAD
-<<<<<<< HEAD
-			$('.bg').on("click",function() {  
-				$('.LoginlayerBox').hide();        
-			});
-=======
 
->>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
-=======
 
->>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
 			/* 로그인  */
 			$("#btnLogin").click(function(){
 				$(".LoginlayerBox").show();
