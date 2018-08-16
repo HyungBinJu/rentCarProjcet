@@ -212,11 +212,21 @@ input[type=submit]:active {
 		
 	 $(document).ready(function(){
 				//팝업레이어
+<<<<<<< HEAD
 
 			$('#close_btn,.bg').on("click",function() {  
+=======
+			$('#close_btn').on("click",function() {  
+>>>>>>> branch 'Darling' of https://github.com/HyungBinJu/rentCarProjcet.git
 				$('.LoginlayerBox').hide();        
 			});
+<<<<<<< HEAD
 
+=======
+			$('.bg').on("click",function() {  
+				$('.LoginlayerBox').hide();        
+			});
+>>>>>>> branch 'Darling' of https://github.com/HyungBinJu/rentCarProjcet.git
 			/* 로그인  */
 			$("#btnLogin").click(function(){
 				$(".LoginlayerBox").show();
