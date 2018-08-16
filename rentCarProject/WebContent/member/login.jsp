@@ -301,13 +301,8 @@ input[type=submit]:active {
 		<div class="bgLogin"></div>
 		 <div class="login">
 		  <h1>WelCome 형카</h1>
-<<<<<<< HEAD
-		  <form method="post" action="Login">
-		    <p><input type="text" name="user_id"placeholder="UserID" id="userid"></p>
-=======
 		  <form method="post" action="Login" id="formLogin">
 		    <p><input type="text" name="userid"placeholder="UserID" id="userid"></p>
->>>>>>> branch 'master' of https://github.com/HyungBinJu/rentCarProjcet.git
 		    <p><input type="password" name="passwd"placeholder="Password" id="userpw"
 		    		  onKeyDown="if(event.keyCode==13)loginProcess()"></p>
 		    <p class="remember_me">
