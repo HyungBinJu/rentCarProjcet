@@ -17,8 +17,8 @@ import com.dto.ShopDTO;
 import com.service.CarService;
 import com.service.ShopService;
 
-@WebServlet("/SelectDateCar")
-public class SelectDateCarServlet extends HttpServlet {
+@WebServlet("/RentCar")
+public class RentCarServlet extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,6 +32,7 @@ public class SelectDateCarServlet extends HttpServlet {
 		String returnDate = request.getParameter("returndate");
 		String carType = request.getParameter("carType");
 		String price = request.getParameter("price");
+		String discountPrice = request.getParameter("discount_price");
 		
 		System.out.println("price"+price);
 		System.out.println("shopId : " +  shopId);
@@ -71,16 +72,13 @@ public class SelectDateCarServlet extends HttpServlet {
 		request.setAttribute("reservDTO", reservDTO);
 		System.out.println(reservDTO);
 		
-		/*
-		request.setAttribute("rentdate", rentDate);
-		request.setAttribute("returndate", returnDate);
-		request.setAttribute("shopid", shopId);
-		*/
 		request.setAttribute("shopname", shopList.get(0).getShopName());
 		request.setAttribute("price", price);
+		request.setAttribute("discountprice", discountPrice);
+		
 		 
 		
-		RequestDispatcher dis = request.getRequestDispatcher("selectCar.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("rent_car.jsp");
 		dis.forward(request, response);
 	} 
 

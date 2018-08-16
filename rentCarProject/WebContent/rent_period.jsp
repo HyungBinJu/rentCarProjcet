@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="common/header.jsp" flush="true"/>
 
-<jsp:include page="rent/selectOption.jsp"  flush="true"/>
+<jsp:include page="rent/rent_period.jsp"  flush="true"/>
 
 
 <jsp:include page="common/footer.jsp"  flush="true"/>

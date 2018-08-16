@@ -13,10 +13,17 @@
 								userid,
 								carid,
 								shopid,
-								price,
-								navigation,
-								babyseat,
-								baby_carriage)
+								price
+						  <if test="navigation != null">
+								,navigation
+						  </if>
+						  <if test="babySeat != null">
+								,babyseat
+				  		  </if>
+				  		  <if test="babyCarriage != null">	
+								,baby_carriage
+					      </if>	
+					      )
 			 VALUES (('R'||reservation_seq.nextval),
 			 		  #{rentDate},
 			 		  null,
@@ -25,10 +32,17 @@
 				      #{userId},
 					  #{carId},
 					  #{shopId},
-					  #{price},
-					  #{navigation},
-					  #{babySeat},
-					  #{babyCarriage})
+					  #{price}
+				  <if test="navigation != null">
+					  ,#{navigation}
+				  </if>
+				  <if test="babySeat != null">
+					  ,#{babySeat}
+		  		  </if>
+		  		  <if test="babyCarriage != null">	
+					  ,#{babyCarriage}
+			      </if>
+			      )
 	</insert>
 	
 	<update id="updateState" parameterType="string">

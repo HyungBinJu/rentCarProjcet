@@ -14,7 +14,7 @@ public class ReservationUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		response.sendRedirect("selectDateShop.jsp");
+		response.sendRedirect("rent_period.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

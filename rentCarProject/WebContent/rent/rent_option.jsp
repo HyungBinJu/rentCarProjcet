@@ -24,6 +24,7 @@
  			<input type="hidden" name="carid" value="${reservDTO.carId}">
  			<input type="hidden" name="carprice" value="${carprice}">
  			<input type="hidden" id="param_price" name="price" value="${price}">
+ 			<input type="hidden" id="discount_param" name="discount_param" value="${discount_param}">
  			
            
            <p class="option_title">옵션/차량할인선택</p>
@@ -95,9 +96,7 @@
 			<div class="subMenu2">
 				<input type="hidden" name="carid" value="${reservDTO.carId}">
 				<input type="hidden" name="shopid" value="${reservDTO.shopId}">
-				<%-- ${reservDTO.carId}
-				${reservDTO.shopId} --%>
-				<%-- ${reservDTO.carId}${reservDTO.rentDate}${reservDTO.returnDate} --%>
+				
 				<p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib" name="carName" id="carName">${carname}</span><br>
 			    <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib" name="rentDate" id="rentDate">${reservDTO.rentDate}</span><br>
 			    <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib" name="returnDate" id="returnDate">${reservDTO.returnDate}</span><br>
@@ -111,11 +110,11 @@
 			    <p class="option_p">부대장비</p>
 			    <input type="text" name="car_option" id="car_option" class="option_span" value="<c:if test="${!empty carOption}"/>${carOption}" readonly="readonly"><br>
 			    <hr><br>
-			    <p>정상금액&nbsp;</p><input type="text" class="price_input" id="price" name="price" value="<c:if test="${!empty price}"/>${price}" readonly="readonly"><br>
-			    <p>예약금액&nbsp;</p><input type="text" class="price_input" id="discount_price" name="discount_price" value="<c:if test="${!empty discountPrice}"/>${discountPrice}"readonly="readonly"><br>
+			    <p>정상금액&nbsp;</p><input type="text" class="price_input" id="price" name="price_option" value="<c:if test="${!empty price}"/>${price}" readonly="readonly"><br>
+			    <p>예약금액&nbsp;</p><input type="text" class="price_input" id="discount_price" name="discount_price" value="<c:if test="${!empty discount_param}"/>${discount_param}"readonly="readonly"><br>
 			    <div class="order">
 			        <button class="orderBtn" disabled="disabled">예약</button>
-			        <button class="cancelBtn" disabled="disabled">취소</button>
+			        <button class="cancelBtn" id="cancelBtn">취소</button>
 			    </div>
 			</div> 
 	    </div> 

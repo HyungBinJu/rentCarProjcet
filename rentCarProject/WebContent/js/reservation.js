@@ -78,7 +78,7 @@ $(function() {
     		event.preventDefault();
     	}else{
     		$("#select_date").on("submit",function(event){
-	   		 	this.action="SelectDateCar";
+	   		 	this.action="RentCar";
 	   		 	this.method="get";
 	  	     });	
     	}
@@ -87,7 +87,7 @@ $(function() {
     
     $(".carType").on("submit",function(){
     	var carType = $(".carType").val();
-    	this.action="SelectDateCar";
+    	this.action="RentCar";
    		this.method="get";
     	
     });
@@ -105,15 +105,31 @@ $(function() {
     	var price = carPrice * totalday;
     	$("#price").val(price);
     	$("#price_param").val(price);
+    	$("#discount_price").val(price);
+    	$("#discount_param").val(price);
+    	
     	
     });
     
-    $("#preDate_btn").on("click", function(){
-    	$("#car_form").attr("action","ReservationUI");
+    $("#preDate_btn").off().on("click", function(){
+    	window.history.back();
+    	return false;
     });
     
+    
+    
+    
     $("#nextOpt_btn").on("click", function(){
-    	$("#car_form").attr("action","SelectOption");
+    	$("#car_form").attr("action","RentOption");
+    });
+    
+    $("#preCar_btn").on("click", function(){
+    	window.history.back();
+    	return false;
+    });
+    
+    $("#nextQua_btn").on("click", function(){
+    	$("#option_form").attr("action","RentAgreement");
     });
     
     
@@ -185,9 +201,7 @@ $(function() {
 		
     });
     
-    $("#nextQua_btn").on("click", function(){
-    	$("#option_form").attr("action","AgreementServlet");
-    });
+   
 
     function calcTotalday(first,last){
     	var dRent = Date.parse(first);
@@ -202,10 +216,12 @@ $(function() {
     
     
    $("#qua_radio").on("click", function(){
-	   console.log("aa");
 	  $("#orderBtn").removeAttr('disabled');
-	  $("#cancelBtn").removeAttr('disabled');
    });
     
+   $("#cancelBtn").off().on("click", function(){
+	  alert("모든 예약이 초기화 됩니다.메인화면으로 이동합니다.");
+	  location.href="index.jsp"
+   });
     
 });

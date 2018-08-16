@@ -85,7 +85,7 @@
        </div>
 	</div>
     <div class="subMenu">
-    	<jsp:include page="reservation.jsp" flush="false"></jsp:include>
+    	<jsp:include page="rent_rightmenu.jsp" flush="false"></jsp:include>
     </div> 
 </div>
    

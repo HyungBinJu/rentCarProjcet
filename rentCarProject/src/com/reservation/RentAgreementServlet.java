@@ -15,22 +15,12 @@ import javax.servlet.http.HttpSession;
 
 import com.dto.ReservationDTO;
 
-/**
- * Servlet implementation class AgreementServlet
- */
-@WebServlet("/AgreementServlet")
-public class AgreementServlet extends HttpServlet {
+@WebServlet("/RentAgreement")
+public class RentAgreementServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*
-		 * <input type="hidden" name="rentdate" value="${rentdate}"> <input
-		 * type="hidden" name="returndate" value="${returndate}"> <input type="hidden"
-		 * name="shop" value="${shopid}"> <input type="hidden" name="shopname"
-		 * value="${shopname}"> <input type="hidden" name="carid"
-		 * value="${carDTO.carId}"> <input type="hidden" name="carname"
-		 * value="${carDTO.carName}">
-		 */
+	
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("userid", "brown");
@@ -40,32 +30,15 @@ public class AgreementServlet extends HttpServlet {
  
 		String promotion = request.getParameter("promotion");
 		String carOption = request.getParameter("car_option");
-		String carPrice = request.getParameter("carprice");
-		String price = request.getParameter("price");
+		String price = request.getParameter("price_option");
 		
 		String insurance = request.getParameter("insurance");	
 		String rentDate = request.getParameter("rentdate");
 		String returnDate = request.getParameter("returndate");
-		String discountPrice = request.getParameter("discount_price");
-		String [] caroption = request.getParameterValues("option_checkbox");
+		String discountParam = request.getParameter("discount_param");
 		String carId = request.getParameter("carid");
 		String shopId = request.getParameter("shop");
-		
-		System.out.println("p"+promotion);
-		System.out.println("c"+carOption);
-		System.out.println("i"+insurance);
-		System.out.println("d"+discountPrice);
-
-		
-		for(int i=0; caroption.length>i; i++) {
-			if(caroption[i].equals("네비게이션")) {
-				reservDTO.setNavigation("Y");
-			}else if(caroption[i].equals("베이비카시트")) {
-				reservDTO.setBabySeat("Y");
-			}else if(caroption[i].equals("유모차")) {
-				reservDTO.setBabyCarriage("Y");
-			}
-		}
+				
 				
 		String carName = request.getParameter("carname");
 		String shopName = request.getParameter("shopname");
@@ -74,7 +47,7 @@ public class AgreementServlet extends HttpServlet {
 		reservDTO.setShopId(shopId);
 		reservDTO.setRentDate(rentDate);
 		reservDTO.setReturnDate(returnDate);
-		reservDTO.setPrice(Integer.parseInt(discountPrice));
+		reservDTO.setPrice(Integer.parseInt(discountParam));
 		reservDTO.setInsurance(insurance);
 		reservDTO.setUserId(userId);
 		
@@ -86,16 +59,12 @@ public class AgreementServlet extends HttpServlet {
 		request.setAttribute("insurance", insurance);
 		request.setAttribute("carOption", carOption);
 		request.setAttribute("price", price);
-		request.setAttribute("discountPrice", discountPrice);
+		request.setAttribute("discount_param", discountParam);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("agreement.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("rent_agreement.jsp");
 		dis.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

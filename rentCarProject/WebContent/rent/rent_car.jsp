@@ -23,6 +23,7 @@
  			<input type="hidden" name="shop" value="${reservDTO.shopId}">
  			<input type="hidden" name="shopname" value="${shopname}"> 
  			<input type="hidden" name="price_param" id="price_param"> 
+ 			<input type="hidden" name="discount_param" id="discount_param"> 
 
  			
            <div class="selectType">
@@ -33,13 +34,6 @@
            <button class="carType" name="carType" value="대형" >대형</button>
            <button class="carType" name="carType" value="SUV" >SUV</button>
            
-               <!--  <select name="car_type" id="car_type" class="car_type" style="font-size: 13px">
-                   <option value="경차">경차</option>
-                   <option value="소형">소형</option>
-                   <option value="중형">중형</option>
-                   <option value="대형">대형</option>
-                   <option value="SUV">SUV</option>
-               </select> -->
            </div> 
 
           <div class="carTable">
@@ -83,7 +77,7 @@
        </div>
 	</div>
 	<div class="subMenu">
-    	<jsp:include page="reservation.jsp" flush="false"/>
+    	<jsp:include page="rent_rightmenu.jsp" flush="false"/>
     </div>
       
 </div>

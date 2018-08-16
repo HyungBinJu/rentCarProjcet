@@ -15,15 +15,15 @@
       <div class="top">
         <h1 class="storeInfo">지점 정보</h1>
       </div> 
-      <h1 id="shop_info">제주시청지점</h1>
+      <h1 id="shop_info">${shopList.shopName}</h1>
       <table id="store_table">
           <tr>
               <th>주소</th>
-              <td>제주도 어딘가</td>          
+              <td>${shopList.addr}</td>          
           </tr>
           <tr>
               <th>번호</th>
-              <td>T.000-000-0000</td>
+              <td>T.${shopList.phone}</td>
           </tr>
           <tr>
               <th>시간</th>

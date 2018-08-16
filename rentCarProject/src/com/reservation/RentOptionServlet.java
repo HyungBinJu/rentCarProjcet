@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dto.ReservationDTO;
 
-@WebServlet("/SelectOption")
-public class SelectOptionServlet extends HttpServlet {
+@WebServlet("/RentOption")
+public class RentOptionServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			  /*		
@@ -33,6 +33,7 @@ public class SelectOptionServlet extends HttpServlet {
 		      String carName = request.getParameter("carSelect").split("/")[0];
 		      String shopName = request.getParameter("shopname");
 		      String price = request.getParameter("price_param");
+		      String discountParam = request.getParameter("discount_param");
 		      
 		      System.out.println("option name = "+carName);	
 		      System.out.println("carPrice = "+carPrice);	
@@ -56,8 +57,10 @@ public class SelectOptionServlet extends HttpServlet {
 			  request.setAttribute("shopname", shopName);
 			  request.setAttribute("carprice", carPrice);
 			  request.setAttribute("price", price);
+			  request.setAttribute("discount_param", discountParam);
 			  
-			  RequestDispatcher dis = request.getRequestDispatcher("selectOption.jsp");
+			  
+			  RequestDispatcher dis = request.getRequestDispatcher("rent_option.jsp");
 		      dis.forward(request, response);
 		
 	}

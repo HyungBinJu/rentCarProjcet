@@ -16,7 +16,6 @@ public class ReservationDAO {
 	}
 
 	public int updateState(SqlSession session, String carid) {
-		int result = session.update("com.reservation.updateState", carid);
-		return 0;
+		return session.update("com.reservation.updateState", carid);
 	}
 }
