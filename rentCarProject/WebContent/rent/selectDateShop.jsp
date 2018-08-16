@@ -30,6 +30,7 @@
               <h1 style="font-size: 30px">지점선택</h1>
               <p style="margin-top: 10px">대여지점을 선택해주세요.</p><br>
                    <select name="shop" id="store" class="store" required>
+                   	   <option value="">지점 선택</option>
                        <option value="J001">제주지점</option>
                        <option value="J002">서귀포지점</option>
                        <option value="J003">함덕지점</option>

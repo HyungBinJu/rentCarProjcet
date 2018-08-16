@@ -12,15 +12,19 @@
  <div class="wrap_reservation">
 
 	<div id="option_div" >
+	<form id="option_form">
 		<div class="resDate">  
            <h1 style="font-size: 30px">옵션 및 할인 선택</h1>
            <p style="margin-top: 10px">부대장비 및 자차손해면책제도, 할인 항목 등을 선택하세요.</p><br>
 
-            <input type="hidden" name="rentdate" value="${reservDTO.rentDate}">
- 			<input type="hidden" name="returndate" value="${reservDTO.returnDate}">
+            <input type="hidden" id="rentdate" name="rentdate" value="${reservDTO.rentDate}">
+ 			<input type="hidden" id="returndate" name="returndate" value="${reservDTO.returnDate}">
  			<input type="hidden" name="shop" value="${reservDTO.shopId}">
  			<input type="hidden" name="shopname" value="${shopname}">
  			<input type="hidden" name="carname" value="${carname}">
+ 			<input type="hidden" name="carid" value="${reservDTO.carId}">
+ 			<input type="hidden" name="carprice" value="${carprice}">
+ 			<input type="hidden" id="param_price" name="price" value="${price}">
            
            <p class="option_title">옵션/차량할인선택</p>
            <div class="saleTable">
@@ -32,6 +36,7 @@
                        <td width="200px" style="background-color: azure">프로모션 할인</td>
                        <td>
                           <select class="cupon_select" name="cupon_select" id="cupon_select">
+                          	  <option value="">프로모션 선택</option>
                               <option value="0.9">여름맞이 바캉스 쿠폰 10%</option>  
                               <option value="0.8">신규 회원 쿠폰 20%</option>    
                           </select>
@@ -48,6 +53,7 @@
                        <td width="200px" style="background-color: azure">자차손해면책제도</td>
                        <td>
                           <select class="insurance_select" name="insurance_select" id="insurance_select">
+                          	  <option value="">보험 선택</option>
                               <option value="15000">일반자차(15,000)</option>  
                               <option value="30000">슈퍼자차(30,000)</option>    
                           </select>
@@ -62,15 +68,15 @@
                    </tr>
                     <tr>
                       <td width="200px" style="background-color: azure">네비게이션</td>
-                       <td><input type="checkbox" style="width:15px;height:15px;border:1px;" name="navi" value="Y"></td>
+                       <td><input type="checkbox" style="width:15px;height:15px;border:1px;" id="navi" class="option_checkbox" name="option_checkbox" value="네비게이션"></td>
                     </tr>
                     <tr>
-                      <td style="background-color: azure">베이비 카시트</td>
-                       <td><input type="checkbox" style="width:15px;height:15px;border:1px;" name="baby_seat" value="Y"></td>
+                      <td style="background-color: azure">베이비카시트</td>
+                       <td><input type="checkbox" style="width:15px;height:15px;border:1px;" id="carseat" class="option_checkbox" name="option_checkbox" value="베이비카시트"></td>
                     </tr>
                     <tr>
                       <td style="background-color: azure">유모차</td>
-                       <td><input type="checkbox" style="width:15px;height:15px;border:1px;" name="baby_carrige" value="Y"></td>
+                       <td><input type="checkbox" style="width:15px;height:15px;border:1px;" id="baby" class="option_checkbox" name="option_checkbox" value="유모차"></td>
                     </tr>
                </table>
            </div>
@@ -83,6 +89,7 @@
                </div> 
            </div>
        </div>
+       </form>
 	</div>
     <div class="subMenu">
     	<jsp:include page="reservation.jsp" flush="false"></jsp:include>
