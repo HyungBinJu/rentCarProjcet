@@ -194,7 +194,7 @@
 }  */
 
  .loginBox{width:500px;height:500px;}
- .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
+ .loginWrapBox .bg{ position:fixed;top:0;left:0; width:100%; height:100%; background:rgba(0, 0, 0, .4); opacity:0.7; z-index: 5;}
  
  .login{position: absolute;
     top: 29%;
