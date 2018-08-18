@@ -1,5 +1,8 @@
 $(function() {
 	
+	
+	changCss();
+	
 	var rentDate = null;
 	var returnDate = null;
     $( "#resStartDate" ).datepicker({ 
@@ -59,8 +62,13 @@ $(function() {
     
     
     $("#store").on("change",function(){
-    	var shopId = $("#store option:selected").val();
-    	$(".shop").text($("#store option:selected").text());
+    	if($("#store option:selected").val()==""){
+    		$(".shop").text("");
+    	}else{
+    		$("#shop").text($("#store option:selected").text()+"/지점 정보");
+    		$("#return_shop").text($("#store option:selected").text());
+    	}
+    	
     });
     
     $("#nextCar_btn").off('click').on("click", function(event){
@@ -103,10 +111,11 @@ $(function() {
     	var totalday = calcTotalday(rentdate,returndate);
     	
     	var price = carPrice * totalday;
-    	$("#price").val(price);
-    	$("#price_param").val(price);
-    	$("#discount_price").val(price);
-    	$("#discount_param").val(price);
+    	var price_commna = addComma(price);
+    	$("#price").val(price_commna);
+    	$("#price_param").val(price_commna);
+    	$("#discount_price").val(price_commna);
+    	$("#discount_param").val(price_commna);
     	
     	
     });
@@ -119,8 +128,13 @@ $(function() {
     
     
     
-    $("#nextOpt_btn").on("click", function(){
-    	$("#car_form").attr("action","RentOption");
+    $("#nextOpt_btn").off().on("click", function(){
+    	if($("#carName").text()==""){
+    		alert("대여하실 차를 선택해주세요.");
+    		event.preventDefault();
+    	}else{
+    		$("#car_form").attr("action","RentOption");
+    	}
     });
     
     $("#preCar_btn").on("click", function(){
@@ -139,11 +153,17 @@ $(function() {
     	var promotion_val = promotion.val();
     	var price = $("#price").val();
     	if(promotion_val == ""){
+    		$("#price").css('color','white');
+    		$("#price").css('text-decoration','none');
     		$("#price").val(price);
     		$("#discount_price").val(price);    	
+    		$("#promotion").val("");
     	}else{
-    		var promotion_price = price * promotion_val;
-    		$("#discount_price").val(promotion_price);    	
+    		$("#price").css('text-decoration','line-through');
+    		$("#price").css('text-decoration-color',' #ea0000');
+    		var promotion_price = price.replace(/,/,"") * promotion_val;
+    		var promotion_price_comma = addComma(promotion_price);
+    		$("#discount_price").val(promotion_price_comma);    	
     	}
     	
 
@@ -162,23 +182,27 @@ $(function() {
     		$("#price").val(price);
     		if($(".cupon_select option:selected").val()==""){
     			$("#discount_price").val(price); 
+    			$("#insurance").val("");
     		}else{
     			var promotion_val = $(".cupon_select option:selected").val()
-    			var reprice = price*promotion_val;
-    			$("#discount_price").val(reprice); 
+    			var reprice = price.replace(/,/gi,"")*promotion_val;
+    			var reprice_comma = addComma(reprice);
+    			$("#discount_price").val(reprice_comma); 
     		}	
     	}else{
     		$("#insurance").val(insurance.text());
     		
     		var insurance_val = insurance.val() * totalday;
-    		var insurance_price = parseInt(price) + parseInt(insurance_val);
+    		var insurance_price = parseInt(price.replace(/,/gi,"")) + parseInt(insurance_val);
     		var promotion_val = $(".cupon_select option:selected").val();
-    		$("#price").val(insurance_price);
+    		var insurance_price_comma = addComma(insurance_price);
+    		$("#price").val(insurance_price_comma);
     		if(promotion_val==""){
     			promotion_val = 1;
     		}
     		var promotion_price = insurance_price * promotion_val;
-    		$("#discount_price").val(promotion_price); 
+    		var promotion_price_comma = addComma(promotion_price);
+    		$("#discount_price").val(promotion_price_comma); 
     	}
     	
     	
@@ -217,11 +241,33 @@ $(function() {
     
    $("#qua_radio").on("click", function(){
 	  $("#orderBtn").removeAttr('disabled');
+	  $("#orderBtn").css('background-color','darkorange');
    });
     
    $("#cancelBtn").off().on("click", function(){
 	  alert("모든 예약이 초기화 됩니다.메인화면으로 이동합니다.");
 	  location.href="index.jsp"
    });
-    
+   
+   $(".rent_shop").off().on("click",function(){
+	   var shopid= $("#store option:selected").val();
+	   window.open("RentShopInfo?shopid="+shopid, "지점정보", 'width=440, height=550, scrollbars=no, resizable=no, toolbars=no, menubar=no');   
+   });
+   
+   $(".closeBtn").off().on("click",function(){
+	   window.self.close();
+   });
+   
+   function changCss(){
+	   if($("#price").val() != $("#discount_price").val()){
+   		   $("#price").css('text-decoration','line-through');
+   		   $("#price").css('text-decoration-color',' #ea0000');
+	   }
+   }
+   
+   // 숫자에 천단위로 콤마 찍기 
+	function addComma(num) {
+		var regexp = /\B(?=(\d{3})+(?!\d))/g;
+		return num.toString().replace(regexp, ',');
+	}
 });

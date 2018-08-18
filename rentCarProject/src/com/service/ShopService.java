@@ -21,17 +21,17 @@ public class ShopService {
 
 
 
-	public List<ShopDTO> getShopList(ShopDTO shopDTO) {
+	public ShopDTO getShopList(ShopDTO shopDTO) {
 		SqlSession session = MysqlSessionFactory.getSession();
-		List<ShopDTO> list = null;
+		ShopDTO dto = null;
 		try {
-			list = dao.getShopList(session, shopDTO);
+			dto = dao.getShopList(session, shopDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			session.close();
 		} 
-		return list;
+		return dto;
 	}
 
 

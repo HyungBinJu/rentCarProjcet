@@ -15,7 +15,6 @@
 
 <jsp:include page="rent/rent_option.jsp"  flush="true"/>
 
-
 <jsp:include page="common/footer.jsp"  flush="true"/>
 
 

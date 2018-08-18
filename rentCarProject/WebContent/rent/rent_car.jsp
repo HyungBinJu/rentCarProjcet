@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/reservation.css" type="text/css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script src="js/reservation.js"></script>
 
  
@@ -20,7 +20,7 @@
 		<form id="car_form">           
 			<input type="hidden" id="rentdate" name="rentdate" value="${reservDTO.rentDate}">
  			<input type="hidden" id="returndate" name="returndate" value="${reservDTO.returnDate}">
- 			<input type="hidden" name="shop" value="${reservDTO.shopId}">
+ 			<input type="hidden" name="shopid" value="${reservDTO.shopId}">
  			<input type="hidden" name="shopname" value="${shopname}"> 
  			<input type="hidden" name="price_param" id="price_param"> 
  			<input type="hidden" name="discount_param" id="discount_param"> 
@@ -67,10 +67,10 @@
            </div>
            <div class="btn">
                <div class="preBtn">
-                   <button id="preDate_btn">날짜/지점</button>
+                   <button id="preDate_btn" class="btn">날짜/지점</button>
                </div>  
                <div class="nextBtn">
-                   <button id="nextOpt_btn">옵션/할인</button>
+                   <button id="nextOpt_btn" class="btn">옵션/할인</button>
                </div> 
            </div>
         </form>

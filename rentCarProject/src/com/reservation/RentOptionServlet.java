@@ -15,15 +15,7 @@ import com.dto.ReservationDTO;
 public class RentOptionServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			  /*		
-		      <input type="hidden" name="rentdate" value="${rentdate}">
-			  <input type="hidden" name="returndate" value="${returndate}">
-			  <input type="hidden" name="shop" value="${shopid}">
-			  <input type="hidden" name="shopname" value="${shopname}">
-			  <input type="hidden" name="carid" value="${carDTO.carId}"> 
-	          <input type="hidden" name="carname" value="${carDTO.carName}">  
-	     	  */
-		
+			 
 			  //String price = request.getParameter("price");
 	          String carId = request.getParameter("carSelect").split("/")[1];
 	          String carPrice = request.getParameter("carSelect").split("/")[2];
@@ -35,11 +27,6 @@ public class RentOptionServlet extends HttpServlet {
 		      String price = request.getParameter("price_param");
 		      String discountParam = request.getParameter("discount_param");
 		      
-		      System.out.println("option name = "+carName);	
-		      System.out.println("carPrice = "+carPrice);	
-		      System.out.println("price = "+price);
-			  System.out.println("option id = "+carId);
-		      
 		      ReservationDTO reservDTO = new ReservationDTO();
 		      reservDTO.setCarId(carId);
 		      reservDTO.setShopId(shopId);
@@ -47,12 +34,7 @@ public class RentOptionServlet extends HttpServlet {
 		      reservDTO.setReturnDate(returnDate);
 			      
 			  request.setAttribute("reservDTO", reservDTO);   
-			  /*
-			  request.setAttribute("carid", carId);
-			  request.setAttribute("rentdate", rentDate);
-			  request.setAttribute("returndate", returnDate);
-			  request.setAttribute("shopid", shopId);
-			  */
+
 			  request.setAttribute("carname", carName);
 			  request.setAttribute("shopname", shopName);
 			  request.setAttribute("carprice", carPrice);

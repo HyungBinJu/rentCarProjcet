@@ -66,11 +66,9 @@ public class RentCompleteServlet extends HttpServlet {
 		ReservationService reservService = new ReservationService();
 		int result = reservService.insertOrder(reservDTO,carId);
 		if(result > 0 ) {
-			RequestDispatcher dis = request.getRequestDispatcher("rent_complete.jsp");
-			dis.forward(request, response);
+			response.sendRedirect("rent_complete.jsp");
 		}else {
-			RequestDispatcher dis = request.getRequestDispatcher("ReservationUI");
-			dis.forward(request, response);
+			response.sendRedirect("ReservationUI");
 		}
 	
 		

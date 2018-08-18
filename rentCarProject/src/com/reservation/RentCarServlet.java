@@ -27,7 +27,7 @@ public class RentCarServlet extends HttpServlet {
 		session.setAttribute("userid", "brown");
 		String userId = (String)session.getAttribute("userid");
 		
-		String shopId = request.getParameter("shop");
+		String shopId = request.getParameter("shopid");
 		String rentDate = request.getParameter("rentdate");
 		String returnDate = request.getParameter("returndate");
 		String carType = request.getParameter("carType");
@@ -54,7 +54,7 @@ public class RentCarServlet extends HttpServlet {
 		
 		carList = carService.carAllList(dto);
 		
-		List<ShopDTO> shopList = shopService.getShopList(shopDTO);
+		ShopDTO shopList = shopService.getShopList(shopDTO);
 		if(carList.size() <= 0 || carList == null) {
 			request.setAttribute("msg", "검색결과가 없습니다.");
 		}else {
@@ -72,7 +72,7 @@ public class RentCarServlet extends HttpServlet {
 		request.setAttribute("reservDTO", reservDTO);
 		System.out.println(reservDTO);
 		
-		request.setAttribute("shopname", shopList.get(0).getShopName());
+		request.setAttribute("shopname", shopList.getShopName());
 		request.setAttribute("price", price);
 		request.setAttribute("discountprice", discountPrice);
 		

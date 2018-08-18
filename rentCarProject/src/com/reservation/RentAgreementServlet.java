@@ -35,10 +35,11 @@ public class RentAgreementServlet extends HttpServlet {
 		String insurance = request.getParameter("insurance");	
 		String rentDate = request.getParameter("rentdate");
 		String returnDate = request.getParameter("returndate");
-		String discountParam = request.getParameter("discount_param");
+		String discountParam = request.getParameter("discount_price");
 		String carId = request.getParameter("carid");
 		String shopId = request.getParameter("shop");
 				
+		
 				
 		String carName = request.getParameter("carname");
 		String shopName = request.getParameter("shopname");
@@ -47,7 +48,7 @@ public class RentAgreementServlet extends HttpServlet {
 		reservDTO.setShopId(shopId);
 		reservDTO.setRentDate(rentDate);
 		reservDTO.setReturnDate(returnDate);
-		reservDTO.setPrice(Integer.parseInt(discountParam));
+		reservDTO.setPrice(Integer.parseInt(discountParam.replaceAll(",", "")));
 		reservDTO.setInsurance(insurance);
 		reservDTO.setUserId(userId);
 		
@@ -60,6 +61,7 @@ public class RentAgreementServlet extends HttpServlet {
 		request.setAttribute("carOption", carOption);
 		request.setAttribute("price", price);
 		request.setAttribute("discount_param", discountParam);
+		
 		
 		RequestDispatcher dis = request.getRequestDispatcher("rent_agreement.jsp");
 		dis.forward(request, response);

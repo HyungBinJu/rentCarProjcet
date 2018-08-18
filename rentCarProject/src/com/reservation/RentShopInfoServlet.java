@@ -17,19 +17,19 @@ import com.service.ShopService;
 public class RentShopInfoServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String shopId = request.getParameter("shop");
-		
+		System.out.println("RentShopInfoServlet()");		
+		String shopId = request.getParameter("shopid");
+		System.out.println("s: " +shopId);
 		ShopDTO shopDTO = new ShopDTO();
 		shopDTO.setShopId(shopId);
 		
 		ShopService shopService = new ShopService();
 		
-		List<ShopDTO> shopList = shopService.getShopList(shopDTO);
+		ShopDTO shopList = shopService.getShopList(shopDTO);
 		
 		request.setAttribute("shopList", shopList);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("rent_shopinfo.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("rent/rent_shopinfo.jsp");
 		dis.forward(request, response);
 		
 		
