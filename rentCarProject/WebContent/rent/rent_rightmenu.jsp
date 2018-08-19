@@ -22,11 +22,11 @@
 	<input type="hidden" name="discount_param" id="discount_param" value="${discount_param}">
 	
 	
-	<p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib sub_span" id="carName">${carname}</span><br>
-    <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib sub_span" id="rentDate">${reservDTO.rentDate}</span><br>
-    <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib sub_span" id="returnDate">${reservDTO.returnDate}</span><br>
-    <p class="sub_ib">대여지점&nbsp;</p><a href="#" class="sub_ib shop rent_shop sub_span" id="shop">${shopname}</a><br>
-    <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop sub_span" id="return_shop">${shopname}</span><br>
+	<p class="sub_ib sub_p">차종명칭&nbsp;</p><span class="sub_ib sub_span" id="carName">${carname}</span><br>
+    <p class="sub_ib sub_p">대여일시&nbsp;</p><span class="sub_ib sub_span" id="rentDate">${reservDTO.rentDate}</span><br>
+    <p class="sub_ib sub_p">반납일시&nbsp;</p><span class="sub_ib sub_span" id="returnDate">${reservDTO.returnDate}</span><br>
+    <p class="sub_ib sub_p">대여지점&nbsp;</p><a href="#" class="sub_ib shop rent_shop sub_span" id="shop">${shopname}</a><br>
+    <p class="sub_ib sub_p">반납지점&nbsp;</p><span class="sub_ib shop sub_span" id="return_shop">${shopname}</span><br>
     <hr><br>
     <p class="option_p">할인내용</p>
     <input type="text" name="promotion" id="promotion" class="option_input" value="<c:if test="${!empty promotion}"/>${promotion}" readonly="readonly"><br>
@@ -35,8 +35,8 @@
     <p class="option_p">부대장비</p>
     <input type="text" width="200px" name="car_option" id="car_option" class="option_input" value="<c:if test="${!empty carOption}"/>${carOption}" readonly="readonly"><br>
     <hr><br>
-    <p>정상금액&nbsp;</p><input type="text" class="price_input" id="price" name="price" value="<c:if test="${!empty price}"/>${price}" readonly="readonly"><br>
-    <p>예약금액&nbsp;</p><input type="text" class="price_input" id="discount_price" name="discount_price" value="<c:if test="${!empty discount_param}"/>${discount_param}"readonly="readonly"><br>
+    <p class="price_p">정상금액&nbsp;</p><input type="text" class="price_input" id="price" name="price" value="<c:if test="${!empty price}"/>${price}" readonly="readonly"><br>
+    <p class="price_p">예약금액&nbsp;</p><input type="text" class="price_input" id="discount_price" name="discount_price" value="<c:if test="${!empty discount_param}"/>${discount_param}"readonly="readonly"><br>
     <div class="order">
         <button class="orderBtn" id="orderBtn" disabled="disabled">예약</button>
         <button type="reset" class="orderBtn" id="cancelBtn">취소</button>

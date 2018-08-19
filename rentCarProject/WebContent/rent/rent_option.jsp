@@ -97,11 +97,11 @@
 				<input type="hidden" name="carid" value="${reservDTO.carId}">
 				<input type="hidden" name="shopid" value="${reservDTO.shopId}">
 				
-				<p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib sub_span" id="carName">${carname}</span><br>
-			    <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib sub_span" id="rentDate">${reservDTO.rentDate}</span><br>
-			    <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib sub_span" id="returnDate">${reservDTO.returnDate}</span><br>
-			    <p class="sub_ib">대여지점&nbsp;</p><a href="#" class="sub_ib shop rent_shop sub_span" id="shop">${shopname}</a><br>
-			    <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop sub_span">${shopname}</span><br>
+				<p class="sub_ib sub_p">차종명칭&nbsp;</p><span class="sub_ib sub_span" id="carName">${carname}</span><br>
+			    <p class="sub_ib sub_p">대여일시&nbsp;</p><span class="sub_ib sub_span" id="rentDate">${reservDTO.rentDate}</span><br>
+			    <p class="sub_ib sub_p">반납일시&nbsp;</p><span class="sub_ib sub_span" id="returnDate">${reservDTO.returnDate}</span><br>
+			    <p class="sub_ib sub_p">대여지점&nbsp;</p><a href="#" class="sub_ib shop rent_shop sub_span" id="shop">${shopname}</a><br>
+			    <p class="sub_ib sub_p">반납지점&nbsp;</p><span class="sub_ib shop sub_span">${shopname}</span><br>
 			    <hr><br>
 			    <p class="option_p">할인내용</p>
 			    <input type="text" name="promotion" id="promotion" class="option_input" value="<c:if test="${!empty promotion}"/>${promotion}" readonly="readonly"><br>

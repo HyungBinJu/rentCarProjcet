@@ -66,7 +66,7 @@ $(function() {
     	if($("#store option:selected").val()==""){
     		$(".shop").text("");
     	}else{
-    		$("#shop").text($("#store option:selected").text()+"/지점 정보");
+    		$("#shop").text($("#store option:selected").text());
     		$("#return_shop").text($("#store option:selected").text());
     	}
     	
@@ -250,8 +250,9 @@ $(function() {
 	  location.href="index.jsp"
    });
    
-   var shopid = $("#shopid").val();
+   
    $(".rent_shop").off().on("click",function(){
+	   var shopid = $("#shopid").val();
 	   if(shopid==""){
 		   shopid= $("#store option:selected").val();
 	   }
