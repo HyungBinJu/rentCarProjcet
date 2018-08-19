@@ -3,6 +3,7 @@ $(function() {
 	
 	changCss();
 	
+	
 	var rentDate = null;
 	var returnDate = null;
     $( "#resStartDate" ).datepicker({ 
@@ -249,9 +250,14 @@ $(function() {
 	  location.href="index.jsp"
    });
    
+   var shopid = $("#shopid").val();
    $(".rent_shop").off().on("click",function(){
-	   var shopid= $("#store option:selected").val();
-	   window.open("RentShopInfo?shopid="+shopid, "지점정보", 'width=440, height=550, scrollbars=no, resizable=no, toolbars=no, menubar=no');   
+	   if(shopid==""){
+		   shopid= $("#store option:selected").val();
+	   }
+	   window.open("RentShopInfo?shopid="+shopid, "지점정보", 'width=440, height=590, scrollbars=no, resizable=no, toolbars=no, menubar=no');   
+	   
+	    
    });
    
    $(".closeBtn").off().on("click",function(){
@@ -270,4 +276,6 @@ $(function() {
 		var regexp = /\B(?=(\d{3})+(?!\d))/g;
 		return num.toString().replace(regexp, ',');
 	}
+	
+
 });

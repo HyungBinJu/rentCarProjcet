@@ -18,7 +18,7 @@
 
             <input type="hidden" id="rentdate" name="rentdate" value="${reservDTO.rentDate}">
  			<input type="hidden" id="returndate" name="returndate" value="${reservDTO.returnDate}">
- 			<input type="hidden" name="shop" value="${reservDTO.shopId}">
+ 			<input type="hidden" name="shopid" id="shopid"  value="${reservDTO.shopId}">
  			<input type="hidden" name="shopname" value="${shopname}">
  			<input type="hidden" name="carname" value="${carname}">
  			<input type="hidden" name="carid" value="${reservDTO.carId}">
@@ -82,11 +82,11 @@
                </table>
            </div>
            <div class="option_btn">
-               <div class="btn preBtn" id="preCar_btn">
-                   <button>차종선택</button>
+               <div class="preBtn" id="preCar_btn">
+                   <button class="btn">차종선택</button>
                </div>  
-               <div class="btn nextBtn" id="nextQua_btn">
-                   <button>약관동의</button>
+               <div class="nextBtn" id="nextQua_btn">
+                   <button class="btn">약관동의</button>
                </div> 
            </div>
        </div>
@@ -97,10 +97,10 @@
 				<input type="hidden" name="carid" value="${reservDTO.carId}">
 				<input type="hidden" name="shopid" value="${reservDTO.shopId}">
 				
-				<p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib sub_span" name="carName" id="carName">${carname}</span><br>
-			    <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib sub_span" name="rentDate" id="rentDate">${reservDTO.rentDate}</span><br>
-			    <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib sub_span" name="returnDate" id="returnDate">${reservDTO.returnDate}</span><br>
-			    <p class="sub_ib">대여지점&nbsp;</p><span class="sub_ib shop sub_span" name="shop" id="shop">${shopname}</span><br>
+				<p class="sub_ib">차종명칭&nbsp;</p><span class="sub_ib sub_span" id="carName">${carname}</span><br>
+			    <p class="sub_ib">대여일시&nbsp;</p><span class="sub_ib sub_span" id="rentDate">${reservDTO.rentDate}</span><br>
+			    <p class="sub_ib">반납일시&nbsp;</p><span class="sub_ib sub_span" id="returnDate">${reservDTO.returnDate}</span><br>
+			    <p class="sub_ib">대여지점&nbsp;</p><a href="#" class="sub_ib shop rent_shop sub_span" id="shop">${shopname}</a><br>
 			    <p class="sub_ib">반납지점&nbsp;</p><span class="sub_ib shop sub_span">${shopname}</span><br>
 			    <hr><br>
 			    <p class="option_p">할인내용</p>
@@ -114,7 +114,7 @@
 			    <p>예약금액&nbsp;</p><input type="text" class="price_input" id="discount_price" name="discount_price" value="<c:if test="${!empty discount_param}"/>${discount_param}"readonly="readonly"><br>
 			    <div class="order">
 			        <button class="orderBtn" disabled="disabled">예약</button>
-			        <button class="cancelBtn" id="cancelBtn">취소</button>
+			        <button class="cancelBtn orderBtn" id="cancelBtn">취소</button>
 			    </div>
 			</div> 
 	    </div> 

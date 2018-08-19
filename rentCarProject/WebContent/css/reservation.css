@@ -17,7 +17,7 @@
 .resCar{width: 70%; height: 600px;float: left; margin-top: 30px;}
 .preBtn{display: inline-block;}
 .preBtn button{ width: 90px;font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
-.nextBtn{display: inline-block; margin-left: 10px; }  
+.nextBtn{display: inline-block; margin-left: 10px;}  
 .nextBtn button{ width: 90px; font-size: 15px; font-family: 'Jeju Gothic', sans-serif;}
 .btn{float: right;}
 .option_btn{margin-top: 20PX; float: right;}
@@ -205,6 +205,12 @@ background-color:#083763; color: white; font-family: 'Jeju Gothic', sans-serif; 
 }
 
 .btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}
+.orderBtn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}
 .carType{
 	background-color: azure;
+}
+
+#map_shop{
+	width: 270px;
+	height: 250px;
 }

@@ -19,7 +19,7 @@ public class RentOptionServlet extends HttpServlet {
 			  //String price = request.getParameter("price");
 	          String carId = request.getParameter("carSelect").split("/")[1];
 	          String carPrice = request.getParameter("carSelect").split("/")[2];
-		      String shopId = request.getParameter("shop");
+		      String shopId = request.getParameter("shopid");
 		      String rentDate = request.getParameter("rentdate");
 		      String returnDate = request.getParameter("returndate");   
 		      String carName = request.getParameter("carSelect").split("/")[0];

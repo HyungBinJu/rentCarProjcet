@@ -20,7 +20,7 @@
 		<form id="car_form">           
 			<input type="hidden" id="rentdate" name="rentdate" value="${reservDTO.rentDate}">
  			<input type="hidden" id="returndate" name="returndate" value="${reservDTO.returnDate}">
- 			<input type="hidden" name="shopid" value="${reservDTO.shopId}">
+ 			<input type="hidden" name="shopid" id="shopid" value="${reservDTO.shopId}">
  			<input type="hidden" name="shopname" value="${shopname}"> 
  			<input type="hidden" name="price_param" id="price_param"> 
  			<input type="hidden" name="discount_param" id="discount_param"> 

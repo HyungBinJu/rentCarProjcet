@@ -14,69 +14,91 @@ public class ShopDTO {
 	 private String shopName;
 	 private String addr;
 	 private String phone;
-	 private String map;
+	 private String lat;
+	 private String lon;
+	 
 	
 	public ShopDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ShopDTO(String shopId, String shopName, String addr, String phone, String map) {
+
+	public ShopDTO(String shopId, String shopName, String addr, String phone, String lat, String lon) {
 		super();
 		this.shopId = shopId;
 		this.shopName = shopName;
 		this.addr = addr;
 		this.phone = phone;
-		this.map = map;
+		this.lat = lat;
+		this.lon = lon;
 	}
+
 
 	public String getShopId() {
 		return shopId;
 	}
 
+
 	public void setShopId(String shopId) {
 		this.shopId = shopId;
 	}
+
 
 	public String getShopName() {
 		return shopName;
 	}
 
+
 	public void setShopName(String shopName) {
 		this.shopName = shopName;
 	}
+
 
 	public String getAddr() {
 		return addr;
 	}
 
+
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
+
 
 	public String getPhone() {
 		return phone;
 	}
 
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
-	public String getMap() {
-		return map;
+
+	public String getLat() {
+		return lat;
 	}
 
-	public void setMap(String map) {
-		this.map = map;
+
+	public void setLat(String lat) {
+		this.lat = lat;
 	}
+
+
+	public String getLon() {
+		return lon;
+	}
+
+
+	public void setLon(String lon) {
+		this.lon = lon;
+	}
+
 
 	@Override
 	public String toString() {
-		return "ShopDTO [shopId=" + shopId + ", shopName=" + shopName + ", addr=" + addr + ", phone=" + phone + ", map="
-				+ map + "]";
-	}
-     
-	 
-	 
+		return "ShopDTO [shopId=" + shopId + ", shopName=" + shopName + ", addr=" + addr + ", phone=" + phone + ", lat="
+				+ lat + ", lon=" + lon + "]";
+	}	 
 	 
 }//end

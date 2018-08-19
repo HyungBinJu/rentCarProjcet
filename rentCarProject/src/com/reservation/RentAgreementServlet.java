@@ -37,7 +37,7 @@ public class RentAgreementServlet extends HttpServlet {
 		String returnDate = request.getParameter("returndate");
 		String discountParam = request.getParameter("discount_price");
 		String carId = request.getParameter("carid");
-		String shopId = request.getParameter("shop");
+		String shopId = request.getParameter("shopid");
 				
 		
 				
