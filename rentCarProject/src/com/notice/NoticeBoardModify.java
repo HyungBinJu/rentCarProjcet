@@ -20,8 +20,6 @@ public class NoticeBoardModify extends HttpServlet {
 		String num = request.getParameter("num");
 		String content = request.getParameter("content");
 		System.out.println(num);
-		System.out.println(title);
-		System.out.println(content);
 	}
 
 	/**
