@@ -60,9 +60,11 @@
 				<tr>
 					<td colspan="3"  style="border-bottom: none;">
 					<c:if test="${pagingQA.totalNumQA > 0}"><a <c:if test="${pagingQA.startPageQA > 1}"/> href='MyQABoard?curPageQA=1'>처음</a>&nbsp;</c:if>
+					<c:if test="${pagingQA.totalNumQA > 0}"><a <c:if test="${pagingQA.curPageQA > 1}"/> href='MyQABoard?curPageQA=${pagingQA.curPageQA-1}'>이전</a>&nbsp;</c:if>
 					<c:forEach var="i" begin="${pagingQA.startPageQA}" end="${pagingQA.endPageQA}" step="1" varStatus="status">
 						<a <c:if test="${pagingQA.curPageQA != i}"/> href='MyQABoard?curPageQA=${i}'>${i}</a>&nbsp;
 					</c:forEach>	
+					<c:if test="${pagingQA.totalNumQA > 1}"><a <c:if test="${pagingQA.curPageQA < pagingQA.totalNumQA}"/> href='MyQABoard?curPageQA=${pagingQA.curPageQA+1}'>다음</a>&nbsp;</c:if>
 					<c:if test="${pagingQA.totalNumQA > 1}"><a <c:if test="${pagingQA.endPageQA < pagingQA.totalNumQA}"/> href='MyQABoard?curPageQA=${pagingQA.totalNumQA}'>끝</a>&nbsp;</c:if>	
 					</td>
 				</tr>

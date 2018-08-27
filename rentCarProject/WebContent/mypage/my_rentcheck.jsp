@@ -60,10 +60,12 @@
 				</c:forEach>
 				<tr>
 					<td colspan="5" style="border-bottom: none;">
-					<c:if test="${paging.totalNum > 1}"><a <c:if test="${paging.startPage > 1}"/> href='MyRentCheck?curPage=1'>처음</a>&nbsp;</c:if>
+					<c:if test="${paging.totalNum > 0}"><a <c:if test="${paging.startPage > 1}"/> href='MyRentCheck?curPage=1'>처음</a>&nbsp;</c:if>
+					<c:if test="${paging.totalNum > 0}"><a <c:if test="${paging.curPage > 1}"/> href='MyRentCheck?curPage=${paging.curPage-1}'>이전</a>&nbsp;</c:if>
 					<c:forEach var="i" begin="${paging.startPage}" end="${paging.endPage}" step="1" varStatus="status">
 						<a <c:if test="${paging.curPage != i}"/> href='MyRentCheck?curPage=${i}'>${i}</a>&nbsp;
 					</c:forEach>
+					<c:if test="${paging.totalNum > 1}"><a <c:if test="${paging.curPage < paging.totalNum}"/> href='MyRentCheck?curPage=${paging.curPage+1}'>다음</a>&nbsp;</c:if>
 					<c:if test="${paging.totalNum > 1}"><a <c:if test="${paging.endPage < paging.totalNum}"/> href='MyRentCheck?curPage=${paging.totalNum}'>끝</a>&nbsp;</c:if>	
 					</td>
 				</tr>
