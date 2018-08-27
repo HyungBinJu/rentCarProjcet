@@ -11,8 +11,8 @@ import com.dto.ShopDTO;
 
 public class ShopDAO {
 
-	public List<ShopDTO> getShopList(SqlSession session, ShopDTO shopDTO) {
-		return session.selectList("com.shop.getShopList",shopDTO);
+	public ShopDTO getShopList(SqlSession session, ShopDTO shopDTO) {
+		return session.selectOne("com.shop.getShopList",shopDTO);
 	}
 
 }

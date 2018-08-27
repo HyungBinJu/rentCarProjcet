@@ -29,9 +29,11 @@ public class ReservationDTO {
 	private String shopId;
 	private String userId;
 	private String navigation;
-	private String babyseat;
+	private String babySeat;
 	private String babyCarriage;
 	private int price;
+	
+	private CarDTO carDTO;
 	
 	public ReservationDTO() {
 		super();
@@ -39,21 +41,22 @@ public class ReservationDTO {
 	}
 
 	public ReservationDTO(String rentId, String rentDate, String returnDate, String realReturnDate, String insurance,
-			String carId, String shopId, String userId, String navigation, String babyseat, String babyCarriage,
-			int price) {
+			String carId, String shopId, String userId, String navigation, String babySeat, String babyCarriage,
+			int price, CarDTO carDTO) {
 		super();
 		this.rentId = rentId;
 		this.rentDate = rentDate;
 		this.returnDate = returnDate;
-		this.RealReturnDate = realReturnDate;
+		RealReturnDate = realReturnDate;
 		this.insurance = insurance;
 		this.carId = carId;
 		this.shopId = shopId;
 		this.userId = userId;
 		this.navigation = navigation;
-		this.babyseat = babyseat;
+		this.babySeat = babySeat;
 		this.babyCarriage = babyCarriage;
 		this.price = price;
+		this.carDTO = carDTO;
 	}
 
 	public String getRentId() {
@@ -128,12 +131,12 @@ public class ReservationDTO {
 		this.navigation = navigation;
 	}
 
-	public String getBabyseat() {
-		return babyseat;
+	public String getBabySeat() {
+		return babySeat;
 	}
 
-	public void setBabyseat(String babyseat) {
-		this.babyseat = babyseat;
+	public void setBabySeat(String babySeat) {
+		this.babySeat = babySeat;
 	}
 
 	public String getBabyCarriage() {
@@ -152,13 +155,22 @@ public class ReservationDTO {
 		this.price = price;
 	}
 
+	public CarDTO getCarDTO() {
+		return carDTO;
+	}
+
+	public void setCarDTO(CarDTO carDTO) {
+		this.carDTO = carDTO;
+	}
+
 	@Override
 	public String toString() {
 		return "ReservationDTO [rentId=" + rentId + ", rentDate=" + rentDate + ", returnDate=" + returnDate
 				+ ", RealReturnDate=" + RealReturnDate + ", insurance=" + insurance + ", carId=" + carId + ", shopId="
-				+ shopId + ", userId=" + userId + ", navigation=" + navigation + ", babyseat=" + babyseat
-				+ ", babyCarriage=" + babyCarriage + ", price=" + price + "]";
+				+ shopId + ", userId=" + userId + ", navigation=" + navigation + ", babySeat=" + babySeat
+				+ ", babyCarriage=" + babyCarriage + ", price=" + price + ", carDTO=" + carDTO + "]";
 	}
+
 	
 	
 	

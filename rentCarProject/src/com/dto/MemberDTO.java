@@ -5,7 +5,7 @@ public class MemberDTO {
 	private String userid;
 	private String username;
 	private String passwd;
-	private int post;
+	private String post;
 	private String addr1;
 	private String addr2;
 	private String phone;
@@ -19,7 +19,7 @@ public class MemberDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDTO(String userid, String username, String passwd, int post, String addr1, String addr2, String phone,
+	public MemberDTO(String userid, String username, String passwd, String post, String addr1, String addr2, String phone,
 			String birth, String email, String licensetype, String licensenum, int mlevel) {
 		super();
 		this.userid = userid;
@@ -60,11 +60,11 @@ public class MemberDTO {
 		this.passwd = passwd;
 	}
 
-	public int getPost() {
+	public String getPost() {
 		return post;
 	}
 
-	public void setPost(int post) {
+	public void setPost(String post) {
 		this.post = post;
 	}
 

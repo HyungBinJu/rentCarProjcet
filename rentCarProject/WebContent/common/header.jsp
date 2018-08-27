@@ -69,6 +69,23 @@
 				
 		  });
 		  
+		//형카 예약 눌렀을때 로그인 했는지 체크		  
+			$("#Reservation_a").on("click",function(){
+				loginCheck();
+			});	  
+			//로그인체크 함수
+			function loginCheck(){
+				var userid = '${sessionScope.userid}';
+				//alert(userid);
+				if(userid==""){
+					$(".LoginlayerBox").show();
+					event.preventDefault();
+				}else{
+					var url = "ReservationUI"; 
+					$(location).attr('href',url);
+				}
+			}
+		  
 	});
 	
 
@@ -122,7 +139,7 @@
 					<c:if test="${! empty userid}">
 								
 								<li>
-									<a href="MyPage">${userid}님</a>
+									<a href="MyPageUI">${userid}님</a>
 								</li>
 								<li>
 									<a href="index.jsp">홈</a>
@@ -131,7 +148,7 @@
 									<a href="Logout">로그아웃</a>
 								</li>
 								<li>
-									 <a href="MyPage">내정보</a>
+									 <a href="MyPageUI">내정보</a>
 								</li>
 								<li>
 									<a href="#">채용</a>
@@ -150,7 +167,7 @@
 							<a href="#">형카소개</a>
 						</li>
 						<li>
-							<a href="ReservationUI">형카예약</a>
+							<a href="ReservationUI" id="Reservation_a">형카예약</a>
 						</li>
 						<li>
 							<a href="NoticeUI">형카알림</a>

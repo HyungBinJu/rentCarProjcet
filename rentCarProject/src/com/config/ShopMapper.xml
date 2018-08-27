@@ -9,7 +9,8 @@
 		       shopname shopName,
 		       addr,
 		       phone,
-		       map
+		       lat,
+		       lon
 		  FROM shop
 		 WHERE shopId = #{shopId} 
 	</select>
